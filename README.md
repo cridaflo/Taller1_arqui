@@ -1,5 +1,5 @@
 # Taller1_arqui
 
 	
-algo1345
+algo13456
 
