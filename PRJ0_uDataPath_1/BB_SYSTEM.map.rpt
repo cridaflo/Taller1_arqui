@@ -1,6 +1,6 @@
 Analysis & Synthesis report for BB_SYSTEM
-Tue Feb 27 07:39:11 2018
-Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+Sat Sep 15 20:39:03 2018
+Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
 ---------------------
@@ -13,35 +13,66 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |BB_SYSTEM|WB_SYSTEM:WB_SYSTEM_u0|SC_STATEMACHINE:SC_STATEMACHINE_u0|State_Register
-  9. Registers Removed During Synthesis
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
  10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |BB_SYSTEM
- 13. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0
- 14. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0
- 15. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_u0
- 16. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_u1
- 17. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_u2
- 18. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_u3
- 19. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u0
- 20. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1
- 21. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegSHIFTER:SC_RegSHIFTER_u0
- 22. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_DECODER:CC_DECODER_u0
- 23. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_MUXX:CC_MUXX_u0
- 24. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_MUXX:CC_MUXX_u1
- 25. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_ALU:CC_ALU_u0
- 26. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|SC_STATEMACHINE:SC_STATEMACHINE_u0
- 27. Post-Synthesis Netlist Statistics for Top Partition
- 28. Elapsed Time Per Partition
- 29. Analysis & Synthesis Messages
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |BB_SYSTEM
+ 12. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0
+ 13. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0
+ 14. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r1
+ 15. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r2
+ 16. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r3
+ 17. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r4
+ 18. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r5
+ 19. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r6
+ 20. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r7
+ 21. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r8
+ 22. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r9
+ 23. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r10
+ 24. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r11
+ 25. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r12
+ 26. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r13
+ 27. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r14
+ 28. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r15
+ 29. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r16
+ 30. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r17
+ 31. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r18
+ 32. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r19
+ 33. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r20
+ 34. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r21
+ 35. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r22
+ 36. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r23
+ 37. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r24
+ 38. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r25
+ 39. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r26
+ 40. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r27
+ 41. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r28
+ 42. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r29
+ 43. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r30
+ 44. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r31
+ 45. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_pc
+ 46. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_t0
+ 47. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_t1
+ 48. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_t2
+ 49. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_t3
+ 50. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir
+ 51. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0
+ 52. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_DECODER:CC_DECODER_u0
+ 53. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_MUXX:CC_MUXX_u0
+ 54. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_MUXX:CC_MUXX_u1
+ 55. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_ALU:CC_ALU_u0
+ 56. Port Connectivity Checks: "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_DECODER:CC_DECODER_u0"
+ 57. Port Connectivity Checks: "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0"
+ 58. Post-Synthesis Netlist Statistics for Top Partition
+ 59. Elapsed Time Per Partition
+ 60. Analysis & Synthesis Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2017  Intel Corporation. All rights reserved.
+Copyright (C) 2016  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -61,16 +92,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Feb 27 07:39:11 2018       ;
-; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Analysis & Synthesis Status        ; Successful - Sat Sep 15 20:39:03 2018       ;
+; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 85                                          ;
-;     Total combinational functions  ; 58                                          ;
-;     Dedicated logic registers      ; 39                                          ;
-; Total registers                    ; 39                                          ;
-; Total pins                         ; 10                                          ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 34                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -170,140 +201,159 @@ agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
+; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                  ; Library ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------+---------+
-; rtl/uDataPath.v                  ; yes             ; User Verilog HDL File  ; /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/uDataPath.v       ;         ;
-; rtl/SC_STATEMACHINE.v            ; yes             ; User Verilog HDL File  ; /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/SC_STATEMACHINE.v ;         ;
-; rtl/SC_RegSHIFTER.v              ; yes             ; User Verilog HDL File  ; /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/SC_RegSHIFTER.v   ;         ;
-; rtl/SC_RegGENERAL.v              ; yes             ; User Verilog HDL File  ; /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/SC_RegGENERAL.v   ;         ;
-; rtl/SC_RegFIXED.v                ; yes             ; User Verilog HDL File  ; /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/SC_RegFIXED.v     ;         ;
-; rtl/CC_MUXX.v                    ; yes             ; User Verilog HDL File  ; /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/CC_MUXX.v         ;         ;
-; rtl/CC_DECODER.v                 ; yes             ; User Verilog HDL File  ; /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/CC_DECODER.v      ;         ;
-; rtl/CC_ALU.v                     ; yes             ; User Verilog HDL File  ; /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/CC_ALU.v          ;         ;
-; BB_SYSTEM.v                      ; yes             ; User Verilog HDL File  ; /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/BB_SYSTEM.v           ;         ;
-; rtl/WB_SYSTEM.v                  ; yes             ; User Verilog HDL File  ; /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v       ;         ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                   ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
+; rtl/uDataPath.v                  ; yes             ; User Verilog HDL File  ; E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v     ;         ;
+; rtl/SC_RegGENERAL.v              ; yes             ; User Verilog HDL File  ; E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegGENERAL.v ;         ;
+; rtl/SC_RegFIXED.v                ; yes             ; User Verilog HDL File  ; E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegFIXED.v   ;         ;
+; rtl/CC_MUXX.v                    ; yes             ; User Verilog HDL File  ; E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUXX.v       ;         ;
+; rtl/CC_DECODER.v                 ; yes             ; User Verilog HDL File  ; E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_DECODER.v    ;         ;
+; rtl/CC_ALU.v                     ; yes             ; User Verilog HDL File  ; E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_ALU.v        ;         ;
+; BB_SYSTEM.v                      ; yes             ; User Verilog HDL File  ; E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v         ;         ;
+; rtl/WB_SYSTEM.v                  ; yes             ; User Verilog HDL File  ; E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v     ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                            ;
-+---------------------------------------------+--------------------------+
-; Resource                                    ; Usage                    ;
-+---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 85                       ;
-;                                             ;                          ;
-; Total combinational functions               ; 58                       ;
-; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 27                       ;
-;     -- 3 input functions                    ; 17                       ;
-;     -- <=2 input functions                  ; 14                       ;
-;                                             ;                          ;
-; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 44                       ;
-;     -- arithmetic mode                      ; 14                       ;
-;                                             ;                          ;
-; Total registers                             ; 39                       ;
-;     -- Dedicated logic registers            ; 39                       ;
-;     -- I/O registers                        ; 0                        ;
-;                                             ;                          ;
-; I/O pins                                    ; 10                       ;
-;                                             ;                          ;
-; Embedded Multiplier 9-bit elements          ; 0                        ;
-;                                             ;                          ;
-; Maximum fan-out node                        ; BB_SYSTEM_CLOCK_50~input ;
-; Maximum fan-out                             ; 39                       ;
-; Total fan-out                               ; 343                      ;
-; Average fan-out                             ; 2.93                     ;
-+---------------------------------------------+--------------------------+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                          ;
++---------------------------------------------+----------------------------------------+
+; Resource                                    ; Usage                                  ;
++---------------------------------------------+----------------------------------------+
+;                                             ;                                        ;
+; Total combinational functions               ; 0                                      ;
+; Logic element usage by number of LUT inputs ;                                        ;
+;     -- 4 input functions                    ; 0                                      ;
+;     -- 3 input functions                    ; 0                                      ;
+;     -- <=2 input functions                  ; 0                                      ;
+;                                             ;                                        ;
+; Logic elements by mode                      ;                                        ;
+;     -- normal mode                          ; 0                                      ;
+;     -- arithmetic mode                      ; 0                                      ;
+;                                             ;                                        ;
+; Total registers                             ; 0                                      ;
+;     -- Dedicated logic registers            ; 0                                      ;
+;     -- I/O registers                        ; 0                                      ;
+;                                             ;                                        ;
+; I/O pins                                    ; 34                                     ;
+;                                             ;                                        ;
+; Embedded Multiplier 9-bit elements          ; 0                                      ;
+;                                             ;                                        ;
+; Maximum fan-out node                        ; BB_SYSTEM_DataBUSDisplay_Out[0]~output ;
+; Maximum fan-out                             ; 1                                      ;
+; Total fan-out                               ; 34                                     ;
+; Average fan-out                             ; 0.50                                   ;
++---------------------------------------------+----------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                              ;
-+--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                     ; Entity Name     ; Library Name ;
-+--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
-; |BB_SYSTEM                                 ; 58 (0)              ; 39 (0)                    ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |BB_SYSTEM                                                                              ; BB_SYSTEM       ; work         ;
-;    |WB_SYSTEM:WB_SYSTEM_u0|                ; 58 (0)              ; 39 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WB_SYSTEM:WB_SYSTEM_u0                                                       ; WB_SYSTEM       ; work         ;
-;       |SC_STATEMACHINE:SC_STATEMACHINE_u0| ; 17 (17)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WB_SYSTEM:WB_SYSTEM_u0|SC_STATEMACHINE:SC_STATEMACHINE_u0                    ; SC_STATEMACHINE ; work         ;
-;       |uDataPath:uDataPath_u0|             ; 41 (0)              ; 24 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0                                ; uDataPath       ; work         ;
-;          |CC_ALU:CC_ALU_u0|                ; 26 (26)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_ALU:CC_ALU_u0               ; CC_ALU          ; work         ;
-;          |CC_DECODER:CC_DECODER_u0|        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_DECODER:CC_DECODER_u0       ; CC_DECODER      ; work         ;
-;          |CC_MUXX:CC_MUXX_u0|              ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_MUXX:CC_MUXX_u0             ; CC_MUXX         ; work         ;
-;          |SC_RegGENERAL:SC_RegGENERAL_u2|  ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_u2 ; SC_RegGENERAL   ; work         ;
-;          |SC_RegGENERAL:SC_RegGENERAL_u3|  ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_u3 ; SC_RegGENERAL   ; work         ;
-;          |SC_RegSHIFTER:SC_RegSHIFTER_u0|  ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegSHIFTER:SC_RegSHIFTER_u0 ; SC_RegSHIFTER   ; work         ;
-+--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |BB_SYSTEM                 ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 34   ; 0            ; |BB_SYSTEM          ; BB_SYSTEM   ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |BB_SYSTEM|WB_SYSTEM:WB_SYSTEM_u0|SC_STATEMACHINE:SC_STATEMACHINE_u0|State_Register                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
-+----------------------------------------------------+----------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+------------------------------------+------------------------------------+------------------------------------+--------------------------------------------+--------------------------------------------+--------------------------------------------+--------------------------------------------+--------------------------------------------+--------------------------------------------+------------------------------+------------------------------+
-; Name                                               ; State_Register.State_END_0 ; State_Register.State_ADD_RegGEN3_RegGEN3_RegFIX0_2 ; State_Register.State_ADD_RegGEN3_RegGEN3_RegFIX0_1 ; State_Register.State_ADD_RegGEN3_RegGEN3_RegFIX0_0 ; State_Register.State_DEC_RegGEN2_2 ; State_Register.State_DEC_RegGEN2_1 ; State_Register.State_DEC_RegGEN2_0 ; State_Register.State_MOV_RegGEN3_RegFIX0_2 ; State_Register.State_MOV_RegGEN3_RegFIX0_1 ; State_Register.State_MOV_RegGEN3_RegFIX0_0 ; State_Register.State_MOV_RegGEN2_RegFIX1_2 ; State_Register.State_MOV_RegGEN2_RegFIX1_1 ; State_Register.State_MOV_RegGEN2_RegFIX1_0 ; State_Register.State_START_0 ; State_Register.State_RESET_0 ;
-+----------------------------------------------------+----------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+------------------------------------+------------------------------------+------------------------------------+--------------------------------------------+--------------------------------------------+--------------------------------------------+--------------------------------------------+--------------------------------------------+--------------------------------------------+------------------------------+------------------------------+
-; State_Register.State_RESET_0                       ; 0                          ; 0                                                  ; 0                                                  ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                            ; 0                            ;
-; State_Register.State_START_0                       ; 0                          ; 0                                                  ; 0                                                  ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 1                            ; 1                            ;
-; State_Register.State_MOV_RegGEN2_RegFIX1_0         ; 0                          ; 0                                                  ; 0                                                  ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 1                                          ; 0                            ; 1                            ;
-; State_Register.State_MOV_RegGEN2_RegFIX1_1         ; 0                          ; 0                                                  ; 0                                                  ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 1                                          ; 0                                          ; 0                            ; 1                            ;
-; State_Register.State_MOV_RegGEN2_RegFIX1_2         ; 0                          ; 0                                                  ; 0                                                  ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                          ; 0                                          ; 0                                          ; 1                                          ; 0                                          ; 0                                          ; 0                            ; 1                            ;
-; State_Register.State_MOV_RegGEN3_RegFIX0_0         ; 0                          ; 0                                                  ; 0                                                  ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                          ; 0                                          ; 1                                          ; 0                                          ; 0                                          ; 0                                          ; 0                            ; 1                            ;
-; State_Register.State_MOV_RegGEN3_RegFIX0_1         ; 0                          ; 0                                                  ; 0                                                  ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                          ; 1                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                            ; 1                            ;
-; State_Register.State_MOV_RegGEN3_RegFIX0_2         ; 0                          ; 0                                                  ; 0                                                  ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 1                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                            ; 1                            ;
-; State_Register.State_DEC_RegGEN2_0                 ; 0                          ; 0                                                  ; 0                                                  ; 0                                                  ; 0                                  ; 0                                  ; 1                                  ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                            ; 1                            ;
-; State_Register.State_DEC_RegGEN2_1                 ; 0                          ; 0                                                  ; 0                                                  ; 0                                                  ; 0                                  ; 1                                  ; 0                                  ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                            ; 1                            ;
-; State_Register.State_DEC_RegGEN2_2                 ; 0                          ; 0                                                  ; 0                                                  ; 0                                                  ; 1                                  ; 0                                  ; 0                                  ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                            ; 1                            ;
-; State_Register.State_ADD_RegGEN3_RegGEN3_RegFIX0_0 ; 0                          ; 0                                                  ; 0                                                  ; 1                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                            ; 1                            ;
-; State_Register.State_ADD_RegGEN3_RegGEN3_RegFIX0_1 ; 0                          ; 0                                                  ; 1                                                  ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                            ; 1                            ;
-; State_Register.State_ADD_RegGEN3_RegGEN3_RegFIX0_2 ; 0                          ; 1                                                  ; 0                                                  ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                            ; 1                            ;
-; State_Register.State_END_0                         ; 1                          ; 0                                                  ; 0                                                  ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                                          ; 0                            ; 1                            ;
-+----------------------------------------------------+----------------------------+----------------------------------------------------+----------------------------------------------------+----------------------------------------------------+------------------------------------+------------------------------------+------------------------------------+--------------------------------------------+--------------------------------------------+--------------------------------------------+--------------------------------------------+--------------------------------------------+--------------------------------------------+------------------------------+------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                     ;
++----------------------------------------------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                                                            ; Reason for Removal                          ;
++----------------------------------------------------------------------------------------------------------+---------------------------------------------+
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[0..31]  ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_t3|RegGENERAL_Register[0..31]  ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_t2|RegGENERAL_Register[0..31]  ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_t1|RegGENERAL_Register[0..31]  ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_t0|RegGENERAL_Register[0..31]  ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_pc|RegGENERAL_Register[0..31]  ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r31|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r30|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r29|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r28|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r27|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r26|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r25|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r24|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r23|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r22|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r21|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r20|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r19|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r18|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r17|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r16|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r15|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r14|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r13|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r12|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r11|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r10|RegGENERAL_Register[0..31] ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r9|RegGENERAL_Register[0..31]  ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r8|RegGENERAL_Register[0..31]  ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r7|RegGENERAL_Register[0..31]  ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r6|RegGENERAL_Register[0..31]  ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r5|RegGENERAL_Register[0..31]  ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r4|RegGENERAL_Register[0..31]  ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r3|RegGENERAL_Register[0..31]  ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r2|RegGENERAL_Register[0..31]  ; Lost fanout                                 ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r1|RegGENERAL_Register[0..31]  ; Stuck at GND due to stuck port clock_enable ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[0..31]        ; Lost fanout                                 ;
+; Total Number of Removed Registers = 1216                                                                 ;                                             ;
++----------------------------------------------------------------------------------------------------------+---------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                                                 ;
-+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
-; Register name                                                                                          ; Reason for Removal                                                                                        ;
-+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
-; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_u1|RegGENERAL_Register[0..7] ; Stuck at GND due to stuck port clock_enable                                                               ;
-; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_u0|RegGENERAL_Register[0..7] ; Stuck at GND due to stuck port clock_enable                                                               ;
-; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1|RegFIXED_Register[1]          ; Merged with WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1|RegFIXED_Register[0] ;
-; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u0|RegFIXED_Register[0]          ; Merged with WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1|RegFIXED_Register[0] ;
-; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1|RegFIXED_Register[2,3]        ; Merged with WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1|RegFIXED_Register[0] ;
-; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u0|RegFIXED_Register[3]          ; Merged with WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1|RegFIXED_Register[0] ;
-; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1|RegFIXED_Register[5]          ; Merged with WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1|RegFIXED_Register[7] ;
-; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u0|RegFIXED_Register[6]          ; Merged with WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1|RegFIXED_Register[7] ;
-; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1|RegFIXED_Register[4]          ; Merged with WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1|RegFIXED_Register[7] ;
-; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u0|RegFIXED_Register[1,4,5,7]    ; Merged with WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1|RegFIXED_Register[7] ;
-; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1|RegFIXED_Register[6]          ; Merged with WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1|RegFIXED_Register[7] ;
-; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u0|RegFIXED_Register[2]          ; Merged with WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1|RegFIXED_Register[7] ;
-; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1|RegFIXED_Register[0]          ; Stuck at VCC due to stuck port data_in                                                                    ;
-; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1|RegFIXED_Register[7]          ; Stuck at GND due to stuck port data_in                                                                    ;
-; WB_SYSTEM:WB_SYSTEM_u0|SC_STATEMACHINE:SC_STATEMACHINE_u0|State_Register~4                             ; Lost fanout                                                                                               ;
-; WB_SYSTEM:WB_SYSTEM_u0|SC_STATEMACHINE:SC_STATEMACHINE_u0|State_Register~5                             ; Lost fanout                                                                                               ;
-; WB_SYSTEM:WB_SYSTEM_u0|SC_STATEMACHINE:SC_STATEMACHINE_u0|State_Register~6                             ; Lost fanout                                                                                               ;
-; WB_SYSTEM:WB_SYSTEM_u0|SC_STATEMACHINE:SC_STATEMACHINE_u0|State_Register~7                             ; Lost fanout                                                                                               ;
-; WB_SYSTEM:WB_SYSTEM_u0|SC_STATEMACHINE:SC_STATEMACHINE_u0|State_Register~8                             ; Lost fanout                                                                                               ;
-; WB_SYSTEM:WB_SYSTEM_u0|SC_STATEMACHINE:SC_STATEMACHINE_u0|State_Register~9                             ; Lost fanout                                                                                               ;
-; WB_SYSTEM:WB_SYSTEM_u0|SC_STATEMACHINE:SC_STATEMACHINE_u0|State_Register~10                            ; Lost fanout                                                                                               ;
-; WB_SYSTEM:WB_SYSTEM_u0|SC_STATEMACHINE:SC_STATEMACHINE_u0|State_Register~11                            ; Lost fanout                                                                                               ;
-; Total Number of Removed Registers = 40                                                                 ;                                                                                                           ;
-+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                ;
++------------------------------------------------------------------------------------------------------+--------------------+------------------------------------------------------------------------------------------------+
+; Register name                                                                                        ; Reason for Removal ; Registers Removed due to This Register                                                         ;
++------------------------------------------------------------------------------------------------------+--------------------+------------------------------------------------------------------------------------------------+
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[0]  ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[0]  ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[31] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[31] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[30] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[30] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[29] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[29] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[28] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[28] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[27] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[27] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[26] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[26] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[25] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[25] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[24] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[24] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[23] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[23] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[22] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[22] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[21] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[21] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[20] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[20] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[19] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[19] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[18] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[18] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[17] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[17] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[16] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[16] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[15] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[15] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[14] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[14] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[13] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[13] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[12] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[12] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[11] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[11] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[10] ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[10] ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[9]  ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[9]  ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[8]  ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[8]  ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[7]  ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[7]  ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[6]  ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[6]  ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[5]  ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[5]  ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[4]  ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[4]  ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[3]  ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[3]  ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[2]  ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[2]  ;
+; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir|RegGENERAL_Register[1]  ; Lost Fanouts       ; WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0|RegFIXED_Register[1]  ;
++------------------------------------------------------------------------------------------------------+--------------------+------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -311,149 +361,439 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 39    ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 39    ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 24    ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |BB_SYSTEM|WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_ALU:CC_ALU_u0|Mux1   ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |BB_SYSTEM|WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_MUXX:CC_MUXX_u0|Mux1 ;
-; 1:1                ; 8 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |BB_SYSTEM|WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_ALU:CC_ALU_u0|Add0   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |BB_SYSTEM|WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_ALU:CC_ALU_u0|Mux4   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
-
-
 +---------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Top-level Entity: |BB_SYSTEM ;
-+--------------------------------+----------+-------------------------------+
-; Parameter Name                 ; Value    ; Type                          ;
-+--------------------------------+----------+-------------------------------+
-; DATAWIDTH_BUS                  ; 8        ; Signed Integer                ;
-; DATAWIDTH_REGSHIFTER_SELECTION ; 2        ; Signed Integer                ;
-; DATAWIDTH_DECODER_SELECTION    ; 3        ; Signed Integer                ;
-; DATAWIDTH_ALU_SELECTION        ; 4        ; Signed Integer                ;
-; DATA_REGFIXED_INIT_0           ; 00001001 ; Unsigned Binary               ;
-; DATA_REGFIXED_INIT_1           ; 00001111 ; Unsigned Binary               ;
-; DATAWIDTH_DECODER_OUT          ; 4        ; Signed Integer                ;
-; DATAWIDTH_MUX_SELECTION        ; 3        ; Signed Integer                ;
-+--------------------------------+----------+-------------------------------+
++-----------------------------+----------+----------------------------------+
+; Parameter Name              ; Value    ; Type                             ;
++-----------------------------+----------+----------------------------------+
+; DATAWIDTH_BUS               ; 32       ; Signed Integer                   ;
+; DATAWIDTH_DECODER_SELECTION ; 6        ; Signed Integer                   ;
+; DATAWIDTH_ALU_SELECTION     ; 4        ; Signed Integer                   ;
+; DATA_REGFIXED_INIT_0        ; 00000000 ; Unsigned Binary                  ;
+; DATAWIDTH_DECODER_OUT       ; 38       ; Signed Integer                   ;
+; DATAWIDTH_MUX_SELECTION     ; 6        ; Signed Integer                   ;
++-----------------------------+----------+----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0 ;
-+--------------------------------+----------+-------------------------+
-; Parameter Name                 ; Value    ; Type                    ;
-+--------------------------------+----------+-------------------------+
-; DATAWIDTH_BUS                  ; 8        ; Signed Integer          ;
-; DATAWIDTH_REGSHIFTER_SELECTION ; 2        ; Signed Integer          ;
-; DATAWIDTH_DECODER_SELECTION    ; 3        ; Signed Integer          ;
-; DATAWIDTH_ALU_SELECTION        ; 4        ; Signed Integer          ;
-; DATA_REGFIXED_INIT_0           ; 00001001 ; Unsigned Binary         ;
-; DATA_REGFIXED_INIT_1           ; 00001111 ; Unsigned Binary         ;
-; DATAWIDTH_DECODER_OUT          ; 4        ; Signed Integer          ;
-; DATAWIDTH_MUX_SELECTION        ; 3        ; Signed Integer          ;
-+--------------------------------+----------+-------------------------+
++-----------------------------+----------+----------------------------+
+; Parameter Name              ; Value    ; Type                       ;
++-----------------------------+----------+----------------------------+
+; DATAWIDTH_BUS               ; 32       ; Signed Integer             ;
+; DATAWIDTH_DECODER_SELECTION ; 6        ; Signed Integer             ;
+; DATAWIDTH_ALU_SELECTION     ; 4        ; Signed Integer             ;
+; DATA_REGFIXED_INIT_0        ; 00000000 ; Unsigned Binary            ;
+; DATAWIDTH_DECODER_OUT       ; 38       ; Signed Integer             ;
+; DATAWIDTH_MUX_SELECTION     ; 6        ; Signed Integer             ;
++-----------------------------+----------+----------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +--------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0 ;
-+--------------------------------+----------+------------------------------------------------+
-; Parameter Name                 ; Value    ; Type                                           ;
-+--------------------------------+----------+------------------------------------------------+
-; DATAWIDTH_BUS                  ; 8        ; Signed Integer                                 ;
-; DATAWIDTH_REGSHIFTER_SELECTION ; 2        ; Signed Integer                                 ;
-; DATAWIDTH_DECODER_SELECTION    ; 3        ; Signed Integer                                 ;
-; DATAWIDTH_ALU_SELECTION        ; 4        ; Signed Integer                                 ;
-; DATA_REGFIXED_INIT_0           ; 00001001 ; Unsigned Binary                                ;
-; DATA_REGFIXED_INIT_1           ; 00001111 ; Unsigned Binary                                ;
-; DATAWIDTH_DECODER_OUT          ; 4        ; Signed Integer                                 ;
-; DATAWIDTH_MUX_SELECTION        ; 3        ; Signed Integer                                 ;
-+--------------------------------+----------+------------------------------------------------+
++-----------------------------+----------+---------------------------------------------------+
+; Parameter Name              ; Value    ; Type                                              ;
++-----------------------------+----------+---------------------------------------------------+
+; DATAWIDTH_BUS               ; 32       ; Signed Integer                                    ;
+; DATAWIDTH_DECODER_SELECTION ; 6        ; Signed Integer                                    ;
+; DATAWIDTH_ALU_SELECTION     ; 4        ; Signed Integer                                    ;
+; DATA_REGFIXED_INIT_0        ; 00000000 ; Unsigned Binary                                   ;
+; DATAWIDTH_DECODER_OUT       ; 38       ; Signed Integer                                    ;
+; DATAWIDTH_MUX_SELECTION     ; 6        ; Signed Integer                                    ;
++-----------------------------+----------+---------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_u0 ;
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r1 ;
 +----------------+-------+--------------------------------------------------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                                                             ;
 +----------------+-------+--------------------------------------------------------------------------------------------------+
-; DATAWIDTH_BUS  ; 8     ; Signed Integer                                                                                   ;
-+----------------+-------+--------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_u1 ;
-+----------------+-------+--------------------------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                                             ;
-+----------------+-------+--------------------------------------------------------------------------------------------------+
-; DATAWIDTH_BUS  ; 8     ; Signed Integer                                                                                   ;
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                   ;
 +----------------+-------+--------------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_u2 ;
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r2 ;
 +----------------+-------+--------------------------------------------------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                                                             ;
 +----------------+-------+--------------------------------------------------------------------------------------------------+
-; DATAWIDTH_BUS  ; 8     ; Signed Integer                                                                                   ;
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                   ;
 +----------------+-------+--------------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_u3 ;
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r3 ;
 +----------------+-------+--------------------------------------------------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                                                             ;
 +----------------+-------+--------------------------------------------------------------------------------------------------+
-; DATAWIDTH_BUS  ; 8     ; Signed Integer                                                                                   ;
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r4 ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r5 ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r6 ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r7 ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r8 ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r9 ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r10 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r11 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r12 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r13 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r14 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r15 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r16 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r17 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r18 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r19 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r20 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r21 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r22 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r23 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r24 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r25 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r26 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r27 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r28 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r29 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r30 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r31 ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_pc ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_t0 ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_t1 ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_t2 ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_t3 ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_ir ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; DATAWIDTH_BUS  ; 32    ; Signed Integer                                                                                   ;
 +----------------+-------+--------------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u0 ;
+; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0 ;
 +--------------------+----------+---------------------------------------------------------------------------------------+
 ; Parameter Name     ; Value    ; Type                                                                                  ;
 +--------------------+----------+---------------------------------------------------------------------------------------+
-; DATAWIDTH_BUS      ; 8        ; Signed Integer                                                                        ;
-; DATA_REGFIXED_INIT ; 00001001 ; Unsigned Binary                                                                       ;
+; DATAWIDTH_BUS      ; 32       ; Signed Integer                                                                        ;
+; DATA_REGFIXED_INIT ; 00000000 ; Unsigned Binary                                                                       ;
 +--------------------+----------+---------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1 ;
-+--------------------+----------+---------------------------------------------------------------------------------------+
-; Parameter Name     ; Value    ; Type                                                                                  ;
-+--------------------+----------+---------------------------------------------------------------------------------------+
-; DATAWIDTH_BUS      ; 8        ; Signed Integer                                                                        ;
-; DATA_REGFIXED_INIT ; 00001111 ; Unsigned Binary                                                                       ;
-+--------------------+----------+---------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegSHIFTER:SC_RegSHIFTER_u0 ;
-+--------------------------------+-------+----------------------------------------------------------------------------------+
-; Parameter Name                 ; Value ; Type                                                                             ;
-+--------------------------------+-------+----------------------------------------------------------------------------------+
-; DATAWIDTH_BUS                  ; 8     ; Signed Integer                                                                   ;
-; DATAWIDTH_REGSHIFTER_SELECTION ; 2     ; Signed Integer                                                                   ;
-+--------------------------------+-------+----------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -462,8 +802,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------------+-------+-------------------------------------------------------------------------------+
 ; Parameter Name              ; Value ; Type                                                                          ;
 +-----------------------------+-------+-------------------------------------------------------------------------------+
-; DATAWIDTH_DECODER_SELECTION ; 3     ; Signed Integer                                                                ;
-; DATAWIDTH_DECODER_OUT       ; 4     ; Signed Integer                                                                ;
+; DATAWIDTH_DECODER_SELECTION ; 6     ; Signed Integer                                                                ;
+; DATAWIDTH_DECODER_OUT       ; 38    ; Signed Integer                                                                ;
 +-----------------------------+-------+-------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -473,8 +813,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------+-------+-----------------------------------------------------------------------------+
 ; Parameter Name          ; Value ; Type                                                                        ;
 +-------------------------+-------+-----------------------------------------------------------------------------+
-; DATAWIDTH_MUX_SELECTION ; 3     ; Signed Integer                                                              ;
-; DATAWIDTH_BUS           ; 8     ; Signed Integer                                                              ;
+; DATAWIDTH_MUX_SELECTION ; 6     ; Signed Integer                                                              ;
+; DATAWIDTH_BUS           ; 32    ; Signed Integer                                                              ;
 +-------------------------+-------+-----------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -484,8 +824,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------+-------+-----------------------------------------------------------------------------+
 ; Parameter Name          ; Value ; Type                                                                        ;
 +-------------------------+-------+-----------------------------------------------------------------------------+
-; DATAWIDTH_MUX_SELECTION ; 3     ; Signed Integer                                                              ;
-; DATAWIDTH_BUS           ; 8     ; Signed Integer                                                              ;
+; DATAWIDTH_MUX_SELECTION ; 6     ; Signed Integer                                                              ;
+; DATAWIDTH_BUS           ; 32    ; Signed Integer                                                              ;
 +-------------------------+-------+-----------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -495,23 +835,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------+-------+---------------------------------------------------------------------------+
 ; Parameter Name          ; Value ; Type                                                                      ;
 +-------------------------+-------+---------------------------------------------------------------------------+
-; DATAWIDTH_BUS           ; 8     ; Signed Integer                                                            ;
+; DATAWIDTH_BUS           ; 32    ; Signed Integer                                                            ;
 ; DATAWIDTH_ALU_SELECTION ; 4     ; Signed Integer                                                            ;
 +-------------------------+-------+---------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|SC_STATEMACHINE:SC_STATEMACHINE_u0 ;
-+--------------------------------+-------+---------------------------------------------------------------+
-; Parameter Name                 ; Value ; Type                                                          ;
-+--------------------------------+-------+---------------------------------------------------------------+
-; DATAWIDTH_DECODER_SELECTION    ; 3     ; Signed Integer                                                ;
-; DATAWIDTH_MUX_SELECTION        ; 3     ; Signed Integer                                                ;
-; DATAWIDTH_ALU_SELECTION        ; 4     ; Signed Integer                                                ;
-; DATAWIDTH_REGSHIFTER_SELECTION ; 2     ; Signed Integer                                                ;
-+--------------------------------+-------+---------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_DECODER:CC_DECODER_u0"                                      ;
++-------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                          ; Type   ; Severity ; Details                                                                             ;
++-------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; CC_DECODER_DataDecoder_Out[0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0"                                                          ;
++--------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                     ; Type   ; Severity ; Details                                                                             ;
++--------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; uDataPath_Overflow_InLow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; uDataPath_Carry_InLow    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; uDataPath_Negative_InLow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; uDataPath_Zero_InLow     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -519,22 +867,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 10                          ;
-; cycloneiii_ff         ; 39                          ;
-;     CLR               ; 15                          ;
-;     ENA CLR           ; 24                          ;
-; cycloneiii_lcell_comb ; 58                          ;
-;     arith             ; 14                          ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 7                           ;
-;     normal            ; 44                          ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 5                           ;
-;         3 data inputs ; 10                          ;
-;         4 data inputs ; 27                          ;
+; boundary_port         ; 34                          ;
+; cycloneiii_lcell_comb ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 5.48                        ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
 +-----------------------+-----------------------------+
 
 
@@ -552,54 +891,86 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Feb 27 07:38:59 2018
+    Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+    Info: Processing started: Sat Sep 15 20:38:51 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
-Info (12021): Found 1 design units, including 1 entities, in source file rtl/uDataPath.v
-    Info (12023): Found entity 1: uDataPath File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 27
-Info (12021): Found 1 design units, including 1 entities, in source file rtl/SC_STATEMACHINE.v
-    Info (12023): Found entity 1: SC_STATEMACHINE File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/SC_STATEMACHINE.v Line: 27
-Info (12021): Found 1 design units, including 1 entities, in source file rtl/SC_RegSHIFTER.v
-    Info (12023): Found entity 1: SC_RegSHIFTER File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/SC_RegSHIFTER.v Line: 27
-Info (12021): Found 1 design units, including 1 entities, in source file rtl/SC_RegGENERAL.v
-    Info (12023): Found entity 1: SC_RegGENERAL File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/SC_RegGENERAL.v Line: 27
-Info (12021): Found 1 design units, including 1 entities, in source file rtl/SC_RegFIXED.v
-    Info (12023): Found entity 1: SC_RegFIXED File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/SC_RegFIXED.v Line: 27
-Info (12021): Found 1 design units, including 1 entities, in source file rtl/CC_MUXX.v
-    Info (12023): Found entity 1: CC_MUXX File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/CC_MUXX.v Line: 27
-Info (12021): Found 1 design units, including 1 entities, in source file rtl/CC_DECODER.v
-    Info (12023): Found entity 1: CC_DECODER File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/CC_DECODER.v Line: 27
-Info (12021): Found 1 design units, including 1 entities, in source file rtl/CC_ALU.v
-    Info (12023): Found entity 1: CC_ALU File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/CC_ALU.v Line: 27
-Info (12021): Found 1 design units, including 1 entities, in source file BB_SYSTEM.v
-    Info (12023): Found entity 1: BB_SYSTEM File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 27
-Info (12021): Found 1 design units, including 1 entities, in source file rtl/WB_SYSTEM.v
-    Info (12023): Found entity 1: WB_SYSTEM File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/udatapath.v
+    Info (12023): Found entity 1: uDataPath File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 27
+Warning (12019): Can't analyze file -- file rtl/SC_STATEMACHINE.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_regshifter.v
+    Info (12023): Found entity 1: SC_RegSHIFTER File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegSHIFTER.v Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_reggeneral.v
+    Info (12023): Found entity 1: SC_RegGENERAL File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegGENERAL.v Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_regfixed.v
+    Info (12023): Found entity 1: SC_RegFIXED File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegFIXED.v Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_muxx.v
+    Info (12023): Found entity 1: CC_MUXX File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUXX.v Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_decoder.v
+    Info (12023): Found entity 1: CC_DECODER File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_DECODER.v Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_alu.v
+    Info (12023): Found entity 1: CC_ALU File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_ALU.v Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file bb_system.v
+    Info (12023): Found entity 1: BB_SYSTEM File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/wb_system.v
+    Info (12023): Found entity 1: WB_SYSTEM File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_regir.v
+    Info (12023): Found entity 1: SC_RegIR File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegIR.v Line: 27
 Info (12127): Elaborating entity "BB_SYSTEM" for the top level hierarchy
-Info (12128): Elaborating entity "WB_SYSTEM" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0" File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 70
-Info (12128): Elaborating entity "uDataPath" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0" File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v Line: 85
-Info (12128): Elaborating entity "SC_RegGENERAL" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_u0" File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 110
-Info (12128): Elaborating entity "SC_RegFIXED" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u0" File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 144
-Info (12128): Elaborating entity "SC_RegFIXED" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_u1" File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 150
-Info (12128): Elaborating entity "SC_RegSHIFTER" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegSHIFTER:SC_RegSHIFTER_u0" File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 163
-Info (12128): Elaborating entity "CC_DECODER" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_DECODER:CC_DECODER_u0" File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 173
-Info (12128): Elaborating entity "CC_MUXX" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_MUXX:CC_MUXX_u0" File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 192
-Info (12128): Elaborating entity "CC_ALU" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_ALU:CC_ALU_u0" File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 223
-Warning (10036): Verilog HDL or VHDL warning at CC_ALU.v(58): object "addition0" assigned a value but never read File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/CC_ALU.v Line: 58
-Warning (10036): Verilog HDL or VHDL warning at CC_ALU.v(59): object "addition1" assigned a value but never read File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/CC_ALU.v Line: 59
-Info (12128): Elaborating entity "SC_STATEMACHINE" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|SC_STATEMACHINE:SC_STATEMACHINE_u0" File: /media/fsegura/FES-INFO/Dropbox/work/de0nano/0DATAPATH/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v Line: 102
-Info (286030): Timing-Driven Synthesis is running
-Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (12128): Elaborating entity "WB_SYSTEM" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 68
+Info (12128): Elaborating entity "uDataPath" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v Line: 81
+Info (12128): Elaborating entity "SC_RegGENERAL" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r1" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 139
+Info (12128): Elaborating entity "SC_RegFIXED" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 437
+Info (12128): Elaborating entity "CC_DECODER" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_DECODER:CC_DECODER_u0" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 460
+Info (12128): Elaborating entity "CC_MUXX" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_MUXX:CC_MUXX_u0" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 509
+Info (12128): Elaborating entity "CC_ALU" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_ALU:CC_ALU_u0" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 570
+Warning (10036): Verilog HDL or VHDL warning at CC_ALU.v(58): object "addition0" assigned a value but never read File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_ALU.v Line: 58
+Warning (10036): Verilog HDL or VHDL warning at CC_ALU.v(59): object "addition1" assigned a value but never read File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_ALU.v Line: 59
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[0]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[1]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[2]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[3]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[4]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[5]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[6]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[7]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[8]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[9]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[10]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[11]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[12]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[13]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[14]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[15]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[16]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[17]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[18]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[19]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[20]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[21]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[22]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[23]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[24]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[25]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[26]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[27]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[28]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[29]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[30]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+    Warning (13410): Pin "BB_SYSTEM_DataBUSDisplay_Out[31]" is stuck at GND File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 53
+Info (17049): 1184 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 101 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "BB_SYSTEM_CLOCK_50" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 54
+    Warning (15610): No output dependent on input pin "BB_SYSTEM_Reset_InHigh" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 55
+Info (21057): Implemented 34 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 91 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 981 megabytes
-    Info: Processing ended: Tue Feb 27 07:39:11 2018
+    Info (21059): Implemented 32 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 39 warnings
+    Info: Peak virtual memory: 4743 megabytes
+    Info: Processing ended: Sat Sep 15 20:39:03 2018
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:26
 

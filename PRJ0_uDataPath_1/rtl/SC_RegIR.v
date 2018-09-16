@@ -24,46 +24,54 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module BB_SYSTEM (
-//////////// OUTPUTS //////////
-	BB_SYSTEM_DataBUSDisplay_Out,
-//////////// INPUTS //////////
-	BB_SYSTEM_CLOCK_50,
-	BB_SYSTEM_Reset_InHigh
+module SC_RegIR #(parameter DATAWIDTH_BUS=32)(
+	//////////// OUTPUTS //////////
+	SC_RegGENERAL_DataBUS_Out,
+	//////////// INPUTS //////////
+	SC_RegGENERAL_CLOCK_50,
+	SC_RegGENERAL_Reset_InHigh,
+	SC_RegGENERAL_Write_InHigh,
+	SC_RegGENERAL_DataBUS_In
 );
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
-	parameter DATAWIDTH_BUS = 32;
-// SHIFT_REGISTER CONTROL
-// DECODER CONTROL:  TO GENERATE WRITE SIGNAL TO GENERAL_REGISTERS TO WRITE DATA FROM DATA_BUS_C. ¡ONE BY ONE, NOT AT SAME TIME!
-	parameter DATAWIDTH_DECODER_SELECTION = 6;
-// ALU CONTROL
-	parameter DATAWIDTH_ALU_SELECTION = 4;
-// FIXED_REGISTERS INIT
-	parameter DATA_REGFIXED_INIT_0 = 8'b00000000;
-// DECODER CONTROL:  TO GENERATE WRITE SIGNAL TO GENERAL_REGISTERS TO WRITE DATA FROM DATA_BUS_C. ¡ONE BY ONE, NOT AT SAME TIME!
-	parameter DATAWIDTH_DECODER_OUT = 38;
-// MUX CONTROL: TO SELECT OUTPUT REGISTER TO BUS_A, BUS_B OR BOTH OF THEM
-	parameter DATAWIDTH_MUX_SELECTION = 6;
 
 //=======================================================
 //  PORT declarations
 //=======================================================
-	output	[DATAWIDTH_BUS-1:0] BB_SYSTEM_DataBUSDisplay_Out;
-	input 	BB_SYSTEM_CLOCK_50;
-	input 	BB_SYSTEM_Reset_InHigh;
+	output reg	[DATAWIDTH_BUS-1:0] SC_RegGENERAL_DataBUS_Out;
+	input			SC_RegGENERAL_CLOCK_50;
+	input			SC_RegGENERAL_Reset_InHigh;
+	input			SC_RegGENERAL_Write_InHigh;
+	input 		[DATAWIDTH_BUS-1:0] SC_RegGENERAL_DataBUS_In;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-
+	reg [DATAWIDTH_BUS-1:0] RegGENERAL_Register;
+	reg [DATAWIDTH_BUS-1:0] RegGENERAL_Signal;
 //=======================================================
 //  Structural coding
 //=======================================================
-WB_SYSTEM #(.DATAWIDTH_BUS(DATAWIDTH_BUS),.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_DECODER_SELECTION), .DATAWIDTH_ALU_SELECTION(DATAWIDTH_ALU_SELECTION), .DATA_REGFIXED_INIT_0(DATA_REGFIXED_INIT_0), .DATAWIDTH_DECODER_OUT(DATAWIDTH_DECODER_OUT), .DATAWIDTH_MUX_SELECTION(DATAWIDTH_MUX_SELECTION)) WB_SYSTEM_u0 (
-// port map - connection between master ports and signals/registers   
-	.WB_SYSTEM_DataBUSDisplay_Out(BB_SYSTEM_DataBUSDisplay_Out),
-	.WB_SYSTEM_CLOCK_50(BB_SYSTEM_CLOCK_50),
-	.WB_SYSTEM_Reset_InHigh(BB_SYSTEM_Reset_InHigh)
-);
+//INPUT LOGIC: COMBINATIONAL
+	always @ (*)
+	if (SC_RegGENERAL_Write_InHigh == 1)	
+		RegGENERAL_Signal = SC_RegGENERAL_DataBUS_In;
+	else 	
+		RegGENERAL_Signal = RegGENERAL_Register;
+
+// REGISTER : SEQUENTIAL
+	always @ ( posedge SC_RegGENERAL_CLOCK_50 , posedge SC_RegGENERAL_Reset_InHigh)
+	if (SC_RegGENERAL_Reset_InHigh==1)
+		RegGENERAL_Register <= 0;
+	else
+		RegGENERAL_Register <= RegGENERAL_Signal;
+//=======================================================
+//  Outputs
+//=======================================================
+// OUTPUT LOGIC : COMBINATIONAL
+	always @ (*)
+		SC_RegGENERAL_DataBUS_Out = RegGENERAL_Register;  
+
 endmodule
+

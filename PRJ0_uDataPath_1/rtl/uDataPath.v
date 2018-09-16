@@ -24,7 +24,7 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module uDataPath #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELECTION=3, parameter DATAWIDTH_ALU_SELECTION=4, parameter DATA_REGFIXED_INIT_0=8'b00000000, parameter DATAWIDTH_DECODER_OUT=37, parameter DATAWIDTH_MUX_SELECTION=6)(
+module uDataPath #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELECTION=6, parameter DATAWIDTH_ALU_SELECTION=4, parameter DATA_REGFIXED_INIT_0=8'b00000000, parameter DATAWIDTH_DECODER_OUT=38, parameter DATAWIDTH_MUX_SELECTION=6)(
 	//////////// OUTPUTS //////////
 	uDataPath_DataBUSDisplay_Out,
 	uDataPath_Overflow_InLow,
@@ -134,7 +134,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r1 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R1),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[1]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[1]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r2 (
@@ -142,7 +142,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r2 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R2),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[2]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[2]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r3 (
@@ -150,7 +150,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r3 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R3),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[3]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[3]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r4 (
@@ -158,7 +158,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r4 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R4),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[4]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[4]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r5 (
@@ -166,7 +166,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r5 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R5),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[5]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[5]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r6 (
@@ -174,7 +174,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r6 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R6),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[6]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[6]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r7 (
@@ -182,7 +182,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r7 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R7),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[7]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[7]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r8 (
@@ -190,7 +190,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r8 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R8),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[8]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[8]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r9 (
@@ -198,7 +198,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r9 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R9),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[9]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[9]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r10 (
@@ -206,7 +206,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r10 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R10),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[10]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[10]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r11 (
@@ -214,7 +214,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r11 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R11),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[11]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[11]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r12 (
@@ -222,7 +222,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r12 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R12),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[12]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[12]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r13 (
@@ -230,7 +230,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r13 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R13),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[13]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[13]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r14 (
@@ -238,7 +238,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r14 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R14),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[14]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[14]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r15 (
@@ -246,7 +246,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r15 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R15),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[15]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[15]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r16 (
@@ -254,7 +254,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r16 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R16),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[16]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[16]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r17 (
@@ -262,7 +262,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r17 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R17),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[17]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[17]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r18 (
@@ -270,7 +270,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r18 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R18),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[18]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[18]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r19 (
@@ -278,7 +278,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r19 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R19),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[19]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[19]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r20 (
@@ -286,7 +286,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r20 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R20),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[20]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[20]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r21 (
@@ -294,7 +294,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r21 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R21),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[21]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[21]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r22 (
@@ -302,7 +302,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r22 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R22),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[22]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[22]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r23 (
@@ -310,7 +310,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r23 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R23),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[23]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[23]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r24 (
@@ -318,7 +318,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r24 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R24),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[24]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[24]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r25 (
@@ -326,7 +326,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r25 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R25),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[25]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[25]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r26 (
@@ -334,7 +334,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r26 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R26),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[26]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[26]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r27 (
@@ -342,7 +342,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r27 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R27),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[27]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[27]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r28 (
@@ -350,7 +350,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r28 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R28),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[28]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[28]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r29 (
@@ -358,7 +358,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r29 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R29),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[29]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[29]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r30 (
@@ -366,7 +366,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r30 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R30),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[30]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[30]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r31 (
@@ -374,7 +374,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_r31 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R31),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[31]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[31]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_pc (
@@ -382,7 +382,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_pc (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_PC),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[32]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[32]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_t0 (
@@ -390,7 +390,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_t0 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_T0),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[33]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[33]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_t1 (
@@ -398,7 +398,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_t1 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_T1),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[34]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[34]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_t2 (
@@ -406,7 +406,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_t2 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_T2),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[35]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[35]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_t3 (
@@ -414,7 +414,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_t3 (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_T3),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[36]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[36]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_ir (
@@ -422,7 +422,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_ir (
 	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_IR),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InLow(Decoder_DataWrite_Wire[37]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[37]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
 //-------------------------------------------------------
@@ -512,13 +512,44 @@ CC_MUXX #(.DATAWIDTH_MUX_SELECTION(DATAWIDTH_MUX_SELECTION), .DATAWIDTH_BUS(DATA
 (
 // port map - connection between master ports and signals/registers   
 	.CC_MUX_DataBUS_Out(DataBUS_B_Wire),
-	.CC_MUX_DataBUS_In_0(RegGENERAL2MUX_DataBUS_Wire_0), 
-	.CC_MUX_DataBUS_In_1(RegGENERAL2MUX_DataBUS_Wire_1), 
-	.CC_MUX_DataBUS_In_2(RegGENERAL2MUX_DataBUS_Wire_2), 
-	.CC_MUX_DataBUS_In_3(RegGENERAL2MUX_DataBUS_Wire_3), 
-	.CC_MUX_DataBUS_In_4(RegFIXED2MUX_DataBUS_R0),
-	.CC_MUX_DataBUS_In_6(RegGENERAL2MUX_DataBUS_Wire_0), //REPEATED BUT MUST CHANGE
-	.CC_MUX_DataBUS_In_7(RegGENERAL2MUX_DataBUS_Wire_0), //REPEATED BUT MUST CHANGE
+	.CC_MUX_DataBUS_In_0(RegFIXED2MUX_DataBUS_R0), 
+	.CC_MUX_DataBUS_In_1(RegGENERAL2MUX_DataBUS_R1), 
+	.CC_MUX_DataBUS_In_2(RegGENERAL2MUX_DataBUS_R2), 
+	.CC_MUX_DataBUS_In_3(RegGENERAL2MUX_DataBUS_R3), 
+	.CC_MUX_DataBUS_In_4(RegGENERAL2MUX_DataBUS_R4),
+	.CC_MUX_DataBUS_In_5(RegGENERAL2MUX_DataBUS_R5), 
+	.CC_MUX_DataBUS_In_6(RegGENERAL2MUX_DataBUS_R6), 
+	.CC_MUX_DataBUS_In_7(RegGENERAL2MUX_DataBUS_R7),
+	.CC_MUX_DataBUS_In_8(RegGENERAL2MUX_DataBUS_R8), 
+	.CC_MUX_DataBUS_In_9(RegGENERAL2MUX_DataBUS_R9),
+	.CC_MUX_DataBUS_In_10(RegGENERAL2MUX_DataBUS_R10), 
+	.CC_MUX_DataBUS_In_11(RegGENERAL2MUX_DataBUS_R11), 
+	.CC_MUX_DataBUS_In_12(RegGENERAL2MUX_DataBUS_R12), 
+	.CC_MUX_DataBUS_In_13(RegGENERAL2MUX_DataBUS_R13), 
+	.CC_MUX_DataBUS_In_14(RegGENERAL2MUX_DataBUS_R14),
+	.CC_MUX_DataBUS_In_15(RegGENERAL2MUX_DataBUS_R15), 
+	.CC_MUX_DataBUS_In_16(RegGENERAL2MUX_DataBUS_R16), 
+	.CC_MUX_DataBUS_In_17(RegGENERAL2MUX_DataBUS_R17),
+	.CC_MUX_DataBUS_In_18(RegGENERAL2MUX_DataBUS_R18), 
+	.CC_MUX_DataBUS_In_19(RegGENERAL2MUX_DataBUS_R19),
+	.CC_MUX_DataBUS_In_20(RegGENERAL2MUX_DataBUS_R20),
+	.CC_MUX_DataBUS_In_21(RegGENERAL2MUX_DataBUS_R21), 
+	.CC_MUX_DataBUS_In_22(RegGENERAL2MUX_DataBUS_R22), 
+	.CC_MUX_DataBUS_In_23(RegGENERAL2MUX_DataBUS_R23), 
+	.CC_MUX_DataBUS_In_24(RegGENERAL2MUX_DataBUS_R24),
+	.CC_MUX_DataBUS_In_25(RegGENERAL2MUX_DataBUS_R25), 
+	.CC_MUX_DataBUS_In_26(RegGENERAL2MUX_DataBUS_R26), 
+	.CC_MUX_DataBUS_In_27(RegGENERAL2MUX_DataBUS_R27),
+	.CC_MUX_DataBUS_In_28(RegGENERAL2MUX_DataBUS_R28), 
+	.CC_MUX_DataBUS_In_29(RegGENERAL2MUX_DataBUS_R29),
+	.CC_MUX_DataBUS_In_30(RegGENERAL2MUX_DataBUS_R30),
+	.CC_MUX_DataBUS_In_31(RegGENERAL2MUX_DataBUS_R31), 
+	.CC_MUX_DataBUS_In_32(RegGENERAL2MUX_DataBUS_PC), 
+	.CC_MUX_DataBUS_In_33(RegGENERAL2MUX_DataBUS_T0), 
+	.CC_MUX_DataBUS_In_34(RegGENERAL2MUX_DataBUS_T1),
+	.CC_MUX_DataBUS_In_35(RegGENERAL2MUX_DataBUS_T2), 
+	.CC_MUX_DataBUS_In_36(RegGENERAL2MUX_DataBUS_T3), 
+	.CC_MUX_DataBUS_In_37(RegGENERAL2MUX_DataBUS_IR),
 	.CC_MUX_Selection_In(uDataPath_MUXSelectionBUSB_Out)
 );
 //-------------------------------------------------------
@@ -538,7 +569,7 @@ CC_ALU #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATAWIDTH_ALU_SELECTION(DATAWIDTH_ALU_S
 	.CC_ALU_Selection_In(uDataPath_ALUSelection_Out)
 );
 //-------------------------------------------------------
-assign uDataPath_DataBUSDisplay_Out = RegGENERAL2MUX_DataBUS_Wire_3;
+assign uDataPath_DataBUSDisplay_Out = RegGENERAL2MUX_DataBUS_R1;
 
 endmodule
 

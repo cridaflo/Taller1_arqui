@@ -24,7 +24,7 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module WB_SYSTEM #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELECTION=3, parameter DATAWIDTH_ALU_SELECTION=4, parameter DATA_REGFIXED_INIT_0=8'b00000000, parameter DATAWIDTH_DECODER_OUT=37, parameter DATAWIDTH_MUX_SELECTION=6) (
+module WB_SYSTEM #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELECTION=6, parameter DATAWIDTH_ALU_SELECTION=4, parameter DATA_REGFIXED_INIT_0=8'b00000000, parameter DATAWIDTH_DECODER_OUT=38, parameter DATAWIDTH_MUX_SELECTION=6) (
 //////////// OUTPUTS //////////
 	WB_SYSTEM_DataBUSDisplay_Out,
 //////////// INPUTS //////////
@@ -47,8 +47,6 @@ module WB_SYSTEM #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELEC
 //=======================================================
 // SHIFT_REGISTER CONTROL
 	wire RegSHIFTER_LoadCONTROL_Wire;
-	wire [DATAWIDTH_REGSHIFTER_SELECTION-1:0] RegSHIFTER_ShiftSelectionCONTROL_Wire;
-
 // DECODER CONTROL:  TO GENERATE WRITE SIGNAL TO GENERAL_REGISTERS TO WRITE DATA FROM DATA_BUS_C. ¡ONE BY ONE, NOT AT SAME TIME!
 	wire [DATAWIDTH_DECODER_SELECTION-1:0] Decoder_SelectionCONTROL_Wire; 
 
@@ -66,7 +64,7 @@ module WB_SYSTEM #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELEC
 //=======================================================
 //  Structural coding
 //=======================================================
-	uDataPath #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATAWIDTH_DECODER_SELECTION(DATAWIDTH_DECODER_SELECTION), .DATAWIDTH_ALU_SELECTION(DATAWIDTH_ALU_SELECTION), .DATA_REGFIXED_INIT_0(DATA_REGFIXED_INIT_0), .DATA_REGFIXED_INIT_1(DATA_REGFIXED_INIT_1), .DATAWIDTH_DECODER_OUT(DATAWIDTH_DECODER_OUT), .DATAWIDTH_MUX_SELECTION(DATAWIDTH_MUX_SELECTION)) uDataPath_u0 (
+	uDataPath #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATAWIDTH_DECODER_SELECTION(DATAWIDTH_DECODER_SELECTION), .DATAWIDTH_ALU_SELECTION(DATAWIDTH_ALU_SELECTION), .DATA_REGFIXED_INIT_0(DATA_REGFIXED_INIT_0), .DATAWIDTH_DECODER_OUT(DATAWIDTH_DECODER_OUT), .DATAWIDTH_MUX_SELECTION(DATAWIDTH_MUX_SELECTION)) uDataPath_u0 (
 // port map - connection between master ports and signals/registers   
 	.uDataPath_DataBUSDisplay_Out(WB_SYSTEM_DataBUSDisplay_Out),
 	.uDataPath_Overflow_InLow(ALU_OverflowCONTROL_Wire),
@@ -79,26 +77,24 @@ module WB_SYSTEM #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELEC
 	.uDataPath_DecoderSelectionWrite_Out(Decoder_SelectionCONTROL_Wire), 
 	.uDataPath_MUXSelectionBUSA_Out(MUX_SelectionBUSACONTROL_Wire),
 	.uDataPath_MUXSelectionBUSB_Out(MUX_SelectionBUSBCONTROL_Wire),
-	.uDataPath_ALUSelection_Out(ALU_SelectionCONTROL_Wire),
-	.uDataPath_RegSHIFTERLoad_OutLow(RegSHIFTER_LoadCONTROL_Wire),
-	.uDataPath_RegSHIFTERShiftSelection_OutLow(RegSHIFTER_ShiftSelectionCONTROL_Wire)
+	.uDataPath_ALUSelection_Out(ALU_SelectionCONTROL_Wire)
 );
 
-	SC_STATEMACHINE #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_DECODER_SELECTION), .DATAWIDTH_ALU_SELECTION(DATAWIDTH_ALU_SELECTION), .DATAWIDTH_REGSHIFTER_SELECTION(DATAWIDTH_REGSHIFTER_SELECTION)) SC_STATEMACHINE_u0 (
-// port map - connection between master ports and signals/registers   
-	.SC_STATEMACHINE_DecoderSelectionWrite_Out(Decoder_SelectionCONTROL_Wire), 
-	.SC_STATEMACHINE_MUXSelectionBUSA_Out(MUX_SelectionBUSACONTROL_Wire),
-	.SC_STATEMACHINE_MUXSelectionBUSB_Out(MUX_SelectionBUSBCONTROL_Wire),
-	.SC_STATEMACHINE_ALUSelection_Out(ALU_SelectionCONTROL_Wire),
-	.SC_STATEMACHINE_RegSHIFTERLoad_OutLow(RegSHIFTER_LoadCONTROL_Wire),
-	.SC_STATEMACHINE_RegSHIFTERShiftSelection_OutLow(RegSHIFTER_ShiftSelectionCONTROL_Wire),
-	
-	.SC_STATEMACHINE_CLOCK_50(WB_SYSTEM_CLOCK_50),
-	.SC_STATEMACHINE_Reset_InHigh(WB_SYSTEM_Reset_InHigh),
-	.SC_STATEMACHINE_Overflow_InLow(ALU_OverflowCONTROL_Wire),
-	.SC_STATEMACHINE_Carry_InLow(ALU_CarryCONTROL_Wire),
-	.SC_STATEMACHINE_Negative_InLow(ALU_NegativeCONTROL_Wire),
-	.SC_STATEMACHINE_Zero_InLow(ALU_ZeroCONTROL_Wire)
-);
+//	SC_STATEMACHINE #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_DECODER_SELECTION), .DATAWIDTH_ALU_SELECTION(DATAWIDTH_ALU_SELECTION)) SC_STATEMACHINE_u0 (
+//// port map - connection between master ports and signals/registers   
+//	.SC_STATEMACHINE_DecoderSelectionWrite_Out(Decoder_SelectionCONTROL_Wire), 
+//	.SC_STATEMACHINE_MUXSelectionBUSA_Out(MUX_SelectionBUSACONTROL_Wire),
+//	.SC_STATEMACHINE_MUXSelectionBUSB_Out(MUX_SelectionBUSBCONTROL_Wire),
+//	.SC_STATEMACHINE_ALUSelection_Out(ALU_SelectionCONTROL_Wire),
+//	.SC_STATEMACHINE_RegSHIFTERLoad_OutLow(RegSHIFTER_LoadCONTROL_Wire),
+//	.SC_STATEMACHINE_RegSHIFTERShiftSelection_OutLow(RegSHIFTER_ShiftSelectionCONTROL_Wire),
+//	
+//	.SC_STATEMACHINE_CLOCK_50(WB_SYSTEM_CLOCK_50),
+//	.SC_STATEMACHINE_Reset_InHigh(WB_SYSTEM_Reset_InHigh),
+//	.SC_STATEMACHINE_Overflow_InLow(ALU_OverflowCONTROL_Wire),
+//	.SC_STATEMACHINE_Carry_InLow(ALU_CarryCONTROL_Wire),
+//	.SC_STATEMACHINE_Negative_InLow(ALU_NegativeCONTROL_Wire),
+//	.SC_STATEMACHINE_Zero_InLow(ALU_ZeroCONTROL_Wire)
+//);
 endmodule
 
