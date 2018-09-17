@@ -53,7 +53,7 @@ module SC_RegFIXED #(parameter DATAWIDTH_BUS=32, parameter DATA_REGFIXED_INIT=8'
 	always @ (*)
 		RegFIXED_Signal = RegFIXED_Register;
 // REGISTER : SEQUENTIAL
-	always @ ( posedge SC_RegFIXED_CLOCK_50 , posedge SC_RegFIXED_Reset_InHigh)
+	always @ ( negedge SC_RegFIXED_CLOCK_50 , posedge SC_RegFIXED_Reset_InHigh)
 	if (SC_RegFIXED_Reset_InHigh==1)
 		RegFIXED_Register <= DATA_REGFIXED_INIT;
 	else

@@ -26,12 +26,19 @@
 //=======================================================
 module SC_RegIR #(parameter DATAWIDTH_BUS=32)(
 	//////////// OUTPUTS //////////
-	SC_RegGENERAL_DataBUS_Out,
+	SC_RegIR_DataBUS_Out,
+	SC_RegIR_OP,
+	SC_RegIR_RD,
+	SC_RegIR_OP2,
+	SC_RegIR_OP3,
+	SC_RegIR_RS1,
+	SC_RegIR_BIT13,
+	SC_RegIR_RS2,
 	//////////// INPUTS //////////
-	SC_RegGENERAL_CLOCK_50,
-	SC_RegGENERAL_Reset_InHigh,
-	SC_RegGENERAL_Write_InHigh,
-	SC_RegGENERAL_DataBUS_In
+	SC_RegIR_CLOCK_50,
+	SC_RegIR_Reset_InHigh,
+	SC_RegIR_Write_InHigh,
+	SC_RegIR_DataBUS_In
 );
 //=======================================================
 //  PARAMETER declarations
@@ -40,11 +47,18 @@ module SC_RegIR #(parameter DATAWIDTH_BUS=32)(
 //=======================================================
 //  PORT declarations
 //=======================================================
-	output reg	[DATAWIDTH_BUS-1:0] SC_RegGENERAL_DataBUS_Out;
-	input			SC_RegGENERAL_CLOCK_50;
-	input			SC_RegGENERAL_Reset_InHigh;
-	input			SC_RegGENERAL_Write_InHigh;
-	input 		[DATAWIDTH_BUS-1:0] SC_RegGENERAL_DataBUS_In;
+	output reg	[DATAWIDTH_BUS-1:0] SC_RegIR_DataBUS_Out;
+	output 	[1:0] SC_RegIR_OP;
+	output 	[4:0] SC_RegIR_RD;
+	output 	[2:0] SC_RegIR_OP2;
+	output 	[5:0] SC_RegIR_OP3;
+	output 	[4:0] SC_RegIR_RS1;
+	output  SC_RegIR_BIT13;
+	output 	[4:0] SC_RegIR_RS2;
+	input			SC_RegIR_CLOCK_50;
+	input			SC_RegIR_Reset_InHigh;
+	input			SC_RegIR_Write_InHigh;
+	input 		[DATAWIDTH_BUS-1:0] SC_RegIR_DataBUS_In;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
@@ -55,14 +69,14 @@ module SC_RegIR #(parameter DATAWIDTH_BUS=32)(
 //=======================================================
 //INPUT LOGIC: COMBINATIONAL
 	always @ (*)
-	if (SC_RegGENERAL_Write_InHigh == 1)	
-		RegGENERAL_Signal = SC_RegGENERAL_DataBUS_In;
+	if (SC_RegIR_Write_InHigh == 1)	
+		RegGENERAL_Signal = SC_RegIR_DataBUS_In;
 	else 	
 		RegGENERAL_Signal = RegGENERAL_Register;
 
 // REGISTER : SEQUENTIAL
-	always @ ( posedge SC_RegGENERAL_CLOCK_50 , posedge SC_RegGENERAL_Reset_InHigh)
-	if (SC_RegGENERAL_Reset_InHigh==1)
+	always @ ( negedge SC_RegIR_CLOCK_50 , posedge SC_RegIR_Reset_InHigh)
+	if (SC_RegIR_Reset_InHigh==1)
 		RegGENERAL_Register <= 0;
 	else
 		RegGENERAL_Register <= RegGENERAL_Signal;
@@ -71,7 +85,15 @@ module SC_RegIR #(parameter DATAWIDTH_BUS=32)(
 //=======================================================
 // OUTPUT LOGIC : COMBINATIONAL
 	always @ (*)
-		SC_RegGENERAL_DataBUS_Out = RegGENERAL_Register;  
+		SC_RegIR_DataBUS_Out = RegGENERAL_Register; 
+	
+assign SC_RegIR_OP= SC_RegIR_DataBUS_Out[31:30];
+assign SC_RegIR_RD= SC_RegIR_DataBUS_Out[29:25];
+assign SC_RegIR_OP2=	SC_RegIR_DataBUS_Out[24:22];
+assign SC_RegIR_OP3=	SC_RegIR_DataBUS_Out[24:19];
+assign SC_RegIR_RS1=	SC_RegIR_DataBUS_Out[18:14];
+assign SC_RegIR_BIT13=	SC_RegIR_DataBUS_Out[13];
+assign SC_RegIR_RS2=	SC_RegIR_DataBUS_Out[4:0];	
 
 endmodule
 

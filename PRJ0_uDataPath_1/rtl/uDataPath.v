@@ -31,6 +31,13 @@ module uDataPath #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELEC
 	uDataPath_Carry_InLow,
 	uDataPath_Negative_InLow,
 	uDataPath_Zero_InLow,
+	uDataPath_RegIR_OP,
+	uDataPath_RegIR_RD,
+	uDataPath_RegIR_OP2,
+	uDataPath_RegIR_OP3,
+	uDataPath_RegIR_RS1,
+	uDataPath_RegIR_BIT13,
+	uDataPath_RegIR_RS2,
 	//////////// INPUTS //////////
 	uDataPath_CLOCK_50,
 	uDataPath_Reset_InHigh,
@@ -51,6 +58,13 @@ module uDataPath #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELEC
 	output 	uDataPath_Carry_InLow;
 	output 	uDataPath_Negative_InLow;
 	output 	uDataPath_Zero_InLow;
+	output   uDataPath_RegIR_OP;
+	output	uDataPath_RegIR_RD;
+	output	uDataPath_RegIR_OP2;
+	output	uDataPath_RegIR_OP3;
+	output	uDataPath_RegIR_RS1;
+	output	uDataPath_RegIR_BIT13;
+	output	uDataPath_RegIR_RS2;
 	//////////// INPUTS //////////
 	input 	uDataPath_CLOCK_50;
 	input 	uDataPath_Reset_InHigh;
@@ -417,13 +431,20 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_t3 (
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[36]),
 	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
 );
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegGENERAL_ir (
+SC_RegIR #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) SC_RegIR_ir (
 // port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_IR),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[37]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
+	.SC_RegIR_DataBUS_Out(RegGENERAL2MUX_DataBUS_IR),
+	.SC_RegIR_OP(uDataPath_RegIR_OP),
+	.SC_RegIR_RD(uDataPath_RegIR_RD),
+	.SC_RegIR_OP2(uDataPath_RegIR_OP2),
+	.SC_RegIR_OP3(uDataPath_RegIR_OP3),
+	.SC_RegIR_RS1(uDataPath_RegIR_RS1),
+	.SC_RegIR_BIT13(uDataPath_RegIR_BIT13),
+	.SC_RegIR_RS2(uDataPath_RegIR_RS2),
+	.SC_RegIR_CLOCK_50(uDataPath_CLOCK_50),
+	.SC_RegIR_Reset_InHigh(uDataPath_Reset_InHigh),
+	.SC_RegIR_Write_InHigh(Decoder_DataWrite_Wire[37]),
+	.SC_RegIR_DataBUS_In(DataBus_C_Wire)
 );
 //-------------------------------------------------------
 

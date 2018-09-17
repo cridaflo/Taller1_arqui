@@ -60,6 +60,14 @@ module WB_SYSTEM #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELEC
 	wire ALU_CarryCONTROL_Wire;
 	wire ALU_NegativeCONTROL_Wire;
 	wire ALU_ZeroCONTROL_Wire;
+	
+	wire RegIR_OP_Wire;
+	wire RegIR_RD_Wire;
+	wire RegIR_OP2_Wire;
+	wire RegIR_OP3_Wire;
+	wire RegIR_RS1_Wire;
+	wire RegIR_BIT13_Wire;
+	wire RegIR_RS2_Wire;
 
 //=======================================================
 //  Structural coding
@@ -71,6 +79,14 @@ module WB_SYSTEM #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELEC
 	.uDataPath_Carry_InLow(ALU_CarryCONTROL_Wire),
 	.uDataPath_Negative_InLow(ALU_NegativeCONTROL_Wire),
 	.uDataPath_Zero_InLow(ALU_ZeroCONTROL_Wire),
+	
+	.uDataPath_RegIR_OP(RegIR_OP_Wire),
+	.uDataPath_RegIR_RD(RegIR_RD_Wire),
+	.uDataPath_RegIR_OP2(RegIR_OP2_Wire),
+	.uDataPath_RegIR_OP3(RegIR_OP3_Wire),
+	.uDataPath_RegIR_RS1(RegIR_RS1_Wire),
+	.uDataPath_RegIR_BIT13(RegIR_BIT13_Wire),
+	.uDataPath_RegIR_RS2(RegIR_RS2_Wire),
 	
 	.uDataPath_CLOCK_50(WB_SYSTEM_CLOCK_50),
 	.uDataPath_Reset_InHigh(WB_SYSTEM_Reset_InHigh),
