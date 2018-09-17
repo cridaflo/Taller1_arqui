@@ -469,7 +469,7 @@ SC_RegFIXED #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGFIXED_INIT(DATA_REGFIXED_I
 //PSR REGISTER
 SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_psr (
 // port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out({psr_left,PSR_Negative_InHigh,PSR_Zero_InHigh,PSR_Overflow_InHigh,PSR_Carry_InHigh,psr_right}}),
+	.SC_RegGENERAL_DataBUS_Out({psr_left,PSR_Negative_InHigh,PSR_Zero_InHigh,PSR_Overflow_InHigh,PSR_Carry_InHigh,psr_right}),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(~(DATAWIDTH_ALU_SELECTION[DATAWIDTH_ALU_SELECTION-1] | DATAWIDTH_ALU_SELECTION[DATAWIDTH_ALU_SELECTION-2])),

@@ -56,10 +56,10 @@ module WB_SYSTEM #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELEC
 
 //ALU CONTROL
 	wire [DATAWIDTH_ALU_SELECTION-1:0] ALU_SelectionCONTROL_Wire;
-	wire ALU_OverflowCONTROL_Wire;
-	wire ALU_CarryCONTROL_Wire;
-	wire ALU_NegativeCONTROL_Wire;
-	wire ALU_ZeroCONTROL_Wire;
+	wire PSR_OverflowCONTROL_Wire;
+	wire PSR_CarryCONTROL_Wire;
+	wire PSR_NegativeCONTROL_Wire;
+	wire PSR_ZeroCONTROL_Wire;
 	
 	wire RegIR_OP_Wire;
 	wire RegIR_RD_Wire;
@@ -75,10 +75,10 @@ module WB_SYSTEM #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELEC
 	uDataPath #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATAWIDTH_DECODER_SELECTION(DATAWIDTH_DECODER_SELECTION), .DATAWIDTH_ALU_SELECTION(DATAWIDTH_ALU_SELECTION), .DATA_REGFIXED_INIT_0(DATA_REGFIXED_INIT_0), .DATA_REGGEN_INIT_0(DATA_REGGEN_INIT_0), .DATA_REGPC_INIT(DATA_REGPC_INIT) ,.DATAWIDTH_DECODER_OUT(DATAWIDTH_DECODER_OUT), .DATAWIDTH_MUX_SELECTION(DATAWIDTH_MUX_SELECTION)) uDataPath_u0 (
 // port map - connection between master ports and signals/registers   
 	.uDataPath_DataBUSDisplay_Out(WB_SYSTEM_DataBUSDisplay_Out),
-	.uDataPath_Overflow_InHigh(ALU_OverflowCONTROL_Wire),
-	.uDataPath_Carry_InHigh(ALU_CarryCONTROL_Wire),
-	.uDataPath_Negative_InHigh(ALU_NegativeCONTROL_Wire),
-	.uDataPath_Zero_InHigh(ALU_ZeroCONTROL_Wire),
+	.PSR_Overflow_InHigh(PSR_OverflowCONTROL_Wire),
+	.PSR_Carry_InHigh(PSR_CarryCONTROL_Wire),
+	.PSR_Negative_InHigh(PSR_NegativeCONTROL_Wire),
+	.PSR_Zero_InHigh(PSR_ZeroCONTROL_Wire),
 	
 	.uDataPath_RegIR_OP(RegIR_OP_Wire),
 	.uDataPath_RegIR_RD(RegIR_RD_Wire),
