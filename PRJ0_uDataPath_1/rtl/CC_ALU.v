@@ -26,10 +26,10 @@
 //=======================================================
 module CC_ALU #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_ALU_SELECTION=4)(
 	//////////// OUTPUTS //////////
-	CC_ALU_Overflow_OutLow,
-	CC_ALU_Carry_OutLow,
-	CC_ALU_Negative_OutLow,
-	CC_ALU_Zero_OutLow,
+	CC_ALU_Overflow_OutHigh,
+	CC_ALU_Carry_OutHigh,
+	CC_ALU_Negative_OutHigh,
+	CC_ALU_Zero_OutHigh,
 	CC_ALU_DataBUS_Out,
 	//////////// INPUTS //////////
 	CC_ALU_DataBUSA_In,
@@ -43,10 +43,10 @@ module CC_ALU #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_ALU_SELECTION=4)
 //=======================================================
 //  PORT declarations
 //=======================================================
-	output 			CC_ALU_Overflow_OutLow;
-	output 			CC_ALU_Carry_OutLow;
-	output 			CC_ALU_Negative_OutLow;
-	output 			CC_ALU_Zero_OutLow;
+	output		CC_ALU_Overflow_OutHigh;
+	output		CC_ALU_Carry_OutHigh;
+	output		CC_ALU_Negative_OutHigh;
+	output		CC_ALU_Zero_OutHigh;
 	output reg		[DATAWIDTH_BUS-1:0] CC_ALU_DataBUS_Out;
 	input			[DATAWIDTH_BUS-1:0] CC_ALU_DataBUSA_In;
 	input			[DATAWIDTH_BUS-1:0] CC_ALU_DataBUSB_In;
@@ -92,13 +92,15 @@ module CC_ALU #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_ALU_SELECTION=4)
 //  Outputs
 //=======================================================
 /*Flags*/
-assign {caover,addition0[DATAWIDTH_BUS-2:0]}=CC_ALU_DataBUSA_In[DATAWIDTH_BUS-2:0] + CC_ALU_DataBUSB_In[DATAWIDTH_BUS-2:0]; 	// Determinación de carry del bit número 7
-assign {cout,addition1}= CC_ALU_DataBUSA_In[DATAWIDTH_BUS-1] + CC_ALU_DataBUSB_In[DATAWIDTH_BUS-1] + caover;	// Determinación de la flag Carry y la suma de busA y busB
-assign CC_ALU_Zero_OutLow=(CC_ALU_DataBUS_Out==8'b00000000) ? 1'b0 : 1'b1;	// Determinación de la flag Zero
-assign CC_ALU_Carry_OutLow = ~cout;
-assign CC_ALU_Overflow_OutLow = ~ (caover ^ cout);		// Determinación de la flag Ov a partir de la flag Carry y el carry del bit 7
-assign CC_ALU_Negative_OutLow = ~ (CC_ALU_DataBUS_Out[DATAWIDTH_BUS-1]);	
-
+if(~(CC_ALU_Selection_In[DATAWIDTH_ALU_SELECTION-1] | CC_ALU_Selection_In[DATAWIDTH_ALU_SELECTION-1]))
+{
+	assign {caover,addition0[DATAWIDTH_BUS-2:0]}=CC_ALU_DataBUSA_In[DATAWIDTH_BUS-2:0] + CC_ALU_DataBUSB_In[DATAWIDTH_BUS-2:0]; 	// Determinación de carry del bit número 7
+	assign {cout,addition1}= CC_ALU_DataBUSA_In[DATAWIDTH_BUS-1] + CC_ALU_DataBUSB_In[DATAWIDTH_BUS-1] + caover;	// Determinación de la flag Carry y la suma de busA y busB
+	assign CC_ALU_Zero_OutHigh=(CC_ALU_DataBUS_Out==8'b00000000) ? 1'b1 : 1'b0;	// Determinación de la flag Zero
+	assign CC_ALU_Carry_OutHigh = cout;
+	assign CC_ALU_Overflow_OutHigh =  (caover ^ cout);		// Determinación de la flag Ov a partir de la flag Carry y el carry del bit 7
+	assign CC_ALU_Negative_OutHigh =  (CC_ALU_DataBUS_Out[DATAWIDTH_BUS-1]);	
+}
 endmodule
 
 

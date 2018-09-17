@@ -24,7 +24,7 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_RegGENERAL #(parameter DATAWIDTH_BUS=32)(
+module SC_RegGENERAL #(parameter DATAWIDTH_BUS=32, parameter DATA_REGGEN_INIT=32'h00000000)(
 	//////////// OUTPUTS //////////
 	SC_RegGENERAL_DataBUS_Out,
 	//////////// INPUTS //////////
@@ -63,7 +63,7 @@ module SC_RegGENERAL #(parameter DATAWIDTH_BUS=32)(
 // REGISTER : SEQUENTIAL
 	always @ ( negedge SC_RegGENERAL_CLOCK_50 , posedge SC_RegGENERAL_Reset_InHigh)
 	if (SC_RegGENERAL_Reset_InHigh==1)
-		RegGENERAL_Register <= 0;
+		RegGENERAL_Register <= DATA_REGGEN_INIT;
 	else
 		RegGENERAL_Register <= RegGENERAL_Signal;
 //=======================================================
