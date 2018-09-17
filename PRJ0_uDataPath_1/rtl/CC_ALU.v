@@ -24,7 +24,7 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module CC_ALU #(parameter DATAWIDTH_BUS=8, parameter DATAWIDTH_ALU_SELECTION=4)(
+module CC_ALU #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_ALU_SELECTION=4)(
 	//////////// OUTPUTS //////////
 	CC_ALU_Overflow_OutLow,
 	CC_ALU_Carry_OutLow,
@@ -64,23 +64,27 @@ module CC_ALU #(parameter DATAWIDTH_BUS=8, parameter DATAWIDTH_ALU_SELECTION=4)(
 	always@(*)
 	begin
 	case (CC_ALU_Selection_In)	
-		4'b0000:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In; 					//BUSA
-		4'b0001:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In | CC_ALU_DataBUSB_In;	//OR
-		4'b0010:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In & CC_ALU_DataBUSB_In;	//AND
-		4'b0011:  CC_ALU_DataBUS_Out = ~CC_ALU_DataBUSA_In;					//NOT
-		4'b0100:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In ^ CC_ALU_DataBUSB_In;	//XOR
-		4'b0101:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In;					//BUSA Can be other function
-		4'b0110:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In;					//BUSA Can be other function
-		4'b0111:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In;					//BUSA Can be other function
-
+	
+		4'b0000:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In & CC_ALU_DataBUSB_In;	//ANDCC
+		4'b0001:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In | CC_ALU_DataBUSB_In;	//ORCC
+		4'b0010:  CC_ALU_DataBUS_Out = ~(CC_ALU_DataBUSA_In | CC_ALU_DataBUSB_In);	//NORCC
+		4'b0011:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In + CC_ALU_DataBUSB_In;	//ADDCC
+		
+		4'b0100:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In;	//SRL- Not implemented
+		4'b0101:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In & CC_ALU_DataBUSB_In;	//AND
+		4'b0110:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In | CC_ALU_DataBUSB_In;	//OR
+		4'b0111:  CC_ALU_DataBUS_Out = ~(CC_ALU_DataBUSA_In | CC_ALU_DataBUSB_In);	//NOR
 		4'b1000:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In + CC_ALU_DataBUSB_In;	//ADD
-		4'b1001:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In - CC_ALU_DataBUSB_In;	//SUB
-		4'b1010:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In + 1'b1;				//INCREMENT A
-		4'b1011:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In - 1'b1;				//DECREMENT A
-		4'b1100:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In;					//BUSA Can be other function
-		4'b1101:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In;					//BUSA Can be other function
-		4'b1110:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In;					//BUSA Can be other function
-		4'b1111:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In;					//BUSA DO NOTHING!!!!!!!!		
+		
+		4'b1001:  {CC_ALU_DataBUS_Out} = {CC_ALU_DataBUSA_In[31:2], 2'b0 };	//LSHIFT2 
+		4'b1010:  CC_ALU_DataBUS_Out = {CC_ALU_DataBUSA_In[31:10], 10'b0 };//LSHIFT10
+		4'b1011:  CC_ALU_DataBUS_Out = {19'b0, CC_ALU_DataBUSA_In[12:0] };	//SIMM13
+		4'b1100:  CC_ALU_DataBUS_Out = {{19{CC_ALU_DataBUSA_In[12]}}, CC_ALU_DataBUSA_In[12:0] };//SEXT13
+		4'b1101:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In+ 1'b1;//INC 
+		4'b1110:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In+ 3'b100;//INCPC 
+		4'b1111:  CC_ALU_DataBUS_Out = {{5{CC_ALU_DataBUSA_In[31]}}, CC_ALU_DataBUSA_In[26:0] };//RSHIFT5
+		
+		
 		default :  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In; // channel 0 is selected
 	endcase
 	end
