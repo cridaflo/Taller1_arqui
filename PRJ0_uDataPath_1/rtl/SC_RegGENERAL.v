@@ -61,7 +61,7 @@ module SC_RegGENERAL #(parameter DATAWIDTH_BUS=32)(
 		RegGENERAL_Signal = RegGENERAL_Register;
 
 // REGISTER : SEQUENTIAL
-	always @ ( posedge SC_RegGENERAL_CLOCK_50 , posedge SC_RegGENERAL_Reset_InHigh)
+	always @ ( negedge SC_RegGENERAL_CLOCK_50 , posedge SC_RegGENERAL_Reset_InHigh)
 	if (SC_RegGENERAL_Reset_InHigh==1)
 		RegGENERAL_Register <= 0;
 	else
