@@ -81,7 +81,7 @@ uDataPath_ALUSelection_Out<=4'b0010;
 DataBUS_B_Wire<=32'b01010101010101010101010101010101;  		
 uDataPath_ALUSelection_Out<=4'b0010;  		
 
-#100 DataBUS_A_Wire<=32'h00001FFF;  
+#100 DataBUS_A_Wire<=32'h00001000;  
 DataBUS_B_Wire<=32'h00000000; 		
 uDataPath_ALUSelection_Out<=4'b1100; 		
 				 
@@ -90,7 +90,7 @@ DataBUS_B_Wire<=32'h0000000A;
 uDataPath_ALUSelection_Out<=4'b0011; 
 
 #100 DataBUS_A_Wire<=32'hFFFFFFFF;  
-DataBUS_B_Wire<=32'h0000000A; 		
+DataBUS_B_Wire<=32'h00000001; 		
 uDataPath_ALUSelection_Out<=4'b0011; 
 @eachvec;                                              
 // --> end                                             
