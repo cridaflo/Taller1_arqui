@@ -24,7 +24,7 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_RegFIXED #(parameter DATAWIDTH_BUS=8, parameter DATA_REGFIXED_INIT=8'b00000000)(
+module SC_RegFIXED #(parameter DATAWIDTH_BUS=32, parameter DATA_REGFIXED_INIT=32'h00000000)(
 	//////////// OUTPUTS //////////
 	SC_RegFIXED_DataBUS_Out,
 	//////////// INPUTS //////////
@@ -53,7 +53,7 @@ module SC_RegFIXED #(parameter DATAWIDTH_BUS=8, parameter DATA_REGFIXED_INIT=8'b
 	always @ (*)
 		RegFIXED_Signal = RegFIXED_Register;
 // REGISTER : SEQUENTIAL
-	always @ ( posedge SC_RegFIXED_CLOCK_50 , posedge SC_RegFIXED_Reset_InHigh)
+	always @ ( negedge SC_RegFIXED_CLOCK_50 , posedge SC_RegFIXED_Reset_InHigh)
 	if (SC_RegFIXED_Reset_InHigh==1)
 		RegFIXED_Register <= DATA_REGFIXED_INIT;
 	else

@@ -1,0 +1,5 @@
+{
+    "files.associations": { "*Container.js": "javascriptreact",
+        "**/components/*/*.js": "javascriptreact",
+        "**/config/routes.js": "javascriptreact"}
+}
