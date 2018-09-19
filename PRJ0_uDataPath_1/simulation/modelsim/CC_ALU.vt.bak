@@ -1,0 +1,99 @@
+// Copyright (C) 2016  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Intel and sold by Intel or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "04/22/2017 22:07:13"
+                                                                                
+// Verilog Test Bench template for design : Laboratorio7
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 1 ps/ 1 ps
+module cC_ALU_vlg_tst();
+// constants                                           
+// general purpose registers
+reg eachvec;
+// test vector input registers
+reg CLOCK_50;
+reg [31:0] DataBUS_A_Wire;
+reg [31:0] DataBUS_B_Wire;
+reg [3:0] uDataPath_ALUSelection_Out;
+// wires - output                                              
+wire uDataPath_Overflow_InHigh;
+wire uDataPath_Carry_InHigh;
+wire uDataPath_Negative_InHigh;
+wire uDataPath_Zero_InHigh;
+wire [31:0] DataBus_C_Wire;
+
+
+// assign statements (if any)                          
+integer i;
+CC_ALU #(.DATAWIDTH_BUS(32), .DATAWIDTH_ALU_SELECTION(4)) CC_ALU_u0
+(
+// port map - connection between master ports and signals/registers   
+	.CC_ALU_Overflow_OutHigh(uDataPath_Overflow_InHigh), 
+	.CC_ALU_Carry_OutHigh(uDataPath_Carry_InHigh), 
+	.CC_ALU_Negative_OutHigh(uDataPath_Negative_InHigh), 
+	.CC_ALU_Zero_OutHigh(uDataPath_Zero_InHigh),
+	.CC_ALU_DataBUS_Out(DataBus_C_Wire),
+	.CC_ALU_DataBUSA_In(DataBUS_A_Wire), 
+	.CC_ALU_DataBUSB_In(DataBUS_B_Wire),
+	.CC_ALU_Selection_In(uDataPath_ALUSelection_Out)
+);
+initial                                                
+begin                                                  
+// code that executes only once                        
+// insert code here --> begin                          
+                                                       
+// --> end                                             
+$display("Running testbench");                       
+end                                                    
+always                                                 
+// optional sensitivity list                           
+// @(event1 or event2 or .... eventn)                  
+begin                                                  
+// code executes for every event on sensitivity list   
+// insert code here --> begin                          	
+
+#150 DataBUS_A_Wire<=32'b10101010101010101010101010101010;  
+DataBUS_B_Wire<=32'b10101010101010101010101010101010;  		
+uDataPath_ALUSelection_Out<=4'b0010;  		
+
+
+#100 DataBUS_A_Wire<=32'b01010101010101010101010101010101;  
+DataBUS_B_Wire<=32'b01010101010101010101010101010101;  		
+uDataPath_ALUSelection_Out<=4'b0010;  		
+
+#100 DataBUS_A_Wire<=32'h00001FFF;  
+DataBUS_B_Wire<=32'h00000000; 		
+uDataPath_ALUSelection_Out<=4'b1100; 		
+				 
+#100 DataBUS_A_Wire<=32'hFFFFFFFF;  
+DataBUS_B_Wire<=32'h0000000A; 		
+uDataPath_ALUSelection_Out<=4'b0011; 
+
+#100 DataBUS_A_Wire<=32'hFFFFFFFF;  
+DataBUS_B_Wire<=32'h0000000A; 		
+uDataPath_ALUSelection_Out<=4'b0011; 
+@eachvec;                                              
+// --> end                                             
+end                                                    
+endmodule
+

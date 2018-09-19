@@ -24,13 +24,13 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_RegGENERAL #(parameter DATAWIDTH_BUS=8)(
+module SC_RegGENERAL #(parameter DATAWIDTH_BUS=32, parameter DATA_REGGEN_INIT=32'h00000000)(
 	//////////// OUTPUTS //////////
 	SC_RegGENERAL_DataBUS_Out,
 	//////////// INPUTS //////////
 	SC_RegGENERAL_CLOCK_50,
 	SC_RegGENERAL_Reset_InHigh,
-	SC_RegGENERAL_Write_InLow,
+	SC_RegGENERAL_Write_InHigh,
 	SC_RegGENERAL_DataBUS_In
 );
 //=======================================================
@@ -43,7 +43,7 @@ module SC_RegGENERAL #(parameter DATAWIDTH_BUS=8)(
 	output reg	[DATAWIDTH_BUS-1:0] SC_RegGENERAL_DataBUS_Out;
 	input			SC_RegGENERAL_CLOCK_50;
 	input			SC_RegGENERAL_Reset_InHigh;
-	input			SC_RegGENERAL_Write_InLow;
+	input			SC_RegGENERAL_Write_InHigh;
 	input 		[DATAWIDTH_BUS-1:0] SC_RegGENERAL_DataBUS_In;
 //=======================================================
 //  REG/WIRE declarations
@@ -55,15 +55,15 @@ module SC_RegGENERAL #(parameter DATAWIDTH_BUS=8)(
 //=======================================================
 //INPUT LOGIC: COMBINATIONAL
 	always @ (*)
-	if (SC_RegGENERAL_Write_InLow == 0)	
+	if (SC_RegGENERAL_Write_InHigh == 1)	
 		RegGENERAL_Signal = SC_RegGENERAL_DataBUS_In;
 	else 	
 		RegGENERAL_Signal = RegGENERAL_Register;
 
 // REGISTER : SEQUENTIAL
-	always @ ( posedge SC_RegGENERAL_CLOCK_50 , posedge SC_RegGENERAL_Reset_InHigh)
+	always @ ( negedge SC_RegGENERAL_CLOCK_50 , posedge SC_RegGENERAL_Reset_InHigh)
 	if (SC_RegGENERAL_Reset_InHigh==1)
-		RegGENERAL_Register <= 0;
+		RegGENERAL_Register <= DATA_REGGEN_INIT;
 	else
 		RegGENERAL_Register <= RegGENERAL_Signal;
 //=======================================================

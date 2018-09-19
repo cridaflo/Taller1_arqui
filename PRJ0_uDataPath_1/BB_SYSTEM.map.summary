@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Analysis & Synthesis Status : Failed - Wed Sep 19 00:24:38 2018
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 Revision Name : BB_SYSTEM
@@ -12,3 +13,19 @@ Total virtual pins : N/A until Partition Merge
 Total memory bits : N/A until Partition Merge
 Embedded Multiplier 9-bit elements : N/A until Partition Merge
 Total PLLs : N/A until Partition Merge
+=======
+Analysis & Synthesis Status : Successful - Mon Sep 17 17:04:08 2018
+Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Revision Name : BB_SYSTEM
+Top-level Entity Name : BB_SYSTEM
+Family : Cyclone IV E
+Total logic elements : 0
+    Total combinational functions : 0
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 34
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+>>>>>>> RegistroAdaptado
