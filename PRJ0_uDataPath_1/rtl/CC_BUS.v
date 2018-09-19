@@ -28,8 +28,7 @@ module CC_BUS #(parameter DATAWIDTH_BUS=32)(
 	//////////// OUTPUTS //////////
 	CC_BUS_DataBUS_Out,
 	//////////// INPUTS //////////
-	CC_BUS_DataBUS_In_REG,
-	CC_MUX_DataBUS_SELECT
+	CC_BUS_DataBUS_In
 );
 //=======================================================
 //  PARAMETER declarations
@@ -38,9 +37,8 @@ module CC_BUS #(parameter DATAWIDTH_BUS=32)(
 //=======================================================
 //  PORT declarations
 //=======================================================
-	output reg	[DATAWIDTH_BUS-1:0] CC_MUX_DataBUS_Out;
-	input			[DATAWIDTH_BUS-1:0] CC_BUS_DataBUS_In_REG;
-	input			CC_MUX_DataBUS_SELECT;	
+	output	[DATAWIDTH_BUS-1:0] CC_MUX_DataBUS_Out;
+	input			[DATAWIDTH_BUS-1:0] CC_BUS_DataBUS_In;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
@@ -49,19 +47,11 @@ module CC_BUS #(parameter DATAWIDTH_BUS=32)(
 //  Structural coding
 //=======================================================
 //INPUT LOGIC: COMBINATIONAL
-	always@(*)
-	begin
-	case (CC_MUX_DataBUS_SELECT)	
-	// Example to more outputs: WaitStart: begin sResetCounter = 0; sCuenteUP = 0; end
-		1'b1: CC_MUX_DataBUS_Out = CC_MUX_DataBUS_In_0;
-		1'b0: CC_MUX_DataBUS_Out = CC_MUX_DataBUS_In_1;
-		default :   CC_MUX_DataBUS_Out = CC_MUX_DataBUS_In_0; // channel 0 is selected 
-		endcase
-	end
+
 //=======================================================
 //  Outputs
 //=======================================================
 // OUTPUT LOGIC : COMBINATIONAL
-
+	assign CC_BUS_DataBUS_Out = CC_BUS_DataBUS_In;
 endmodule
 

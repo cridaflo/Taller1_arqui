@@ -1,11 +1,6 @@
 Flow report for BB_SYSTEM
-<<<<<<< HEAD
-Wed Sep 19 00:24:38 2018
-Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-=======
-Mon Sep 17 17:04:08 2018
+Wed Sep 19 14:36:11 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
->>>>>>> RegistroAdaptado
 
 
 ---------------------
@@ -26,11 +21,7 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-<<<<<<< HEAD
-Copyright (C) 2018  Intel Corporation. All rights reserved.
-=======
 Copyright (C) 2016  Intel Corporation. All rights reserved.
->>>>>>> RegistroAdaptado
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -38,30 +29,25 @@ functions, and any output files from any of the foregoing
 associated documentation or information are expressly subject 
 to the terms and conditions of the Intel Program License 
 Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel FPGA IP License Agreement, or other applicable license
-agreement, including, without limitation, that your use is for
-the sole purpose of programming logic devices manufactured by
-Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
 
 
 
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-<<<<<<< HEAD
-; Flow Status                        ; Flow Failed - Wed Sep 19 00:24:38 2018      ;
-; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
-=======
-; Flow Status                        ; Successful - Mon Sep 17 17:04:08 2018       ;
+; Flow Status                        ; Flow Failed - Wed Sep 19 14:36:11 2018      ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
->>>>>>> RegistroAdaptado
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-<<<<<<< HEAD
 ; Total logic elements               ; N/A until Partition Merge                   ;
 ;     Total combinational functions  ; N/A until Partition Merge                   ;
 ;     Dedicated logic registers      ; N/A until Partition Merge                   ;
@@ -71,17 +57,6 @@ refer to the applicable agreement for further details.
 ; Total memory bits                  ; N/A until Partition Merge                   ;
 ; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
 ; Total PLLs                         ; N/A until Partition Merge                   ;
-=======
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 34                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
->>>>>>> RegistroAdaptado
 +------------------------------------+---------------------------------------------+
 
 
@@ -90,11 +65,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-<<<<<<< HEAD
-; Start date & time ; 09/19/2018 00:24:33 ;
-=======
-; Start date & time ; 09/17/2018 17:03:57 ;
->>>>>>> RegistroAdaptado
+; Start date & time ; 09/19/2018 14:36:01 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; BB_SYSTEM           ;
 +-------------------+---------------------+
@@ -105,30 +76,27 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
-<<<<<<< HEAD
-; COMPILER_SIGNATURE_ID                ; 272774796113278.153733467309624        ; --            ; --          ; --             ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; TB_SYSTEM      ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; TB_SYSTEM                              ; --            ; --          ; eda_simulation ;
-; EDA_NETLIST_WRITER_OUTPUT_DIR        ; simulation/modelsim                    ; --            ; --          ; eda_simulation ;
-=======
-; COMPILER_SIGNATURE_ID                ; 128437433780423.153722183715520        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 128437433780423.153738576019924        ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; SC_RegIR       ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; CC_ALU         ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; SC_RegFixed    ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; SC_RegGENERAL  ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; SC_RegIR                               ; --            ; --          ; eda_simulation ;
->>>>>>> RegistroAdaptado
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; CC_ALU                                 ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation ;
 ; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/SC_RegIR.vt        ; --            ; --          ; SC_RegIR       ;
+; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/CC_ALU.vt          ; --            ; --          ; CC_ALU         ;
 ; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/SC_RegFixed.vt     ; --            ; --          ; SC_RegFixed    ;
 ; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/SC_RegGENERAL.vt   ; --            ; --          ; SC_RegGENERAL  ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; SC_RegIR                               ; --            ; --          ; SC_RegIR       ;
+; EDA_TEST_BENCH_MODULE_NAME           ; CC_ALU                                 ; --            ; --          ; CC_ALU         ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; SC_RegFixed                            ; --            ; --          ; SC_RegFixed    ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; SC_RegGENERAL                          ; --            ; --          ; SC_RegGENERAL  ;
 ; EDA_TEST_BENCH_NAME                  ; SC_RegGENERAL                          ; --            ; --          ; eda_simulation ;
 ; EDA_TEST_BENCH_NAME                  ; SC_RegFixed                            ; --            ; --          ; eda_simulation ;
 ; EDA_TEST_BENCH_NAME                  ; SC_RegIR                               ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_NAME                  ; CC_ALU                                 ; --            ; --          ; eda_simulation ;
 ; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --             ;
@@ -146,22 +114,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-<<<<<<< HEAD
-; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 548 MB              ; 00:00:10                           ;
-; Total                ; 00:00:05     ; --                      ; --                  ; 00:00:10                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-
-
-+-------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                     ;
-+----------------------+------------------+-------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name     ; OS Version ; Processor type ;
-+----------------------+------------------+-------------+------------+----------------+
-; Analysis & Synthesis ; SANTIAGO         ; Windows 8.1 ; 6.3        ; x86_64         ;
-+----------------------+------------------+-------------+------------+----------------+
-=======
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4732 MB             ; 00:00:26                           ;
-; Total                ; 00:00:12     ; --                      ; --                  ; 00:00:26                           ;
+; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4708 MB             ; 00:00:26                           ;
+; Total                ; 00:00:11     ; --                      ; --                  ; 00:00:26                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -172,7 +126,6 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; korkies22        ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
->>>>>>> RegistroAdaptado
 
 
 ------------

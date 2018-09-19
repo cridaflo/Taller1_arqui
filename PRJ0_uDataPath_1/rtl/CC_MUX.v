@@ -24,15 +24,13 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_RegFIXED #(parameter DATAWIDTH_BUS=32, parameter DATA_REGFIXED_INIT=32'h00000000)(
+module CC_MUX #(parameter DATAWIDTH_DECODER_SELECTION=6, parameter DATAWIDTH_IR_SELECTION=5)(
 	//////////// OUTPUTS //////////
-	SC_RegGENERAL_DataBUS_Out_A,
-	SC_RegGENERAL_DataBUS_Out_B,
+	CC_MUX_TO_DECODER_OUT,
 	//////////// INPUTS //////////
-	SC_RegFIXED_CLOCK_50,
-	SC_RegFIXED_Reset_InHigh,
-	SC_RegGENERAL_ENABLE_BUS_A,
-	SC_RegGENERAL_ENABLE_BUS_B,
+	CC_MUX_MIR_FIELD,
+	CC_MUX_IR_FIELD,
+	CC_MUX_SELECT
 );
 //=======================================================
 //  PARAMETER declarations
@@ -41,36 +39,23 @@ module SC_RegFIXED #(parameter DATAWIDTH_BUS=32, parameter DATA_REGFIXED_INIT=32
 //=======================================================
 //  PORT declarations
 //=======================================================
-	output [DATAWIDTH_BUS-1:0] SC_RegGENERAL_DataBUS_Out_A;
-	output [DATAWIDTH_BUS-1:0] SC_RegGENERAL_DataBUS_Out_B;
-	input			SC_RegFIXED_CLOCK_50;
-	input			SC_RegGENERAL_ENABLE_BUS_A;
-	input			SC_RegGENERAL_ENABLE_BUS_B;
-	input			SC_RegFIXED_Reset_InHigh;
+	output	[DATAWIDTH_DECODER_SELECTION-1:0] CC_MUX_TO_DECODER_OUT;
+	input			[DATAWIDTH_DECODER_SELECTION-1:0] CC_MUX_MIR_FIELD;
+	input			[DATAWIDTH_IR_SELECTION-1:0] CC_MUX_IR_FIELD;
+	input			CC_MUX_SELECT;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-	reg [DATAWIDTH_BUS-1:0] RegFIXED_Register;
-	reg [DATAWIDTH_BUS-1:0] RegFIXED_Signal;
+
 //=======================================================
 //  Structural coding
 //=======================================================
 //INPUT LOGIC: COMBINATIONAL
-	always @ (*)
-		RegFIXED_Signal = RegFIXED_Register;
-// REGISTER : SEQUENTIAL
-	always @ ( negedge SC_RegFIXED_CLOCK_50 , posedge SC_RegFIXED_Reset_InHigh)
-	if (SC_RegFIXED_Reset_InHigh==1)
-		RegFIXED_Register <= DATA_REGFIXED_INIT;
-	else
-		RegFIXED_Register <= RegFIXED_Signal;
+
 //=======================================================
 //  Outputs
 //=======================================================
 // OUTPUT LOGIC : COMBINATIONAL
-// OUTPUT BUS A
-	assign SC_RegGENERAL_DataBUS_Out_A = (SC_RegGENERAL_ENABLE_BUS_A)? RegFIXED_Register : 32'hZZZZZZZZ;
-// OUTPUT BUS B
-	assign SC_RegGENERAL_DataBUS_Out_B = (SC_RegGENERAL_ENABLE_BUS_B)? RegFIXED_Register : 32'hZZZZZZZZ;
+assign CC_MUX_TO_DECODER_OUT = (CC_MUX_SELECT)? {0,CC_MUX_IR_FIELD} : CC_MUX_MIR_FIELD;
 endmodule
 
