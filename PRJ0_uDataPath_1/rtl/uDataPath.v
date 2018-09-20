@@ -31,20 +31,23 @@ module uDataPath #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELEC
 	PSR_Carry_InHigh,
 	PSR_Negative_InHigh,
 	PSR_Zero_InHigh,
-	uDataPath_RegIR_OP,
-	uDataPath_RegIR_RD,
-	uDataPath_RegIR_OP2,
-	uDataPath_RegIR_OP3,
-	uDataPath_RegIR_RS1,
-	uDataPath_RegIR_BIT13,
-	uDataPath_RegIR_RS2,
+	Scratchpath_RegIR_OP,
+	Scratchpath_RegIR_RD,
+	Scratchpath_RegIR_OP2,
+	Scratchpath_RegIR_OP3,
+	Scratchpath_RegIR_RS1,
+	Scratchpath_RegIR_BIT13,
+	Scratchpath_RegIR_RS2,
 	//////////// INPUTS //////////
 	uDataPath_CLOCK_50,
 	uDataPath_Reset_InHigh,
-	uDataPath_DecoderSelectionWrite_Out,
-	uDataPath_MUXSelectionBUSA_Out,
-	uDataPath_MUXSelectionBUSB_Out,
-	uDataPath_ALUSelection_Out
+	uDataPath_ALUSelection_Out,
+	MIR_A_FIELD,
+	MIR_B_FIELD,
+	MIR_C_FIELD,
+	MUX_SELECT_A,
+	MUX_SELECT_B,
+	MUX_SELECT_C
 );
 //=======================================================
 //  PARAMETER declarations
@@ -58,19 +61,21 @@ module uDataPath #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELEC
 	output 	PSR_Carry_InHigh;
 	output 	PSR_Negative_InHigh;
 	output 	PSR_Zero_InHigh;
-	output  uDataPath_RegIR_OP;
-	output	uDataPath_RegIR_RD;
-	output	uDataPath_RegIR_OP2;
-	output	uDataPath_RegIR_OP3;
-	output	uDataPath_RegIR_RS1;
-	output	uDataPath_RegIR_BIT13;
-	output	uDataPath_RegIR_RS2;
+	output  	Scratchpath_RegIR_OP;
+	output	Scratchpath_RegIR_RD;
+	output	Scratchpath_RegIR_OP2;
+	output	Scratchpath_RegIR_OP3;
+	output	Scratchpath_RegIR_RS1;
+	output	Scratchpath_RegIR_BIT13;
+	output	Scratchpath_RegIR_RS2;
 	//////////// INPUTS //////////
 	input 	uDataPath_CLOCK_50;
 	input 	uDataPath_Reset_InHigh;
-	input 	[DATAWIDTH_DECODER_SELECTION-1:0]	uDataPath_DecoderSelectionWrite_Out;
-	input 	[DATAWIDTH_MUX_SELECTION-1:0]	uDataPath_MUXSelectionBUSA_Out;
-	input 	[DATAWIDTH_MUX_SELECTION-1:0]	uDataPath_MUXSelectionBUSB_Out;
+	input 	[DATAWIDTH_DECODER_SELECTION-1:0]	DecoderSelection_A;
+	input 	[DATAWIDTH_DECODER_SELECTION-1:0]	DecoderSelection_B;
+	input 	[DATAWIDTH_DECODER_SELECTION-1:0]	DecoderSelection_C;
+	input 	[DATAWIDTH_MUX_SELECTION-1:0]	DataBUS_A_Out;
+	input 	[DATAWIDTH_MUX_SELECTION-1:0]	DataBUS_A_Out;
 	input 	[DATAWIDTH_ALU_SELECTION-1:0]	uDataPath_ALUSelection_Out;
 //=======================================================
 //  REG/WIRE declarations
@@ -83,57 +88,18 @@ module uDataPath #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELEC
 // Wires to get register from PSR
 	wire [DATAWIDTH_BUS-13:0] psr_left; // Variable usada para la operación suma y para determinar las flags
 	wire [DATAWIDTH_BUS-25:0] pst_right;		// Variable usada para la operación suma y para determinar las flags
-// FIXED_REGISTERS OUTPUTS WIRES
-	wire [DATAWIDTH_BUS-1:0] RegFIXED2MUX_DataBUS_R0; 
-// GENERAL_REGISTERS OUTPUTS
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R1; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R2; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R3; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R4; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R5; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R6; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R7; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R8; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R9;
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R10;
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R11; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R12; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R13; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R14; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R15; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R16; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R17; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R18; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R19;
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R20;
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R21; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R22; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R23; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R24; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R25; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R26; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R27; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R28; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R29;
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R30; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_R31; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_PC; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_T0; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_T1; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_T2; 
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_T3;
-	wire [DATAWIDTH_BUS-1:0] RegGENERAL2MUX_DataBUS_IR;
 // SHIFT_REGISTER CONTROL
 	//wire RegSHIFTER_LoadCONTROL_Wire;
 	//wire [DATAWIDTH_REGSHIFTER_SELECTION-1:0] RegSHIFTER_ShiftSelectionCONTROL_Wire;
 // ARCHITECTURE BUSES WIRES
-	wire [DATAWIDTH_BUS-1:0] DataBUS_A_Wire;
-	wire [DATAWIDTH_BUS-1:0] DataBUS_B_Wire; 
-	wire [DATAWIDTH_BUS-1:0] ALU2RegSHIFTER_DataBUS_Wire;
-	wire [DATAWIDTH_BUS-1:0] DataBus_C_Wire;
+	wire [DATAWIDTH_BUS-1:0] DataBUS_A_Out;
+	wire [DATAWIDTH_BUS-1:0] DataBUS_B_Out;
+	wire [DATAWIDTH_BUS-1:0] DataBUS_C_Out;
 // DECODER CONTROL:  TO GENERATE WRITE SIGNAL TO GENERAL_REGISTERS TO WRITE DATA FROM DATA_BUS_C. ¡ONE BY ONE, NOT AT SAME TIME!
 	//wire [DATAWIDTH_DECODER_SELECTION-1:0] Decoder_SelectionCONTROL_Wire; 
-	wire [DATAWIDTH_DECODER_OUT-1:0] Decoder_DataWrite_Wire;
+	wire [DATAWIDTH_DECODER_SELECTION-1:0] MUX_TO_DECODER_A;
+	wire [DATAWIDTH_DECODER_SELECTION-1:0] MUX_TO_DECODER_B;
+	wire [DATAWIDTH_DECODER_SELECTION-1:0] MUX_TO_DECODER_C;
 // MUX CONTROL: TO SELECT OUTPUT REGISTER TO BUS_A, BUS_B OR BOTH OF THEM
 	//wire [DATAWIDTH_MUX_SELECTION-1:0] MUX_SelectionBUSACONTROL_Wire;
 	//wire [DATAWIDTH_MUX_SELECTION-1:0] MUX_SelectionBUSBCONTROL_Wire;
@@ -147,376 +113,28 @@ module uDataPath #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELEC
 //=======================================================
 //  Structural coding
 //=======================================================
-
-//-------------------------------------------------------
-//GENERAL_REGISTERS
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r1 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R1),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[1]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r2 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R2),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[2]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r3 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R3),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[3]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r4 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R4),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[4]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r5 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R5),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[5]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r6 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R6),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[6]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r7 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R7),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[7]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r8 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R8),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[8]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r9 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R9),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[9]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r10 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R10),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[10]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r11 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R11),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[11]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r12 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R12),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[12]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r13 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R13),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[13]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r14 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R14),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[14]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r15 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R15),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[15]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r16 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R16),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[16]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r17 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R17),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[17]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r18 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R18),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[18]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r19 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R19),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[19]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r20 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R20),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[20]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r21 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R21),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[21]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r22 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R22),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[22]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r23 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R23),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[23]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r24 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R24),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[24]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r25 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R25),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[25]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r26 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R26),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[26]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r27 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R27),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[27]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r28 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R28),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[28]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r29 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R29),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[29]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r30 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R30),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[30]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_r31 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_R31),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[31]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGPC_INIT)) SC_RegGENERAL_pc (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_PC),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[32]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_t0 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_T0),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[33]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_t1 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_T1),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[34]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_t2 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_T2),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[35]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_t3 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(RegGENERAL2MUX_DataBUS_T3),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire[36]),
-	.SC_RegGENERAL_DataBUS_In(DataBus_C_Wire)
-);
-SC_RegIR #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegIR_ir (
-// port map - connection between master ports and signals/registers   
-	.SC_RegIR_DataBUS_Out(RegGENERAL2MUX_DataBUS_IR),
-	.SC_RegIR_OP(uDataPath_RegIR_OP),
-	.SC_RegIR_RD(uDataPath_RegIR_RD),
-	.SC_RegIR_OP2(uDataPath_RegIR_OP2),
-	.SC_RegIR_OP3(uDataPath_RegIR_OP3),
-	.SC_RegIR_RS1(uDataPath_RegIR_RS1),
-	.SC_RegIR_BIT13(uDataPath_RegIR_BIT13),
-	.SC_RegIR_RS2(uDataPath_RegIR_RS2),
-	.SC_RegIR_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegIR_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegIR_Write_InHigh(Decoder_DataWrite_Wire[37]),
-	.SC_RegIR_DataBUS_In(DataBus_C_Wire)
-);
-//-------------------------------------------------------
-
-//-------------------------------------------------------
-// FIXED_REGISTERS
-SC_RegFIXED #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGFIXED_INIT(DATA_REGFIXED_INIT_0)) SC_RegFIXED_r0 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegFIXED_DataBUS_Out(RegFIXED2MUX_DataBUS_R0),
-	.SC_RegFIXED_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegFIXED_Reset_InHigh(uDataPath_Reset_InHigh)
-);
-//-------------------------------------------------------
-
-//-------------------------------------------------------
-//PSR REGISTER
-SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_psr (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out({psr_left,PSR_Negative_InHigh,PSR_Zero_InHigh,PSR_Overflow_InHigh,PSR_Carry_InHigh,psr_right}),
-	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh(~(DATAWIDTH_ALU_SELECTION[DATAWIDTH_ALU_SELECTION-1] | DATAWIDTH_ALU_SELECTION[DATAWIDTH_ALU_SELECTION-2])),
-	.SC_RegGENERAL_DataBUS_In({8'b0, uDataPath_Negative_InHigh, uDataPath_Zero_InHigh, uDataPath_Overflow_InHigh,uDataPath_Carry_InHigh ,20'b0})
-);
-//-------------------------------------------------------
-
-//-------------------------------------------------------
-// SHIFT_REGISTER
-//SC_RegSHIFTER #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATAWIDTH_REGSHIFTER_SELECTION(DATAWIDTH_REGSHIFTER_SELECTION)) SC_RegSHIFTER_r0 (
-//// port map - connection between master ports and signals/registers   
-//	.SC_RegSHIFTER_DataBUS_Out(DataBus_C_Wire),
-//	.SC_RegSHIFTER_CLOCK_50(uDataPath_CLOCK_50),
-//	.SC_RegSHIFTER_Reset_InHigh(uDataPath_Reset_InHigh),
-//	.SC_RegSHIFTER_Load_InHigh(uDataPath_RegSHIFTERLoad_OutLow),
-//	.SC_RegSHIFTER_ShiftSelection_InHigh(uDataPath_RegSHIFTERShiftSelection_OutLow),
-//	.SC_RegSHIFTER_DataBUS_In(ALU2RegSHIFTER_DataBUS_Wire)
-//);
-//-------------------------------------------------------
-
-//-------------------------------------------------------
-// DECODER TO GENERATE WRITE SIGNAL TO GENERAL_REGISTERS TO WRITE DATA TO DATA_BUS_C. ¡ONE BY ONE, NOT AT SAME TIME!
-CC_DECODER #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_DECODER_SELECTION), .DATAWIDTH_DECODER_OUT(DATAWIDTH_DECODER_OUT)) CC_DECODER_A
-(
-// port map - connection between master ports and signals/registers   
-	.CC_DECODER_DataDecoder_Out(Decoder_DataWrite_Wire_A),
-	.CC_DECODER_Selection_In(uDataPath_DecoderSelectionWrite_Out_A)
+// SCRATCHPATH
+Scratchpath #(.DATAWIDTH_BUS(DATAWIDTH_BUS),.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_BUS), .DATA_REGFIXED_INIT_0(DATA_REGFIXED_INIT_0), .DATA_REGGEN_INIT_0(DATA_REGGEN_INIT_0), .DATA_REGPC_INIT(DATA_REGPC_INIT), .DATAWIDTH_DECODER_OUT(DATAWIDTH_DECODER_OUT)) Scratchpath (
+	//////////// OUTPUTS //////////
+	.Scratchpath_RegIR_OP(Scratchpath_RegIR_OP),
+	.Scratchpath_RegIR_RD(Scratchpath_RegIR_RD),
+	.Scratchpath_RegIR_OP2(Scratchpath_RegIR_OP2),
+	.Scratchpath_RegIR_OP3(Scratchpath_RegIR_OP3),
+	.Scratchpath_RegIR_RS1(Scratchpath_RegIR_RS1),
+	.Scratchpath_RegIR_BIT13(Scratchpath_RegIR_BIT13),
+	.Scratchpath_RegIR_RS2(Scratchpath_RegIR_RS2),
+	//////////// INPUTS //////////
+	uDataPath_CLOCK_50(uDataPath_CLOCK_50),
+	uDataPath_Reset_InHigh(uDataPath_Reset_InHigh),
+	DataBus_A_Wire(DataBUS_A_Out),
+	DataBus_B_Wire(DataBUS_B_Out),
+	DataBus_C_Wire(DataBUS_C_Out),
+	DecoderSelectionWrite_Out_A(MUX_TO_DECODER_A),
+	DecoderSelectionWrite_Out_B(MUX_TO_DECODER_B),
+	DecoderSelectionWrite_Out_C(MUX_TO_DECODER_C)
 );
 
-// DECODER TO GENERATE WRITE SIGNAL TO GENERAL_REGISTERS TO WRITE DATA TO DATA_BUS_C. ¡ONE BY ONE, NOT AT SAME TIME!
-CC_DECODER #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_DECODER_SELECTION), .DATAWIDTH_DECODER_OUT(DATAWIDTH_DECODER_OUT)) CC_DECODER_B
-(
-// port map - connection between master ports and signals/registers   
-	.CC_DECODER_DataDecoder_Out(Decoder_DataWrite_Wire_B),
-	.CC_DECODER_Selection_In(uDataPath_DecoderSelectionWrite_Out_B)
-);
 
-// DECODER TO GENERATE WRITE SIGNAL TO GENERAL_REGISTERS TO WRITE DATA TO DATA_BUS_C. ¡ONE BY ONE, NOT AT SAME TIME!
-CC_DECODER #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_DECODER_SELECTION), .DATAWIDTH_DECODER_OUT(DATAWIDTH_DECODER_OUT)) CC_DECODER_C
-(
-// port map - connection between master ports and signals/registers   
-	.CC_DECODER_DataDecoder_Out(Decoder_DataWrite_Wire_C),
-	.CC_DECODER_Selection_In(uDataPath_DecoderSelectionWrite_Out_C)
-);
-//-------------------------------------------------------
-
-//-------------------------------------------------------
 // BUS: CONNECTS REGISTER, ALU AND MEMORY
 CC_BUS #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) CC_BUS_A
 (
@@ -542,16 +160,36 @@ CC_BUS #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) CC_BUS_C
 
 //-------------------------------------------------------
 // MUX CONTROL
-CC_MUX #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_BUS), .DATAWIDTH_IR_SELECTION(5)) CC_BUS_C
+CC_MUX #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_BUS), .DATAWIDTH_IR_SELECTION(5)) CC_MUX_A
 (
 // port map - connection between master ports and signals/registers  
-	.CC_BUS_DataBUS_Out(DataBUS_C_Out), 
-	.CC_BUS_DataBUS_In(DataBUS_C_In)
+	.CC_MUX_TO_DECODER_OUT(MUX_TO_DECODER_A), 
+	.CC_MUX_MIR_FIELD(MIR_A_FIELD)
+	.CC_MUX_IR_FIELD(Scratchpath_RegIR_RS1),
+	.CC_MUX_SELECT(MUX_SELECT_A)
+);
+
+CC_MUX #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_BUS), .DATAWIDTH_IR_SELECTION(5)) CC_MUX_b
+(
+// port map - connection between master ports and signals/registers  
+	.CC_MUX_TO_DECODER_OUT(MUX_TO_DECODER_B), 
+	.CC_MUX_MIR_FIELD(MIR_B_FIELD)
+	.CC_MUX_IR_FIELD(Scratchpath_RegIR_RS2),
+	.CC_MUX_SELECT(MUX_SELECT_B)
+);
+
+CC_MUX #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_BUS), .DATAWIDTH_IR_SELECTION(5)) CC_MUX_c
+(
+// port map - connection between master ports and signals/registers  
+	.CC_MUX_TO_DECODER_OUT(MUX_TO_DECODER_C), 
+	.CC_MUX_MIR_FIELD(MIR_C_FIELD)
+	.CC_MUX_IR_FIELD(Scratchpath_RegIR_RD),
+	.CC_MUX_SELECT(MUX_SELECT_C)
 );
 //-------------------------------------------------------
 
 //-------------------------------------------------------
-//
+// ALU
 CC_ALU #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATAWIDTH_ALU_SELECTION(DATAWIDTH_ALU_SELECTION)) CC_ALU_u0
 (
 // port map - connection between master ports and signals/registers   
@@ -559,12 +197,23 @@ CC_ALU #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATAWIDTH_ALU_SELECTION(DATAWIDTH_ALU_S
 	.CC_ALU_Carry_OutHigh(uDataPath_Carry_InHigh), 
 	.CC_ALU_Negative_OutHigh(uDataPath_Negative_InHigh), 
 	.CC_ALU_Zero_OutHigh(uDataPath_Zero_InHigh),
-	.CC_ALU_DataBUS_Out(DataBus_C_Wire),
-	.CC_ALU_DataBUSA_In(DataBUS_A_Wire), 
-	.CC_ALU_DataBUSB_In(DataBUS_B_Wire),
+	.CC_ALU_DataBUS_Out(DataBUS_C_In),
+	.CC_ALU_DataBUSA_In(DataBUS_A_Out), 
+	.CC_ALU_DataBUSB_In(DataBUS_B_Out),
 	.CC_ALU_Selection_In(uDataPath_ALUSelection_Out)
 );
 //-------------------------------------------------------
+
+//-------------------------------------------------------
+//PSR REGISTER
+SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)) SC_RegGENERAL_psr (
+// port map - connection between master ports and signals/registers   
+	.SC_RegGENERAL_DataBUS_Out({8'b0,PSR_Negative_InHigh,PSR_Zero_InHigh,PSR_Overflow_InHigh,PSR_Carry_InHigh,20'b0}),
+	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
+	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
+	.SC_RegGENERAL_Write_InHigh(~(DATAWIDTH_ALU_SELECTION[DATAWIDTH_ALU_SELECTION-1] | DATAWIDTH_ALU_SELECTION[DATAWIDTH_ALU_SELECTION-2])),
+	.SC_RegGENERAL_DataBUS_In({8'b0, uDataPath_Negative_InHigh, uDataPath_Zero_InHigh, uDataPath_Overflow_InHigh,uDataPath_Carry_InHigh ,20'b0})
+);
 assign uDataPath_DataBUSDisplay_Out = RegGENERAL2MUX_DataBUS_R1;
 
 endmodule

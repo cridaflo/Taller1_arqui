@@ -26,13 +26,13 @@
 //=======================================================
 module SC_RegFIXED #(parameter DATAWIDTH_BUS=32, parameter DATA_REGFIXED_INIT=32'h00000000)(
 	//////////// OUTPUTS //////////
-	SC_RegGENERAL_DataBUS_Out_A,
-	SC_RegGENERAL_DataBUS_Out_B,
+	SC_RegFIXED_DataBUS_Out_A,
+	SC_RegFIXED_DataBUS_Out_B,
 	//////////// INPUTS //////////
 	SC_RegFIXED_CLOCK_50,
 	SC_RegFIXED_Reset_InHigh,
-	SC_RegGENERAL_ENABLE_BUS_A,
-	SC_RegGENERAL_ENABLE_BUS_B,
+	SC_RegFIXED_ENABLE_BUS_A,
+	SC_RegFIXED_ENABLE_BUS_B,
 );
 //=======================================================
 //  PARAMETER declarations
@@ -41,11 +41,11 @@ module SC_RegFIXED #(parameter DATAWIDTH_BUS=32, parameter DATA_REGFIXED_INIT=32
 //=======================================================
 //  PORT declarations
 //=======================================================
-	output [DATAWIDTH_BUS-1:0] SC_RegGENERAL_DataBUS_Out_A;
-	output [DATAWIDTH_BUS-1:0] SC_RegGENERAL_DataBUS_Out_B;
+	output [DATAWIDTH_BUS-1:0] SC_RegFIXED_DataBUS_Out_A;
+	output [DATAWIDTH_BUS-1:0] SC_RegFIXED_DataBUS_Out_B;
 	input			SC_RegFIXED_CLOCK_50;
-	input			SC_RegGENERAL_ENABLE_BUS_A;
-	input			SC_RegGENERAL_ENABLE_BUS_B;
+	input			SC_RegFIXED_ENABLE_BUS_A;
+	input			SC_RegFIXED_ENABLE_BUS_B;
 	input			SC_RegFIXED_Reset_InHigh;
 //=======================================================
 //  REG/WIRE declarations
@@ -69,8 +69,8 @@ module SC_RegFIXED #(parameter DATAWIDTH_BUS=32, parameter DATA_REGFIXED_INIT=32
 //=======================================================
 // OUTPUT LOGIC : COMBINATIONAL
 // OUTPUT BUS A
-	assign SC_RegGENERAL_DataBUS_Out_A = (SC_RegGENERAL_ENABLE_BUS_A)? RegFIXED_Register : 32'hZZZZZZZZ;
+	assign SC_RegFIXED_DataBUS_Out_A = (SC_RegFIXED_ENABLE_BUS_A)? RegFIXED_Register : 32'hZZZZZZZZ;
 // OUTPUT BUS B
-	assign SC_RegGENERAL_DataBUS_Out_B = (SC_RegGENERAL_ENABLE_BUS_B)? RegFIXED_Register : 32'hZZZZZZZZ;
+	assign SC_RegFIXED_DataBUS_Out_B = (SC_RegFIXED_ENABLE_BUS_B)? RegFIXED_Register : 32'hZZZZZZZZ;
 endmodule
 
