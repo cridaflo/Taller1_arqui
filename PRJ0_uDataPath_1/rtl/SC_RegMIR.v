@@ -24,20 +24,20 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_RegIR #(parameter DATAWIDTH_BUS=32, parameter DATA_REGGEN_INIT=32'h00000000)(
+module SC_RegIR #(parameter DATAWIDTH_BUS_OUT=41, parameter DATA_REGGEN_INIT=41'h00000000)(
 	//////////// OUTPUTS //////////
-	SC_RegIR_DataBUS_Out_A,
-	SC_RegIR_DataBUS_Out_B,
-	SC_RegIR_OP,
-	SC_RegIR_RD,
-	SC_RegIR_OP2,
-	SC_RegIR_OP3,
-	SC_RegIR_RS1,
-	SC_RegIR_BIT13,
-	SC_RegIR_RS2,
+	A,
+	AMUX,
+	B,
+	BMUX,
+	C,
+	CMUX
+	RD,
+	WR,
+	ALU,
+	COND,
+	JMP_ADDR,
 	//////////// INPUTS //////////
-	SC_RegIR_ENABLE_BUS_A,
-	SC_RegIR_ENABLE_BUS_B,
 	SC_RegIR_CLOCK_50,
 	SC_RegIR_Reset_InHigh,
 	SC_RegIR_Write_InHigh,
@@ -50,27 +50,27 @@ module SC_RegIR #(parameter DATAWIDTH_BUS=32, parameter DATA_REGGEN_INIT=32'h000
 //=======================================================
 //  PORT declarations
 //=======================================================
-	output [DATAWIDTH_BUS-1:0] SC_RegIR_DataBUS_Out_A;
-	output [DATAWIDTH_BUS-1:0] SC_RegIR_DataBUS_Out_B;
-	output 	[1:0] SC_RegIR_OP;
-	output 	[4:0] SC_RegIR_RD;
-	output 	[2:0] SC_RegIR_OP2;
-	output 	[5:0] SC_RegIR_OP3;
-	output 	[4:0] SC_RegIR_RS1;
-	output  SC_RegIR_BIT13;
-	output 	[4:0] SC_RegIR_RS2;
-	input			SC_RegIR_CLOCK_50;
+	output [5:0] A;
+	output AMUX;
+	output [5:0] B;
+	output BMUX;
+	output [5:0] C;
+	output CMUX;
+	output RD;
+	output WR;
+	output [3:0] ALU;
+	output [2:0] COND;
+	output [10:0] JMP_ADDR
+	input	      SC_RegIR_CLOCK_50;
 	input			SC_RegIR_Reset_InHigh;
 	input			SC_RegIR_Write_InHigh;
-	input			SC_RegIR_ENABLE_BUS_A;
-	input			SC_RegIR_ENABLE_BUS_B;
 	input 		[DATAWIDTH_BUS-1:0] SC_RegIR_DataBUS_In;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
 	reg [DATAWIDTH_BUS-1:0] RegIR_Register;
 	reg [DATAWIDTH_BUS-1:0] RegIR_Signal;
-
+	reg [DATAWIDTH_BUS-1:0] SC_RegIR_DataBUS_Out;
 //=======================================================
 //  Structural coding
 //=======================================================
@@ -94,13 +94,16 @@ module SC_RegIR #(parameter DATAWIDTH_BUS=32, parameter DATA_REGGEN_INIT=32'h000
 	always @ (*)
 		SC_RegIR_DataBUS_Out = RegIR_Register; 
 	
-assign SC_RegIR_OP= SC_RegIR_DataBUS_Out[31:30];
-assign SC_RegIR_RD= SC_RegIR_DataBUS_Out[29:25];
-assign SC_RegIR_OP2=	SC_RegIR_DataBUS_Out[24:22];
-assign SC_RegIR_OP3=	SC_RegIR_DataBUS_Out[24:19];
-assign SC_RegIR_RS1=	SC_RegIR_DataBUS_Out[18:14];
-assign SC_RegIR_BIT13=	SC_RegIR_DataBUS_Out[13];
-assign SC_RegIR_RS2=	SC_RegIR_DataBUS_Out[4:0];	
+assign A    =  SC_RegIR_DataBUS_Out[40:35];
+assign AMUX =  SC_RegIR_DataBUS_Out[34];
+assign B    =	SC_RegIR_DataBUS_Out[33:28];
+assign BMUX =	SC_RegIR_DataBUS_Out[27];
+assign C    =	SC_RegIR_DataBUS_Out[26:21];
+assign CMUX =	SC_RegIR_DataBUS_Out[20];
+assign RD   =	SC_RegIR_DataBUS_Out[19];	
+assign WR   =  SC_RegIR_DataBUS_Out[18];	
+assign ALU  =	SC_RegIR_DataBUS_Out[17:14];
+assign COND =	SC_RegIR_DataBUS_Out[13:11];
+assign JMP_ADDR   =	SC_RegIR_DataBUS_Out[10:0];
 
 endmodule
-
