@@ -95,6 +95,21 @@ module WB_SYSTEM #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELEC
 	.uDataPath_MUXSelectionBUSB_Out(MUX_SelectionBUSBCONTROL_Wire),
 	.uDataPath_ALUSelection_Out(ALU_SelectionCONTROL_Wire)
 );
+uControl #() uControl_1(
+	.uControl_CLOCK_50(WB_SYSTEM_CLOCK_50),
+   .uControl_FLAGs_IN,
+	.uControl_IR13_IN,
+	.uControl_Decode,
+   .uControl_A_OUT,
+	.uControl_AMUX_OUT,
+	.uControl_B_OUT,
+	.uControl_BMUX_OUT,
+	.uControl_C_OUT,
+	.uControl_CMUX_OUT,
+	.uControl_RD_OUT,
+	.uControl_WR_OUT,
+	.uControl_ALU_OUT
+);
 
 //	SC_STATEMACHINE #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_DECODER_SELECTION), .DATAWIDTH_ALU_SELECTION(DATAWIDTH_ALU_SELECTION)) SC_STATEMACHINE_u0 (
 //// port map - connection between master ports and signals/registers   
