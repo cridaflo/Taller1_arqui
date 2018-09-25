@@ -47,7 +47,7 @@ module MIR #(parameter MIR_BUS_WIDTH = 41, parameter REG_BUS_WIDTH = 6, paramete
 //=======================================================
 //  Structural coding
 //=======================================================
-always@(posedge MIR_CLOCK_50)
+always@(negedge MIR_CLOCK_50)
 	assign MIR_JUMP_ADDR_OUT = MIR_Microinstruccion_IN[JUMP_ADDR_BUS_WIDTH-1:0];
 	assign MIR_COND_OUT = MIR_Microinstruccion_IN[COND_BUS_WIDTH+JUMP_ADDR_BUS_WIDTH-1:JUMP_ADDR_BUS_WIDTH];
 	assign MIR_ALU_OUT = MIR_Microinstruccion_IN[ALU_BUS_WIDTH+COND_BUS_WIDTH+JUMP_ADDR_BUS_WIDTH-1:COND_BUS_WIDTH+JUMP_ADDR_BUS_WIDTH];
