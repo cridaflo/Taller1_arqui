@@ -38,7 +38,7 @@ module Scratchpath #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SEL
 	uDataPath_Reset_InHigh,
 	DataBus_A_Wire,
 	DataBus_B_Wire,
-	DataBus_C_Wire
+	DataBus_C_Wire,
 	DecoderSelectionWrite_Out_A,
 	DecoderSelectionWrite_Out_B,
 	DecoderSelectionWrite_Out_C
@@ -50,13 +50,14 @@ module Scratchpath #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SEL
 //=======================================================
 //  PORT declarations
 //=======================================================
-	output   Scratchpath_RegIR_OP;
-	output	Scratchpath_RegIR_RD;
-	output	Scratchpath_RegIR_OP2;
-	output	Scratchpath_RegIR_OP3;
-	output	Scratchpath_RegIR_RS1;
-	output	Scratchpath_RegIR_BIT13;
-	output	Scratchpath_RegIR_RS2;
+	output   RegIR_OP;
+	output	RegIR_RD;
+	output	RegIR_OP2;
+	output	RegIR_OP3;
+	output	RegIR_RS1;
+	output	RegIR_BIT13;
+	output	RegIR_RS2;
+	output	RegR1;
 	//////////// INPUTS //////////
 	input 	uDataPath_CLOCK_50;
 	input 	uDataPath_Reset_InHigh;
@@ -85,6 +86,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(RegR1),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[1]),
@@ -96,6 +98,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[2]),
@@ -107,6 +110,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[3]),
@@ -118,6 +122,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[4]),
@@ -129,6 +134,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[5]),
@@ -140,6 +146,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[6]),
@@ -151,6 +158,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[7]),
@@ -162,6 +170,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[8]),
@@ -173,6 +182,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[9]),
@@ -184,6 +194,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[10]),
@@ -195,6 +206,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[11]),
@@ -206,6 +218,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[12]),
@@ -217,6 +230,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[13]),
@@ -228,6 +242,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[14]),
@@ -239,6 +254,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[15]),
@@ -250,6 +266,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[16]),
@@ -261,6 +278,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[17]),
@@ -272,6 +290,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[18]),
@@ -283,6 +302,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[19]),
@@ -294,6 +314,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[20]),
@@ -305,6 +326,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[21]),
@@ -316,6 +338,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[22]),
@@ -327,6 +350,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[23]),
@@ -338,6 +362,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[24]),
@@ -349,6 +374,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[25]),
@@ -360,6 +386,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[26]),
@@ -371,6 +398,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[27]),
@@ -382,6 +410,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[28]),
@@ -393,6 +422,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[29]),
@@ -404,6 +434,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[30]),
@@ -415,6 +446,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[31]),
@@ -426,6 +458,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGPC_INIT
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[32]),
@@ -437,6 +470,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[33]),
@@ -448,6 +482,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[34]),
@@ -459,6 +494,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[35]),
@@ -470,6 +506,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 // port map - connection between master ports and signals/registers   
 	.SC_RegGENERAL_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegGENERAL_DataBUS_Out_B(DataBus_B_Wire),
+	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[36]),
@@ -481,13 +518,13 @@ SC_RegIR #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0))
 // port map - connection between master ports and signals/registers   
 	.SC_RegIR_DataBUS_Out_A(DataBus_A_Wire),
 	.SC_RegIR_DataBUS_Out_B(DataBus_B_Wire),
-	.SC_RegIR_OP(Scratchpath_RegIR_OP),
-	.SC_RegIR_RD(Scratchpath_RegIR_RD),
-	.SC_RegIR_OP2(Scratchpath_RegIR_OP2),
-	.SC_RegIR_OP3(Scratchpath_RegIR_OP3),
-	.SC_RegIR_RS1(Scratchpath_RegIR_RS1),
-	.SC_RegIR_BIT13(Scratchpath_RegIR_BIT13),
-	.SC_RegIR_RS2(Scratchpath_RegIR_RS2),
+	.SC_RegIR_OP(RegIR_OP),
+	.SC_RegIR_RD(RegIR_RD),
+	.SC_RegIR_OP2(RegIR_OP2),
+	.SC_RegIR_OP3(RegIR_OP3),
+	.SC_RegIR_RS1(RegIR_RS1),
+	.SC_RegIR_BIT13(RegIR_BIT13),
+	.SC_RegIR_RS2(RegIR_RS2),
 	.SC_RegIR_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegIR_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegIR_Write_InHigh(Decoder_DataWrite_Wire_C[37]),
@@ -507,7 +544,6 @@ SC_RegFIXED #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGFIXED_INIT(DATA_REGFIXED_I
 	.SC_RegFIXED_Reset_InHigh(uDataPath_Reset_InHigh),
 	.SC_RegFIXED_ENABLE_BUS_A(Decoder_DataWrite_Wire_A[37]),
 	.SC_RegFIXED_ENABLE_BUS_B(Decoder_DataWrite_Wire_B[37]),
-);
 //-------------------------------------------------------
 
 //-------------------------------------------------------
@@ -535,7 +571,6 @@ CC_DECODER #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_DECODER_SELECTION), .DATAWID
 	.CC_DECODER_Selection_In(DecoderSelectionWrite_Out_C)
 );
 //-------------------------------------------------------
-assign uDataPath_DataBUSDisplay_Out = RegGENERAL2MUX_DataBUS_R1;
 
 endmodule
 

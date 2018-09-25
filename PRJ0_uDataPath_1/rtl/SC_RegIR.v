@@ -91,16 +91,18 @@ module SC_RegIR #(parameter DATAWIDTH_BUS=32, parameter DATA_REGGEN_INIT=32'h000
 //  Outputs
 //=======================================================
 // OUTPUT LOGIC : COMBINATIONAL
-	always @ (*)
-		SC_RegIR_DataBUS_Out = RegIR_Register; 
+// OUTPUT BUS A
+	assign SC_RegIR_DataBUS_Out_A = (SC_RegIR_ENABLE_BUS_A)? RegIR_Register : 32'hZZZZZZZZ;
+// OUTPUT BUS B
+	assign SC_RegIR_DataBUS_Out_B = (SC_RegIR_ENABLE_BUS_B)? RegIR_Register : 32'hZZZZZZZZ;
 	
-assign SC_RegIR_OP= SC_RegIR_DataBUS_Out[31:30];
-assign SC_RegIR_RD= SC_RegIR_DataBUS_Out[29:25];
-assign SC_RegIR_OP2=	SC_RegIR_DataBUS_Out[24:22];
-assign SC_RegIR_OP3=	SC_RegIR_DataBUS_Out[24:19];
-assign SC_RegIR_RS1=	SC_RegIR_DataBUS_Out[18:14];
-assign SC_RegIR_BIT13=	SC_RegIR_DataBUS_Out[13];
-assign SC_RegIR_RS2=	SC_RegIR_DataBUS_Out[4:0];	
+	assign SC_RegIR_OP= RegIR_Register[31:30];
+	assign SC_RegIR_RD= RegIR_Register[29:25];
+	assign SC_RegIR_OP2=	RegIR_Register[24:22];
+	assign SC_RegIR_OP3=	RegIR_Register[24:19];
+	assign SC_RegIR_RS1=	RegIR_Register[18:14];
+	assign SC_RegIR_BIT13=	RegIR_Register[13];
+	assign SC_RegIR_RS2=	RegIR_Register[4:0];	
 
 endmodule
 

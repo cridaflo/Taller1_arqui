@@ -32,7 +32,7 @@ module SC_RegFIXED #(parameter DATAWIDTH_BUS=32, parameter DATA_REGFIXED_INIT=32
 	SC_RegFIXED_CLOCK_50,
 	SC_RegFIXED_Reset_InHigh,
 	SC_RegFIXED_ENABLE_BUS_A,
-	SC_RegFIXED_ENABLE_BUS_B,
+	SC_RegFIXED_ENABLE_BUS_B
 );
 //=======================================================
 //  PARAMETER declarations

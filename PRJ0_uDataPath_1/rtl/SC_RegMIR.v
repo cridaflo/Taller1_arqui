@@ -24,24 +24,25 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_RegIR #(parameter DATAWIDTH_BUS_OUT=41, parameter DATA_REGGEN_INIT=41'h00000000)(
+module SC_RegMIR #(parameter DATAWIDTH_BUS_MIR=41, parameter DATA_REGGEN_INIT=41'h00000000)(
 	//////////// OUTPUTS //////////
 	A,
 	AMUX,
 	B,
 	BMUX,
 	C,
-	CMUX
+	CMUX,
 	RD,
 	WR,
 	ALU,
 	COND,
 	JMP_ADDR,
+	SC_RegMIR_DataBUS_Out,
 	//////////// INPUTS //////////
-	SC_RegIR_CLOCK_50,
-	SC_RegIR_Reset_InHigh,
-	SC_RegIR_Write_InHigh,
-	SC_RegIR_DataBUS_In
+	SC_RegMIR_CLOCK_50,
+	SC_RegMIR_Reset_InHigh,
+	SC_RegMIR_Write_InHigh,
+	SC_RegMIR_DataBUS_In
 );
 //=======================================================
 //  PARAMETER declarations
@@ -60,50 +61,50 @@ module SC_RegIR #(parameter DATAWIDTH_BUS_OUT=41, parameter DATA_REGGEN_INIT=41'
 	output WR;
 	output [3:0] ALU;
 	output [2:0] COND;
-	output [10:0] JMP_ADDR
-	input	      SC_RegIR_CLOCK_50;
-	input			SC_RegIR_Reset_InHigh;
-	input			SC_RegIR_Write_InHigh;
-	input 		[DATAWIDTH_BUS-1:0] SC_RegIR_DataBUS_In;
+	output [10:0] JMP_ADDR;
+	output reg [DATAWIDTH_BUS_MIR-1:0] SC_RegMIR_DataBUS_Out;
+	input	 SC_RegMIR_CLOCK_50;
+	input	 SC_RegMIR_Reset_InHigh;
+	input	 SC_RegMIR_Write_InHigh;
+	input  [DATAWIDTH_BUS_MIR-1:0] SC_RegMIR_DataBUS_In;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-	reg [DATAWIDTH_BUS-1:0] RegIR_Register;
-	reg [DATAWIDTH_BUS-1:0] RegIR_Signal;
-	reg [DATAWIDTH_BUS-1:0] SC_RegIR_DataBUS_Out;
+	reg [DATAWIDTH_BUS_MIR-1:0] RegMIR_Register;
+	reg [DATAWIDTH_BUS_MIR-1:0] RegMIR_Signal;
 //=======================================================
 //  Structural coding
 //=======================================================
 //INPUT LOGIC: COMBINATIONAL
 	always @ (*)
-	if (SC_RegIR_Write_InHigh == 1)	
-		RegIR_Signal = SC_RegIR_DataBUS_In;
+	if (SC_RegMIR_Write_InHigh == 1)	
+		RegMIR_Signal = SC_RegMIR_DataBUS_In;
 	else 	
-		RegIR_Signal = RegIR_Register;
+		RegMIR_Signal = RegMIR_Register;
 
 // REGISTER : SEQUENTIAL
-	always @ ( negedge SC_RegIR_CLOCK_50 , posedge SC_RegIR_Reset_InHigh)
-	if (SC_RegIR_Reset_InHigh==1)
-		RegIR_Register <= DATA_REGGEN_INIT;
+	always @ ( negedge SC_RegMIR_CLOCK_50 , posedge SC_RegMIR_Reset_InHigh)
+	if (SC_RegMIR_Reset_InHigh==1)
+		RegMIR_Register <= DATA_REGGEN_INIT;
 	else
-		RegIR_Register <= RegIR_Signal;
+		RegMIR_Register <= RegMIR_Signal;
 //=======================================================
 //  Outputs
 //=======================================================
 // OUTPUT LOGIC : COMBINATIONAL
 	always @ (*)
-		SC_RegIR_DataBUS_Out = RegIR_Register; 
+	SC_RegMIR_DataBUS_Out= RegMIR_Register;
 	
-assign A    =  SC_RegIR_DataBUS_Out[40:35];
-assign AMUX =  SC_RegIR_DataBUS_Out[34];
-assign B    =	SC_RegIR_DataBUS_Out[33:28];
-assign BMUX =	SC_RegIR_DataBUS_Out[27];
-assign C    =	SC_RegIR_DataBUS_Out[26:21];
-assign CMUX =	SC_RegIR_DataBUS_Out[20];
-assign RD   =	SC_RegIR_DataBUS_Out[19];	
-assign WR   =  SC_RegIR_DataBUS_Out[18];	
-assign ALU  =	SC_RegIR_DataBUS_Out[17:14];
-assign COND =	SC_RegIR_DataBUS_Out[13:11];
-assign JMP_ADDR   =	SC_RegIR_DataBUS_Out[10:0];
+	assign A    =  SC_RegMIR_DataBUS_Out[40:35];
+	assign AMUX =  SC_RegMIR_DataBUS_Out[34];
+	assign B    =	SC_RegMIR_DataBUS_Out[33:28];
+	assign BMUX =	SC_RegMIR_DataBUS_Out[27];
+	assign C    =	SC_RegMIR_DataBUS_Out[26:21];
+	assign CMUX =	SC_RegMIR_DataBUS_Out[20];
+	assign RD   =	SC_RegMIR_DataBUS_Out[19];	
+	assign WR   =  SC_RegMIR_DataBUS_Out[18];	
+	assign ALU  =	SC_RegMIR_DataBUS_Out[17:14];
+	assign COND =	SC_RegMIR_DataBUS_Out[13:11];
+	assign JMP_ADDR   =	SC_RegMIR_DataBUS_Out[10:0];
 
 endmodule

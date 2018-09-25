@@ -37,7 +37,7 @@ module CC_BUS #(parameter DATAWIDTH_BUS=32)(
 //=======================================================
 //  PORT declarations
 //=======================================================
-	output	[DATAWIDTH_BUS-1:0] CC_MUX_DataBUS_Out;
+	output	[DATAWIDTH_BUS-1:0] CC_BUS_DataBUS_Out;
 	input			[DATAWIDTH_BUS-1:0] CC_BUS_DataBUS_In;
 //=======================================================
 //  REG/WIRE declarations

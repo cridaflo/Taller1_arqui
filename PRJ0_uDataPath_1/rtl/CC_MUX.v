@@ -56,6 +56,6 @@ module CC_MUX #(parameter DATAWIDTH_DECODER_SELECTION=6, parameter DATAWIDTH_IR_
 //  Outputs
 //=======================================================
 // OUTPUT LOGIC : COMBINATIONAL
-assign CC_MUX_TO_DECODER_OUT = (CC_MUX_SELECT)? {0,CC_MUX_IR_FIELD} : CC_MUX_MIR_FIELD;
+assign CC_MUX_TO_DECODER_OUT = (CC_MUX_SELECT)? {1'b0,CC_MUX_IR_FIELD} : CC_MUX_MIR_FIELD;
 endmodule
 
