@@ -1,4 +1,4 @@
-module C_BUS_MUX#(parameter BUS_WITH = 32)(
+module C_BUS_MUX #(parameter BUS_WITH = 32)(
 IN_BUS_MEMORY,
  IN_BUS_ALU,
  BUS_OUT,
