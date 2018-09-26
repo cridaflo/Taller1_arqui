@@ -11,112 +11,132 @@
 # Copying E:/Digitales/QuartusPrime/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
+# vlog -vlog01compat -work work +incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl {E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:53:25 on Sep 25,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl" E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX.v 
+# -- Compiling module CC_MUX
+# 
+# Top level modules:
+# 	CC_MUX
+# End time: 08:53:25 on Sep 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl {E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_BUS.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:53:25 on Sep 25,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl" E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_BUS.v 
+# -- Compiling module CC_BUS
+# 
+# Top level modules:
+# 	CC_BUS
+# End time: 08:53:26 on Sep 25,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl {E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:09:39 on Sep 18,2018
+# Start time: 08:53:26 on Sep 25,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl" E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v 
 # -- Compiling module uDataPath
 # 
 # Top level modules:
 # 	uDataPath
-# End time: 16:09:39 on Sep 18,2018, Elapsed time: 0:00:00
+# End time: 08:53:26 on Sep 25,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl {E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegGENERAL.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:09:39 on Sep 18,2018
+# Start time: 08:53:26 on Sep 25,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl" E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegGENERAL.v 
 # -- Compiling module SC_RegGENERAL
 # 
 # Top level modules:
 # 	SC_RegGENERAL
-# End time: 16:09:39 on Sep 18,2018, Elapsed time: 0:00:00
+# End time: 08:53:26 on Sep 25,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl {E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegFIXED.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:09:39 on Sep 18,2018
+# Start time: 08:53:26 on Sep 25,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl" E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegFIXED.v 
 # -- Compiling module SC_RegFIXED
 # 
 # Top level modules:
 # 	SC_RegFIXED
-# End time: 16:09:39 on Sep 18,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl {E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUXX.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:09:39 on Sep 18,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl" E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUXX.v 
-# -- Compiling module CC_MUXX
-# 
-# Top level modules:
-# 	CC_MUXX
-# End time: 16:09:39 on Sep 18,2018, Elapsed time: 0:00:00
+# End time: 08:53:26 on Sep 25,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl {E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_DECODER.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:09:39 on Sep 18,2018
+# Start time: 08:53:26 on Sep 25,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl" E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_DECODER.v 
 # -- Compiling module CC_DECODER
 # 
 # Top level modules:
 # 	CC_DECODER
-# End time: 16:09:39 on Sep 18,2018, Elapsed time: 0:00:00
+# End time: 08:53:26 on Sep 25,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl {E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_ALU.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:09:39 on Sep 18,2018
+# Start time: 08:53:26 on Sep 25,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl" E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_ALU.v 
 # -- Compiling module CC_ALU
 # 
 # Top level modules:
 # 	CC_ALU
-# End time: 16:09:39 on Sep 18,2018, Elapsed time: 0:00:00
+# End time: 08:53:26 on Sep 25,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1 {E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:09:40 on Sep 18,2018
+# Start time: 08:53:26 on Sep 25,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1" E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v 
 # -- Compiling module BB_SYSTEM
 # 
 # Top level modules:
 # 	BB_SYSTEM
-# End time: 16:09:40 on Sep 18,2018, Elapsed time: 0:00:00
+# End time: 08:53:26 on Sep 25,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl {E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:09:40 on Sep 18,2018
+# Start time: 08:53:26 on Sep 25,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl" E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v 
 # -- Compiling module WB_SYSTEM
 # 
 # Top level modules:
 # 	WB_SYSTEM
-# End time: 16:09:40 on Sep 18,2018, Elapsed time: 0:00:00
+# End time: 08:53:26 on Sep 25,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl {E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegIR.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:09:40 on Sep 18,2018
+# Start time: 08:53:26 on Sep 25,2018
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl" E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegIR.v 
 # -- Compiling module SC_RegIR
 # 
 # Top level modules:
 # 	SC_RegIR
-# End time: 16:09:40 on Sep 18,2018, Elapsed time: 0:00:00
+# End time: 08:53:27 on Sep 25,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# 
-# vlog -vlog01compat -work work +incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim {E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim/CC_ALU.vt}
+# vlog -vlog01compat -work work +incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl {E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegPSR.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:09:40 on Sep 18,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim" E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim/CC_ALU.vt 
-# -- Compiling module cC_ALU_vlg_tst
+# Start time: 08:53:27 on Sep 25,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl" E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegPSR.v 
+# -- Compiling module SC_RegPSR
 # 
 # Top level modules:
-# 	cC_ALU_vlg_tst
-# End time: 16:09:40 on Sep 18,2018, Elapsed time: 0:00:00
+# 	SC_RegPSR
+# End time: 08:53:27 on Sep 25,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  CC_ALU
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" CC_ALU 
-# Start time: 16:09:40 on Sep 18,2018
-# Loading work.CC_ALU
+# vlog -vlog01compat -work work +incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim {E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim/SC_RegGENERAL.vt}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:53:27 on Sep 25,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim" E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim/SC_RegGENERAL.vt 
+# -- Compiling module SC_RegGENERAL_vlg_tst
+# 
+# Top level modules:
+# 	SC_RegGENERAL_vlg_tst
+# End time: 08:53:27 on Sep 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  SC_RegGENERAL
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" SC_RegGENERAL 
+# Start time: 08:53:27 on Sep 25,2018
+# Loading work.SC_RegGENERAL
 # 
 # add wave *
 # view structure
@@ -124,27 +144,27 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-vsim work.cC_ALU_vlg_tst
-# End time: 16:09:49 on Sep 18,2018, Elapsed time: 0:00:09
+vsim work.SC_RegGENERAL_vlg_tst
+# End time: 08:53:39 on Sep 25,2018, Elapsed time: 0:00:12
 # Errors: 0, Warnings: 0
-# vsim work.cC_ALU_vlg_tst 
-# Start time: 16:09:49 on Sep 18,2018
-# Loading work.cC_ALU_vlg_tst
-# Loading work.CC_ALU
+# vsim work.SC_RegGENERAL_vlg_tst 
+# Start time: 08:53:39 on Sep 25,2018
+# Loading work.SC_RegGENERAL_vlg_tst
+# Loading work.SC_RegGENERAL
 # WARNING: No extended dataflow license exists
 add wave -position insertpoint  \
-sim:/cC_ALU_vlg_tst/eachvec \
-sim:/cC_ALU_vlg_tst/CLOCK_50 \
-sim:/cC_ALU_vlg_tst/DataBUS_A_Wire \
-sim:/cC_ALU_vlg_tst/DataBUS_B_Wire \
-sim:/cC_ALU_vlg_tst/uDataPath_ALUSelection_Out \
-sim:/cC_ALU_vlg_tst/uDataPath_Overflow_InHigh \
-sim:/cC_ALU_vlg_tst/uDataPath_Carry_InHigh \
-sim:/cC_ALU_vlg_tst/uDataPath_Negative_InHigh \
-sim:/cC_ALU_vlg_tst/uDataPath_Zero_InHigh \
-sim:/cC_ALU_vlg_tst/DataBus_C_Wire \
-sim:/cC_ALU_vlg_tst/i
-force -freeze sim:/cC_ALU_vlg_tst/CLOCK_50 1 0, 0 {50 ps} -r 100
+sim:/SC_RegGENERAL_vlg_tst/eachvec \
+sim:/SC_RegGENERAL_vlg_tst/CLOCK_50 \
+sim:/SC_RegGENERAL_vlg_tst/RESET \
+sim:/SC_RegGENERAL_vlg_tst/WRITE \
+sim:/SC_RegGENERAL_vlg_tst/BUS_IN \
+sim:/SC_RegGENERAL_vlg_tst/BUS_OUT_A \
+sim:/SC_RegGENERAL_vlg_tst/BUS_OUT_B \
+sim:/SC_RegGENERAL_vlg_tst/BUS_OUT \
+sim:/SC_RegGENERAL_vlg_tst/ENABLE_BUS_A \
+sim:/SC_RegGENERAL_vlg_tst/ENABLE_BUS_B \
+sim:/SC_RegGENERAL_vlg_tst/i
+force -freeze sim:/SC_RegGENERAL_vlg_tst/CLOCK_50 1 0, 0 {50 ps} -r 100
 run
 # Running testbench
 run
@@ -154,5 +174,7 @@ run
 run
 run
 run
-# End time: 16:23:46 on Sep 18,2018, Elapsed time: 0:13:57
-# Errors: 0, Warnings: 1
+run
+# Can't move the Now cursor.
+# End time: 08:59:55 on Sep 25,2018, Elapsed time: 0:06:16
+# Errors: 1, Warnings: 1

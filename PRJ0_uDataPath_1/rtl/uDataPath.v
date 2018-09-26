@@ -536,7 +536,7 @@ SC_RegGENERAL #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INI
 	.SC_RegGENERAL_DataBUS_Out(),
 	.SC_RegGENERAL_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegGENERAL_Write_InHigh([36]),
+	.SC_RegGENERAL_Write_InHigh(Decoder_DataWrite_Wire_C[35]),
 	.SC_RegGENERAL_ENABLE_BUS_A(Decoder_DataWrite_Wire_A[36]),
 	.SC_RegGENERAL_ENABLE_BUS_B(Decoder_DataWrite_Wire_B[36]),
 	.SC_RegGENERAL_DataBUS_In(DataBUS_C_Out)

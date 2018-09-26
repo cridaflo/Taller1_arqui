@@ -36,17 +36,26 @@ reg RESET;
 reg WRITE;
 reg [31:0] BUS_IN;
 // wires - output                                              
+wire [31:0]  BUS_OUT_A;
+wire [31:0]  BUS_OUT_B;
 wire [31:0]  BUS_OUT;
+
+reg ENABLE_BUS_A;
+reg ENABLE_BUS_B;
 
 // assign statements (if any)                          
 integer i;
 SC_RegGENERAL #(.DATAWIDTH_BUS(32),.DATA_REGGEN_INIT(32'h00000000)) r1 (
 // port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out(BUS_OUT),
+	.SC_RegGENERAL_DataBUS_Out_A(BUS_OUT_A),
+	.SC_RegGENERAL_DataBUS_Out_B(BUS_OUT_B),
 	.SC_RegGENERAL_CLOCK_50(CLOCK_50),
 	.SC_RegGENERAL_Reset_InHigh(RESET),
 	.SC_RegGENERAL_Write_InHigh(WRITE),
-	.SC_RegGENERAL_DataBUS_In(BUS_IN)
+	.SC_RegGENERAL_DataBUS_In(BUS_IN),
+	.SC_RegGENERAL_DataBUS_Out(BUS_OUT),
+	.SC_RegGENERAL_ENABLE_BUS_A(ENABLE_BUS_A),
+	.SC_RegGENERAL_ENABLE_BUS_B(ENABLE_BUS_B)
 );
 initial                                                
 begin                                                  
@@ -73,6 +82,11 @@ BUS_IN<=32'hFFFFFFFF;
 
 #100 WRITE<=1;	
 BUS_IN<=32'h0000000F; 
+
+#100 ENABLE_BUS_A<=1;
+
+#100 ENABLE_BUS_A<=0;
+ENABLE_BUS_B<=1;
 				 
 @eachvec;                                              
 // --> end                                             
