@@ -1,5 +1,5 @@
 Fitter report for BB_SYSTEM
-Wed Sep 26 09:54:00 2018
+Wed Sep 26 11:15:20 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -58,7 +58,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Wed Sep 26 09:54:00 2018       ;
+; Fitter Status                      ; Successful - Wed Sep 26 11:15:20 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
@@ -1001,7 +1001,7 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  12 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has 3.3V VCCIO pins. 4 total pin(s) used --  20 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  24 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -1026,10 +1026,10 @@ Warning (169177): 2 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2
     Info (169178): Pin BB_SYSTEM_Reset_InHigh uses I/O standard 3.3-V LVTTL at J15 File: D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 65
 Info (144001): Generated suppressed messages file D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 1289 megabytes
-    Info: Processing ended: Wed Sep 26 09:54:01 2018
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:09
+    Info: Peak virtual memory: 1287 megabytes
+    Info: Processing ended: Wed Sep 26 11:15:20 2018
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:07
 
 
 +----------------------------+

@@ -21,6 +21,7 @@ source_file = 1, D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1
 source_file = 1, D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegMIR.v
 source_file = 1, D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/C_BUS_MUX.v
 source_file = 1, D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegPSR.v
+source_file = 1, D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX_REG.v
 source_file = 1, D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/db/BB_SYSTEM.cbx.xml
 design_name = BB_SYSTEM
 instance = comp, \BB_SYSTEM_DataBUSDisplay_Out[0]~output , BB_SYSTEM_DataBUSDisplay_Out[0]~output, BB_SYSTEM, 1

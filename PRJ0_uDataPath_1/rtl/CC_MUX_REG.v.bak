@@ -1,0 +1,38 @@
+//=======================================================
+//  MODULE Definition
+//=======================================================
+module CC_MUX_REG #(parameter DATAWIDTH_DECODER_OUT=38, parameter DATAWIDTH_IR_SELECTION=5)(
+	//////////// OUTPUTS //////////
+	CC_MUX_TO_DECODER_OUT,
+	//////////// INPUTS //////////
+	CC_MUX_MIR_FIELD,
+	CC_MUX_IR_FIELD,
+	CC_MUX_SELECT
+);
+//=======================================================
+//  PARAMETER declarations
+//=======================================================
+
+//=======================================================
+//  PORT declarations
+//=======================================================
+	output	[DATAWIDTH_DECODER_SELECTION-1:0] CC_MUX_TO_DECODER_OUT;
+	input			[DATAWIDTH_DECODER_SELECTION-1:0] CC_MUX_MIR_FIELD;
+	input			[DATAWIDTH_IR_SELECTION-1:0] CC_MUX_IR_FIELD;
+	input			CC_MUX_SELECT;
+//=======================================================
+//  REG/WIRE declarations
+//=======================================================
+
+//=======================================================
+//  Structural coding
+//=======================================================
+//INPUT LOGIC: COMBINATIONAL
+
+//=======================================================
+//  Outputs
+//=======================================================
+// OUTPUT LOGIC : COMBINATIONAL
+assign CC_MUX_TO_DECODER_OUT = (CC_MUX_SELECT)? {1'b0,CC_MUX_IR_FIELD} : CC_MUX_MIR_FIELD;
+endmodule
+

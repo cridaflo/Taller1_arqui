@@ -1,5 +1,5 @@
 Flow report for BB_SYSTEM
-Wed Sep 26 09:54:07 2018
+Wed Sep 26 11:15:28 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Sep 26 09:54:07 2018       ;
+; Flow Status                        ; Successful - Wed Sep 26 11:15:28 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/26/2018 09:53:27 ;
+; Start date & time ; 09/26/2018 11:14:53 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; BB_SYSTEM           ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 272774796113278.153797360700348        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 272774796113278.153797849306688        ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; SC_RegIR       ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; CC_ALU         ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; SC_RegFixed    ;
@@ -113,12 +113,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:23     ; 1.0                     ; 581 MB              ; 00:00:55                           ;
-; Fitter               ; 00:00:08     ; 1.0                     ; 1289 MB             ; 00:00:09                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 544 MB              ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 633 MB              ; 00:00:02                           ;
+; Analysis & Synthesis ; 00:00:18     ; 1.0                     ; 582 MB              ; 00:00:38                           ;
+; Fitter               ; 00:00:08     ; 1.0                     ; 1287 MB             ; 00:00:07                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 543 MB              ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 633 MB              ; 00:00:02                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 504 MB              ; 00:00:01                           ;
-; Total                ; 00:00:34     ; --                      ; --                  ; 00:01:08                           ;
+; Total                ; 00:00:31     ; --                      ; --                  ; 00:00:49                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

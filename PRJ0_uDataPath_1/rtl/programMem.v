@@ -1,6 +1,8 @@
-module programMem #(parameter DATAWIDTH_BUS=32)(
+module programMem #(parameter DATAWIDTH_BUS = 32)(
 // ------------- Inputs ---------------
-   BusDirecciones,
+   RD,
+	WR,
+	BusDirecciones,
  
 // ------------ Outputs ---------------
  
@@ -15,6 +17,8 @@ module programMem #(parameter DATAWIDTH_BUS=32)(
 //=======================================================
 //  PORT declarations
 //=======================================================
+input RD;
+input WR;
 input [DATAWIDTH_BUS-1:0] BusDirecciones; 
 output reg [DATAWIDTH_BUS-1:0] BusDatos; 
  
@@ -23,14 +27,18 @@ output reg [DATAWIDTH_BUS-1:0] BusDatos;
 //  REG/WIRE declarations
 //=======================================================
  
- 
+reg [DATAWIDTH_BUS-1:0] BusMemoria;
  
 //=======================================================
 //  Structural coding
 //=======================================================
  always @(*)
  begin
-	case (BusDirecciones)
+ if (RD==0)
+		BusMemoria <= 32'b00000000000000000000000000000000;
+	else
+		BusMemoria <= BusDirecciones; 
+	case (BusMemoria)
 	32'b0000000000000000000100000000000: BusDatos=32'b10000010100000000010000000000001;
 	32'b0000000000000000000100000000001: BusDatos=32'b10000100100000000010000000000001;
 	32'b0000000000000000000100000000010: BusDatos=32'b10000110100000000010000000000000;
@@ -48,6 +56,5 @@ output reg [DATAWIDTH_BUS-1:0] BusDatos;
 	32'b0000000000000000000100000001110: BusDatos=32'b00000000000000000000000000000000;
 	default: BusDatos=32'b00000000000000000000000000000000;
 	endcase
-	end
- 
+end
 endmodule
