@@ -94,7 +94,7 @@ module uDataPath #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELEC
 	wire [DATAWIDTH_MIR_FIELD-1:0] MIR_A_FIELD;
 	wire [DATAWIDTH_MIR_FIELD-1:0] MIR_B_FIELD;
 	wire [DATAWIDTH_MIR_FIELD-1:0] MIR_C_FIELD;
-	wire [2:0] MIR_COND_OUT
+	wire [2:0] MIR_COND_OUT;
 // MUX SELECT
 	wire MUX_SELECT_A;
 	wire MUX_SELECT_B;
@@ -668,10 +668,10 @@ CC_MUX #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_BUS), .DATAWIDTH_IR_SELECTION(5)
 //-------------------------------------------------------
 C_BUS_MUX #(DATAWIDTH_BUS) SC_C_BUS_MUX (
 // port map - connection between master ports and signals/registers 
-	IN_BUS_MEMORY(BUS_MEM_TO_MUX),
-	IN_BUS_ALU(C_BUS_MUX_ALU_In),
-	BUS_OUT(DataBUS_C_In),
-	IN_SELECT(RD_OUT)
+	.IN_BUS_MEMORY(BUS_MEM_TO_MUX),
+	.IN_BUS_ALU(C_BUS_MUX_ALU_In),
+	.BUS_OUT(DataBUS_C_In),
+	.IN_SELECT(RD_OUT)
  );
 //-------------------------------------------------------
 
@@ -712,31 +712,31 @@ SC_RegPSR #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)
 
 //-------------------------------------------------------
 //MIR
-MIR #(DATAWITH_MIR_BUS, DATAWIDTH_MIR_FIELD, DATAWIDTH_ALU_SELECTION, 3, 11) SC_MIR (
+MIR #(41, 6, 4, 3, 11) SC_MIR (
 // port map - connection between master ports and signals/registers   
-	MIR_CLOCK_50(uDataPath_CLOCK_50),
-	MIR_Microinstruccion_IN(BUS_ROM_TO_MIR),
-	MIR_A_OUT(MIR_A_FIELD),
-	MIR_AMUX_OUT(MUX_SELECT_A),
-	MIR_B_OUT(MIR_B_FIELD),
-	MIR_BMUX_OUT(MUX_SELECT_B),
-	MIR_C_OUT(MUX_SELECT_C),
-	MIR_CMUX_OUT(MUX_SELECT_C),
-	MIR_RD_OUT(RD_OUT),
-	MIR_WR_OUT(WR_OUT),
-	MIR_ALU_OUT(uDataPath_ALUSelection),
-	MIR_COND_OUT(MIR_COND_OUT),
-	MIR_JUMP_ADDR_OUT(JUMP_TO_ADDRESS_MUX)
+	.MIR_CLOCK_50(uDataPath_CLOCK_50),
+	.MIR_Microinstruccion_IN(BUS_ROM_TO_MIR),
+	.MIR_A_OUT(MIR_A_FIELD),
+	.MIR_AMUX_OUT(MUX_SELECT_A),
+	.MIR_B_OUT(MIR_B_FIELD),
+	.MIR_BMUX_OUT(MUX_SELECT_B),
+	.MIR_C_OUT(MUX_SELECT_C),
+	.MIR_CMUX_OUT(MUX_SELECT_C),
+	.MIR_RD_OUT(RD_OUT),
+	.MIR_WR_OUT(WR_OUT),
+	.MIR_ALU_OUT(uDataPath_ALUSelection),
+	.MIR_COND_OUT(MIR_COND_OUT),
+	.MIR_JUMP_ADDR_OUT(JUMP_TO_ADDRESS_MUX)
 	
 );
 //-------------------------------------------------------
 
 //-------------------------------------------------------
 //ROM
-MI_ROM #(11, DATAWITH_MIR_BUS) SC_ROM(
+MI_ROM #(11, 41) SC_ROM(
 // port map - connection between master ports and signals/registers   
-	BUS_IN(ADRESS_MUX_OUT),
-	BUS_OUT(BUS_ROM_TO_MIR)
+	.BUS_IN(ADRESS_MUX_OUT),
+	.BUS_OUT(BUS_ROM_TO_MIR)
 );
 //-------------------------------------------------------
 
@@ -744,49 +744,48 @@ MI_ROM #(11, DATAWITH_MIR_BUS) SC_ROM(
 // CS_ADDRESS_MUS
 CS_Address_MUX #(11,8,2) SC_ADDRESS_MUX (
 	//////////// INPUTS //////////
-	CS_Addres_MUX_Next_IN(CSAI_Direccion_OUT),
-	CS_Addres_MUX_Jump_IN(JUMP_TO_ADDRESS_MUX),
-	CS_Addres_MUX_Decode_IN({RegIR_OP,RegIR_OP3}),
-	CS_Addres_MUX_Selection_IN(CBL_TO_ADRESS_MUX),
+	.CS_Addres_MUX_Next_IN(CSAI_Direccion_OUT),
+	.CS_Addres_MUX_Jump_IN(JUMP_TO_ADDRESS_MUX),
+	.CS_Addres_MUX_Decode_IN({RegIR_OP,RegIR_OP3}),
+	.CS_Addres_MUX_Selection_IN(CBL_TO_ADRESS_MUX),
 	//////////// OUTPUTS //////////
-   CS_Addres_MUX_Direccion_OUT(ADRESS_MUX_OUT)
+   .CS_Addres_MUX_Direccion_OUT(ADRESS_MUX_OUT)
 );
 //-------------------------------------------------------
 
 //-------------------------------------------------------
 // CSAI
-CSAI #(parameter Direction_BUS_WIDTH = 11) SC_CSAI (
+CSAI #(11) SC_CSAI (
 	//////////// INPUTS //////////
-   CSAI_CLOCK_50_ACK(uDataPath_CLOCK_50),
-	CSAI_Direccion_IN(ADRESS_MUX_OUT),
+   .CSAI_CLOCK_50_ACK(uDataPath_CLOCK_50),
+	.CSAI_Direccion_IN(ADRESS_MUX_OUT),
 	//////////// OUTPUTS //////////
-   CSAI_Direccion_OUT(CSAI_Direccion_OUT)
+   .CSAI_Direccion_OUT(CSAI_Direccion_OUT)
 );
 //-------------------------------------------------------
 
 //-------------------------------------------------------
 // CBL
-CBL #(parameter FLAGs_BUS_WIDTH = 4, parameter Cond_BUS_WIDTH = 3) SC_CBL (
+CBL #(4, 3) SC_CBL (
    //////////// CLOCK //////////
 	//////////// INPUTS //////////
-	CBL_IR13_IN(RegIR_BIT13),
-	CBL_FLAGs_IN({PSR_Negative_InHigh,PSR_Zero_InHigh,PSR_Overflow_InHigh,PSR_Carry_InHigh}),
-	CBL_Cond_IN(MIR_COND_OUT),
+	.CBL_IR13_IN(RegIR_BIT13),
+	.CBL_FLAGs_IN({PSR_Negative_InHigh,PSR_Zero_InHigh,PSR_Overflow_InHigh,PSR_Carry_InHigh}),
+	.CBL_Cond_IN(MIR_COND_OUT),
 	//////////// OUTPUTS //////////
-   CBL_MUX_OUT(CBL_TO_ADRESS_MUX)
+   .CBL_MUX_OUT(CBL_TO_ADRESS_MUX)
 );
 //-------------------------------------------------------
 
 //-------------------------------------------------------
 // MEMORY
-programMem #(DATAWIDTH_BUS) PROGRAM_MEM(
+programMem #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) PROGRAM_MEM(
 // ------------- Inputs ---------------
-   BusDirecciones(DataBUS_A_Out)
+   .BusDirecciones(DataBUS_A_Out),
  
 // ------------ Outputs ---------------
  
-	BusDatos(BUS_MEM_TO_MUX)
+	.BusDatos(BUS_MEM_TO_MUX)
 );
-endmodule
 endmodule
 

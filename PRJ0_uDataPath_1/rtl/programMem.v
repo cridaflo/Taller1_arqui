@@ -1,6 +1,6 @@
 module programMem #(parameter DATAWIDTH_BUS=32)(
 // ------------- Inputs ---------------
-   BusDirecciones
+   BusDirecciones,
  
 // ------------ Outputs ---------------
  
@@ -16,7 +16,7 @@ module programMem #(parameter DATAWIDTH_BUS=32)(
 //  PORT declarations
 //=======================================================
 input [DATAWIDTH_BUS-1:0] BusDirecciones; 
-output [DATAWIDTH_BUS-1:0] BusDatos; 
+output reg [DATAWIDTH_BUS-1:0] BusDatos; 
  
  
 //=======================================================
