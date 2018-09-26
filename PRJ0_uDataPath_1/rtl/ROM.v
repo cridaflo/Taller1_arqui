@@ -1,18 +1,18 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module uControl #(parameter MIR_BUS_WIDTH = 41, parameter Direction_BUS_WIDTH = 11)(
+module ROM #(parameter MIR_BUS_WIDTH = 41, parameter Direction_BUS_WIDTH = 11)(
 	//////////// CLOCK //////////
 
 	//////////// INPUTS //////////
-   ROM_Direccion_IN
+   ROM_Direccion_IN,
 	//////////// OUTPUTS //////////
    ROM_Microinstruccion_OUT
 );
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
-   output [MIR_BUS_WIDTH-1:0]ROM_Microinstruccion_OUT;
+   output reg [MIR_BUS_WIDTH-1:0]ROM_Microinstruccion_OUT;
 	input [Direction_BUS_WIDTH-1:0]ROM_Direccion_IN;
 //=======================================================
 //  PORT declarations
@@ -25,6 +25,7 @@ module uControl #(parameter MIR_BUS_WIDTH = 41, parameter Direction_BUS_WIDTH = 
 //=======================================================
 //  Structural coding
 //=======================================================
+initial ROM_Microinstruccion_OUT = 41'b10010100000000000000100101001111111111111;
 always@(*)
-   assign ROM_Microinstruccion_OUT = 52483572515;
+   ROM_Microinstruccion_OUT = 41'b10010100000000000000100101001111111111111;
 endmodule

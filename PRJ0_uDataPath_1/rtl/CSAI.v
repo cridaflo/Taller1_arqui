@@ -25,6 +25,7 @@ module CSAI #(parameter Direction_BUS_WIDTH = 11)(
 //=======================================================
 //  Structural coding
 //=======================================================
+initial CSAI_Direccion_OUT = 8'b00000000;
 always@(negedge CSAI_CLOCK_50_ACK)
-	assign CSAI_Direccion_OUT = CSAI_Direccion_IN + 1;
+	CSAI_Direccion_OUT = CSAI_Direccion_IN + 1'b1;
 endmodule

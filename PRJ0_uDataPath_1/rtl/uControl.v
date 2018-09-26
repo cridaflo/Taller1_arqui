@@ -1,13 +1,13 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module uControl #()(
+module uControl(
 	//////////// CLOCK //////////
 	uControl_CLOCK_50,
 	//////////// INPUTS //////////
    uControl_FLAGs_IN,
 	uControl_IR13_IN,
-	uControl_Decode,
+	uControl_Decode_IN,
 	//////////// OUTPUTS //////////
    uControl_A_OUT,
 	uControl_AMUX_OUT,
@@ -42,10 +42,10 @@ module uControl #()(
 	output uControl_RD_OUT;
 	output uControl_WR_OUT;
 	output [ALU_BUS_WIDTH-1:0]uControl_ALU_OUT;
-	input [Decode_BUS_WIDTH-1:0]uControl_Decode;
-   input [FLAGs_BUS_WIDTH-1:0]uControl_FLAGs_IN,
-	input uControl_CLOCK_50,
-	input uControl_IR13_IN,
+	input [Decode_BUS_WIDTH-1:0]uControl_Decode_IN;
+   input [FLAGs_BUS_WIDTH-1:0]uControl_FLAGs_IN;
+	input uControl_CLOCK_50;
+	input uControl_IR13_IN;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
@@ -62,12 +62,12 @@ CSAI #(.Direction_BUS_WIDTH(Direction_BUS_WIDTH)) CSAI_0 (
 	.CSAI_Direccion_IN(uControl_Direccion),
    .CSAI_Direccion_OUT(uControl_Direccion_Next)
 );
-CS_Address_MUX #(.Direction_BUS_WIDTH(Direction_BUS_WIDTH), .Decode_BUS_WIDTH(Decode_BUS_WIDTH), .Selection_BUS_WIDTH(Selection_BUS_WIDTH)) CS_Address_MUX_0(
+CS_Address_MUX #(.Direction_BUS_WIDTH(Direction_BUS_WIDTH), .Decode_BUS_WIDTH(Decode_BUS_WIDTH), .Selection_BUS_WIDTH(Selection_BUS_WIDTH)) CS_Address_MUX_0 (
 	.CS_Addres_MUX_Next_IN(uControl_Direccion_Next),
 	.CS_Addres_MUX_Jump_IN(uControl_JUMP_ADDR),
-	.CS_Addres_MUX_Decode_IN(Decode_BUS_WIDTH),
+	.CS_Addres_MUX_Decode_IN(uControl_Decode_IN),
 	.CS_Addres_MUX_Selection_IN(uControl_CBL),
-   .CS_Addres_MUX_Direccion_OUT(uControl_Direccion)   
+   .CS_Addres_MUX_Direccion_OUT(uControl_Direccion)  	 
 );
 ROM #(.MIR_BUS_WIDTH(MIR_BUS_WIDTH), .Direction_BUS_WIDTH(Direction_BUS_WIDTH)) ROM_0(
    .ROM_Direccion_IN(uControl_Direccion),

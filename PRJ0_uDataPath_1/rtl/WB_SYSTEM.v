@@ -95,7 +95,7 @@ module WB_SYSTEM #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELEC
 	.uDataPath_MUXSelectionBUSB_Out(MUX_SelectionBUSBCONTROL_Wire),
 	.uDataPath_ALUSelection_Out(ALU_SelectionCONTROL_Wire)
 );
-uControl uControl_1(
+uControl #() uControl_1(
 	.uControl_CLOCK_50(WB_SYSTEM_CLOCK_50),
    .uControl_FLAGs_IN,
 	.uControl_IR13_IN,
