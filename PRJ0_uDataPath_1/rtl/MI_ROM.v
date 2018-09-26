@@ -1,4 +1,4 @@
-module MI_ROM #(parameter DATA_BUS_IN = 11, parameter DATA_BUS_OUT = 44)(
+module MI_ROM #(parameter DATA_BUS_IN = 11, parameter DATA_BUS_OUT = 41)(
 BUS_IN,
 BUS_OUT
 );

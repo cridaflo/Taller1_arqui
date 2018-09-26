@@ -689,5 +689,47 @@ SC_RegPSR #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)
 	.uDataPath_Carry_InHigh(uDataPath_Carry_InHigh)
 	
 );
+//-------------------------------------------------------
+
+//-------------------------------------------------------
+//MIR
+MIR #(DATAWITH_MIR_BUS, DATAWIDTH_MIR_FIELD, DATAWIDTH_ALU_SELECTION, COND_BUS_WIDTH, JUMP_ADDR_BUS_WIDTH) SC_MIR (
+	MIR_CLOCK_50(uDataPath_CLOCK_50),
+	MIR_Microinstruccion_IN(BUS_ROM_TO_MIR),
+	MIR_A_OUT(MIR_A_FIELD),
+	MIR_AMUX_OUT(MUX_SELECT_A),
+	MIR_B_OUT(MIR_B_FIELD),
+	MIR_BMUX_OUT(MUX_SELECT_B),
+	MIR_C_OUT(MUX_SELECT_C),
+	MIR_CMUX_OUT(MUX_SELECT_C),
+	MIR_RD_OUT,
+	MIR_WR_OUT,
+	MIR_ALU_OUT(uDataPath_ALUSelection),
+	MIR_COND_OUT,
+	MIR_JUMP_ADDR_OUT
+	
+);
+//-------------------------------------------------------
+
+//-------------------------------------------------------
+//ROM
+MI_ROM #(JUMP_ADDR_BUS_WIDTH, DATAWITH_MIR_BUS) SC_ROM(
+BUS_IN(),
+BUS_OUT(BUS_ROM_TO_MIR)
+);
+//-------------------------------------------------------
+
+//-------------------------------------------------------
+// CS_ADDRESS_MUS
+CS_Address_MUX #(parameter Direction_BUS_WIDTH = 11, parameter Decode_BUS_WIDTH = 8, parameter Selection_BUS_WIDTH = 2)(
+	//////////// INPUTS //////////
+	CS_Addres_MUX_Next_IN,
+	CS_Addres_MUX_Jump_IN,
+	CS_Addres_MUX_Decode_IN,
+	CS_Addres_MUX_Selection_IN,
+	//////////// OUTPUTS //////////
+   CS_Addres_MUX_Direccion_OUT()
+);
+endmodule
 endmodule
 
