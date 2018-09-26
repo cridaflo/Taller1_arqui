@@ -24,7 +24,7 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module uDataPath #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELECTION=6, parameter DATAWIDTH_ALU_SELECTION=4, parameter DATA_REGFIXED_INIT_0=32'h00000000, parameter DATA_REGGEN_INIT_0=32'h00000000,parameter DATA_REGPC_INIT=32'h00000800, parameter DATAWIDTH_DECODER_OUT=38, parameter DATAWIDTH_MUX_SELECTION=6, parameter DATAWIDTH_MIR_FIELD=6)(
+module uDataPath #(parameter MIR_BUS_WIDTH = 41, parameter Direction_BUS_WIDTH = 11, parameter Decode_BUS_WIDTH = 8, parameter Selection_BUS_WIDTH = 2, parameter REG_BUS_WIDTH = 6, parameter COND_BUS_WIDTH = 3, parameter FLAGs_BUS_WIDTH = 4, parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELECTION=6, parameter DATAWIDTH_ALU_SELECTION=4, parameter DATA_REGFIXED_INIT_0=32'h00000000, parameter DATA_REGGEN_INIT_0=32'h00000000,parameter DATA_REGPC_INIT=32'h00000800, parameter DATAWIDTH_DECODER_OUT=38, parameter DATAWIDTH_MUX_SELECTION=6, parameter DATAWIDTH_MIR_FIELD=6)(
 	//////////// OUTPUTS //////////
 	PSR_Overflow_InHigh,
 	PSR_Carry_InHigh,
@@ -62,6 +62,7 @@ module uDataPath #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELEC
 	output	RegIR_BIT13;
 	output	RegIR_RS2;
 	output	RegR1;
+	
 	//////////// INPUTS //////////
 	input 	uDataPath_CLOCK_50;
 	input 	uDataPath_Reset_InHigh;
@@ -85,6 +86,7 @@ module uDataPath #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELEC
 // ARCHITECTURE BUSES WIRES - INPUT
 	wire [DATAWIDTH_BUS-1:0] DataBUS_A_In;
 	wire [DATAWIDTH_BUS-1:0] DataBUS_B_In;
+	wire [DATAWIDTH_BUS-1:0] DataBUS_C_In;
 	wire [DATAWIDTH_BUS-1:0] C_BUS_MUX_ALU_In;
 // ARCHITECTURE BUSES WIRES - OUTPUT
 	wire [DATAWIDTH_BUS-1:0] DataBUS_A_Out;
@@ -104,14 +106,18 @@ module uDataPath #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_DECODER_SELEC
 	wire [DATAWIDTH_DECODER_SELECTION-1:0] MUX_TO_DECODER_B;
 	wire [DATAWIDTH_DECODER_SELECTION-1:0] MUX_TO_DECODER_C;
 // JUMP WIRE
-	wire [11-1:0] JUMP_TO_ADDRESS_MUX;
+	wire [Direction_BUS_WIDTH-1:0] JUMP_TO_ADDRESS_MUX;
 // MIR FLAGS
+   wire [MIR_BUS_WIDTH-1:0]BUS_ROM_TO_MIR;
 	wire RD_OUT;
 	wire WR_OUT;
 // ROM
-	wire [10:0] ADRESS_MUX_OUT;
+	wire [Direction_BUS_WIDTH-1:0] ADRESS_MUX_OUT;
 // CBL
-   wire [1:0] CBL_TO_ADRESS_MUX;
+   wire [Selection_BUS_WIDTH-1:0] CBL_TO_ADRESS_MUX;
+	wire [Direction_BUS_WIDTH-1:0] CSAI_Direccion_OUT;
+// BUS MUX
+	wire [DATAWIDTH_BUS-1:0]BUS_MEM_TO_MUX;
 //=======================================================
 //  Structural coding
 //=======================================================
@@ -712,10 +718,11 @@ SC_RegPSR #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)
 
 //-------------------------------------------------------
 //MIR
-MIR #(41, 6, 4, 3, 11) SC_MIR (
+MIR #(.MIR_BUS_WIDTH(MIR_BUS_WIDTH), .REG_BUS_WIDTH(REG_BUS_WIDTH), .ALU_BUS_WIDTH(DATAWIDTH_ALU_SELECTION), .COND_BUS_WIDTH(COND_BUS_WIDTH), .JUMP_ADDR_BUS_WIDTH(Direction_BUS_WIDTH)) SC_MIR (
 // port map - connection between master ports and signals/registers   
 	.MIR_CLOCK_50(uDataPath_CLOCK_50),
 	.MIR_Microinstruccion_IN(BUS_ROM_TO_MIR),
+	.SC_RegGENERAL_Reset_InHigh(uDataPath_Reset_InHigh),
 	.MIR_A_OUT(MIR_A_FIELD),
 	.MIR_AMUX_OUT(MUX_SELECT_A),
 	.MIR_B_OUT(MIR_B_FIELD),
@@ -733,7 +740,7 @@ MIR #(41, 6, 4, 3, 11) SC_MIR (
 
 //-------------------------------------------------------
 //ROM
-MI_ROM #(11, 41) SC_ROM(
+ROM #(.DATA_BUS_IN(Direction_BUS_WIDTH), .DATA_BUS_OUT(MIR_BUS_WIDTH)) SC_ROM(
 // port map - connection between master ports and signals/registers   
 	.BUS_IN(ADRESS_MUX_OUT),
 	.BUS_OUT(BUS_ROM_TO_MIR)
@@ -742,7 +749,7 @@ MI_ROM #(11, 41) SC_ROM(
 
 //-------------------------------------------------------
 // CS_ADDRESS_MUS
-CS_Address_MUX #(11,8,2) SC_ADDRESS_MUX (
+CS_Address_MUX #(.Direction_BUS_WIDTH(Direction_BUS_WIDTH), .Decode_BUS_WIDTH(Decode_BUS_WIDTH), .Selection_BUS_WIDTH(Selection_BUS_WIDTH)) SC_ADDRESS_MUX (
 	//////////// INPUTS //////////
 	.CS_Addres_MUX_Next_IN(CSAI_Direccion_OUT),
 	.CS_Addres_MUX_Jump_IN(JUMP_TO_ADDRESS_MUX),
@@ -755,7 +762,7 @@ CS_Address_MUX #(11,8,2) SC_ADDRESS_MUX (
 
 //-------------------------------------------------------
 // CSAI
-CSAI #(11) SC_CSAI (
+CSAI #(.Direction_BUS_WIDTH(Direction_BUS_WIDTH)) SC_CSAI (
 	//////////// INPUTS //////////
    .CSAI_CLOCK_50_ACK(uDataPath_CLOCK_50),
 	.CSAI_Direccion_IN(ADRESS_MUX_OUT),
@@ -766,7 +773,7 @@ CSAI #(11) SC_CSAI (
 
 //-------------------------------------------------------
 // CBL
-CBL #(4, 3) SC_CBL (
+CBL #(.FLAGs_BUS_WIDTH(FLAGs_BUS_WIDTH), .Cond_BUS_WIDTH(COND_BUS_WIDTH)) SC_CBL (
    //////////// CLOCK //////////
 	//////////// INPUTS //////////
 	.CBL_IR13_IN(RegIR_BIT13),

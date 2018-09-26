@@ -6,7 +6,7 @@ set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE22F17C6
 set_global_assignment -name TOP_LEVEL_ENTITY "BB_SYSTEM"
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 12.0
-set_global_assignment -name LAST_QUARTUS_VERSION "16.1.0 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.0.0 Lite Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:35:02 FEBRUARY 19,2018"
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 set_global_assignment -name DEVICE_FILTER_PIN_COUNT 256
@@ -262,6 +262,7 @@ set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/SC_RegGENERA
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/SC_RegFixed.vt -section_id SC_RegFixed
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/SC_RegIR.vt -section_id SC_RegIR
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/CC_ALU.vt -section_id CC_ALU
+set_global_assignment -name VERILOG_FILE rtl/ROM.v
 set_global_assignment -name VERILOG_FILE rtl/programMem.v
 set_global_assignment -name VERILOG_FILE rtl/MIR.v
 set_global_assignment -name VERILOG_FILE rtl/CSAI.v
@@ -281,7 +282,6 @@ set_global_assignment -name SDC_FILE BB_SYSTEM.SDC
 set_global_assignment -name VERILOG_FILE rtl/SC_RegIR.v
 set_global_assignment -name VERILOG_TEST_BENCH_FILE simulation/modelsim/CC_ALU.vt
 set_global_assignment -name VERILOG_FILE rtl/SC_RegMIR.v
-set_global_assignment -name VERILOG_FILE rtl/MI_ROM.v
 set_global_assignment -name VERILOG_FILE rtl/C_BUS_MUX.v
 set_global_assignment -name VERILOG_FILE rtl/SC_RegPSR.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
