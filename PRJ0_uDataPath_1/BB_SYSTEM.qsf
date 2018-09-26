@@ -281,3 +281,4 @@ set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_
 set_global_assignment -name VERILOG_FILE rtl/SC_RegMIR.v
 set_global_assignment -name VERILOG_FILE rtl/MI_ROM.v
 set_global_assignment -name VERILOG_FILE rtl/C_BUS_MUX.v
+set_global_assignment -name VERILOG_FILE rtl/prograMem.v
