@@ -56,6 +56,10 @@ wire [31:0]  CC_MUX_REG_R2;
 wire [31:0]  CC_MUX_REG_R3;
 wire [31:0]  CC_MUX_REG_R4;
 wire [31:0]  CC_MUX_REG_R32;
+wire [31:0]  CC_MUX_REG_R33;
+wire [31:0] C_BUS_MUX_ALU_In;
+wire [31:0] DataBUS_A_Out;
+wire [31:0] DataBUS_B_Out;
 // assign statements (if any)                          
 integer i;
 uDataPath #(41, 11, 8, 2, 6, 3, 4, 32, 6, 4, 32'h00000000, 32'h00000000,32'h00000800, 38,6,6) uDataPath_0 (
@@ -81,6 +85,10 @@ uDataPath #(41, 11, 8, 2, 6, 3, 4, 32, 6, 4, 32'h00000000, 32'h00000000,32'h0000
 	.CC_MUX_REG_R2(CC_MUX_REG_R2),
 	.CC_MUX_REG_R3(CC_MUX_REG_R3),
 	.CC_MUX_REG_R4(CC_MUX_REG_R4),
+	.CC_MUX_REG_R33(CC_MUX_REG_R33),
+	.C_BUS_MUX_ALU_In(C_BUS_MUX_ALU_In),
+	.DataBUS_A_Out(DataBUS_A_Out),
+	.DataBUS_B_Out(DataBUS_B_Out),
 	//////////// INPUTS //////////
 	.uDataPath_CLOCK_50(CLOCK_50),
 	.uDataPath_Reset_InHigh(RESET)

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BB_SYSTEM
-Thu Sep 27 07:40:35 2018
+Thu Sep 27 18:45:08 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -75,12 +75,11 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
  67. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CSAI:SC_CSAI
  68. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CBL:SC_CBL
  69. Parameter Settings for User Entity Instance: WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|programMem:PROGRAM_MEM
- 70. Port Connectivity Checks: "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegPSR:SC_RegGENERAL_psr"
- 71. Port Connectivity Checks: "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0"
- 72. Post-Synthesis Netlist Statistics for Top Partition
- 73. Elapsed Time Per Partition
- 74. Analysis & Synthesis Messages
- 75. Analysis & Synthesis Suppressed Messages
+ 70. Port Connectivity Checks: "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0"
+ 71. Post-Synthesis Netlist Statistics for Top Partition
+ 72. Elapsed Time Per Partition
+ 73. Analysis & Synthesis Messages
+ 74. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -107,7 +106,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Sep 27 07:40:35 2018       ;
+; Analysis & Synthesis Status        ; Successful - Thu Sep 27 18:45:08 2018       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
@@ -1019,15 +1018,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegPSR:SC_RegGENERAL_psr" ;
-+------------------------+-------+----------+-----------------------------------------------------------+
-; Port                   ; Type  ; Severity ; Details                                                   ;
-+------------------------+-------+----------+-----------------------------------------------------------+
-; SC_RegPSR_Write_InHigh ; Input ; Info     ; Stuck at GND                                              ;
-+------------------------+-------+----------+-----------------------------------------------------------+
-
-
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0"                                                                                                   ;
 +--------------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------+
@@ -1057,9 +1047,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ADRESS_MUX_OUT           ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                     ;
 ; Decoder_DataWrite_Wire_C ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                     ;
 ; CC_MUX_REG_R32           ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                     ;
+; CC_MUX_REG_R33           ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                     ;
 ; MUX_TO_DECODER_C         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                     ;
 ; MIR_C_FIELD              ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                     ;
 ; BUS_ROM_TO_MIR           ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                     ;
+; C_BUS_MUX_ALU_In         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                     ;
+; DataBUS_A_Out            ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                     ;
+; DataBUS_B_Out            ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                     ;
 +--------------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1093,7 +1087,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Thu Sep 27 07:40:24 2018
+    Info: Processing started: Thu Sep 27 18:44:56 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/rom.v
@@ -1145,27 +1139,27 @@ Info (12127): Elaborating entity "BB_SYSTEM" for the top level hierarchy
 Info (12128): Elaborating entity "WB_SYSTEM" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 78
 Warning (10034): Output port "WB_SYSTEM_DataBUSDisplay_Out" at WB_SYSTEM.v(41) has no driver File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v Line: 41
 Info (12128): Elaborating entity "uDataPath" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v Line: 92
-Info (12128): Elaborating entity "SC_RegGENERAL" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r1" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 188
-Info (12128): Elaborating entity "SC_RegGENERAL" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_pc" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 436
-Info (12128): Elaborating entity "SC_RegIR" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegIR:SC_RegIR_ir" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 483
-Info (12128): Elaborating entity "SC_RegFIXED" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 493
-Info (12128): Elaborating entity "CC_DECODER" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_DECODER:CC_DECODER_A" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 502
-Info (12128): Elaborating entity "CC_MUX_REG" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_MUX_REG:CC_MUX_REG_A" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 561
+Info (12128): Elaborating entity "SC_RegGENERAL" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_r1" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 194
+Info (12128): Elaborating entity "SC_RegGENERAL" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegGENERAL:SC_RegGENERAL_pc" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 442
+Info (12128): Elaborating entity "SC_RegIR" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegIR:SC_RegIR_ir" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 489
+Info (12128): Elaborating entity "SC_RegFIXED" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegFIXED:SC_RegFIXED_r0" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 499
+Info (12128): Elaborating entity "CC_DECODER" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_DECODER:CC_DECODER_A" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 508
+Info (12128): Elaborating entity "CC_MUX_REG" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_MUX_REG:CC_MUX_REG_A" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 567
 Warning (10762): Verilog HDL Case Statement warning at CC_MUX_REG.v(105): can't check case statement for completeness because the case expression has too many possible states File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX_REG.v Line: 105
 Info (10264): Verilog HDL Case Statement information at CC_MUX_REG.v(105): all case item expressions in this case statement are onehot File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX_REG.v Line: 105
-Info (12128): Elaborating entity "CC_BUS" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_BUS:CC_BUS_A" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 616
-Info (12128): Elaborating entity "CC_MUX" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_MUX:CC_MUX_A" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 642
-Info (12128): Elaborating entity "C_BUS_MUX" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|C_BUS_MUX:SC_C_BUS_MUX" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 670
-Info (12128): Elaborating entity "CC_ALU" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_ALU:CC_ALU_u0" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 686
+Info (12128): Elaborating entity "CC_BUS" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_BUS:CC_BUS_A" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 622
+Info (12128): Elaborating entity "CC_MUX" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_MUX:CC_MUX_A" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 648
+Info (12128): Elaborating entity "C_BUS_MUX" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|C_BUS_MUX:SC_C_BUS_MUX" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 676
+Info (12128): Elaborating entity "CC_ALU" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CC_ALU:CC_ALU_u0" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 692
 Warning (10036): Verilog HDL or VHDL warning at CC_ALU.v(58): object "addition0" assigned a value but never read File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_ALU.v Line: 58
 Warning (10036): Verilog HDL or VHDL warning at CC_ALU.v(59): object "addition1" assigned a value but never read File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_ALU.v Line: 59
-Info (12128): Elaborating entity "SC_RegPSR" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegPSR:SC_RegGENERAL_psr" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 705
-Info (12128): Elaborating entity "MIR" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|MIR:SC_MIR" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 727
-Info (12128): Elaborating entity "ROM" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|ROM:SC_ROM" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 736
-Info (12128): Elaborating entity "CS_Address_MUX" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CS_Address_MUX:SC_ADDRESS_MUX" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 749
-Info (12128): Elaborating entity "CSAI" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CSAI:SC_CSAI" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 760
-Info (12128): Elaborating entity "CBL" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CBL:SC_CBL" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 773
-Info (12128): Elaborating entity "programMem" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|programMem:PROGRAM_MEM" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 786
+Info (12128): Elaborating entity "SC_RegPSR" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|SC_RegPSR:SC_RegGENERAL_psr" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 711
+Info (12128): Elaborating entity "MIR" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|MIR:SC_MIR" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 733
+Info (12128): Elaborating entity "ROM" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|ROM:SC_ROM" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 742
+Info (12128): Elaborating entity "CS_Address_MUX" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CS_Address_MUX:SC_ADDRESS_MUX" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 755
+Info (12128): Elaborating entity "CSAI" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CSAI:SC_CSAI" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 766
+Info (12128): Elaborating entity "CBL" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|CBL:SC_CBL" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 779
+Info (12128): Elaborating entity "programMem" for hierarchy "WB_SYSTEM:WB_SYSTEM_u0|uDataPath:uDataPath_u0|programMem:PROGRAM_MEM" File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v Line: 792
 Warning (10762): Verilog HDL Case Statement warning at programMem.v(41): can't check case statement for completeness because the case expression has too many possible states File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/programMem.v Line: 41
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
@@ -1211,10 +1205,10 @@ Info (21057): Implemented 34 device resources after synthesis - the final resour
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 32 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
-    Info: Peak virtual memory: 4748 megabytes
-    Info: Processing ended: Thu Sep 27 07:40:35 2018
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Peak virtual memory: 4751 megabytes
+    Info: Processing ended: Thu Sep 27 18:45:08 2018
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:26
 
 
 +------------------------------------------+

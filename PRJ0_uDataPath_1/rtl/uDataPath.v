@@ -44,9 +44,13 @@ module uDataPath #(parameter MIR_BUS_WIDTH = 41, parameter Direction_BUS_WIDTH =
 	ADRESS_MUX_OUT,
 	Decoder_DataWrite_Wire_C,
 	CC_MUX_REG_R32,
+	CC_MUX_REG_R33,
 	MUX_TO_DECODER_C,
 	MIR_C_FIELD,
 	BUS_ROM_TO_MIR,
+	C_BUS_MUX_ALU_In,
+	DataBUS_A_Out,
+	DataBUS_B_Out,
 	//////////// INPUTS //////////
 	uDataPath_CLOCK_50,
 	uDataPath_Reset_InHigh
@@ -80,12 +84,18 @@ module uDataPath #(parameter MIR_BUS_WIDTH = 41, parameter Direction_BUS_WIDTH =
 	
 	output [37:0]Decoder_DataWrite_Wire_C;
 	output [DATAWIDTH_BUS-1:0]CC_MUX_REG_R32;
+	output [DATAWIDTH_BUS-1:0]CC_MUX_REG_R33;
 	
 	output [5:0]MUX_TO_DECODER_C;
 	
 	output [5:0]MIR_C_FIELD;
 	
 	output [40:0]BUS_ROM_TO_MIR;
+	
+	output [DATAWIDTH_BUS-1:0] C_BUS_MUX_ALU_In;
+	
+	output [DATAWIDTH_BUS-1:0]DataBUS_A_Out;
+	output [DATAWIDTH_BUS-1:0]DataBUS_B_Out;
 	
 
 	//////////// INPUTS //////////
@@ -111,10 +121,7 @@ module uDataPath #(parameter MIR_BUS_WIDTH = 41, parameter Direction_BUS_WIDTH =
 	wire [DATAWIDTH_BUS-1:0] DataBUS_A_In;
 	wire [DATAWIDTH_BUS-1:0] DataBUS_B_In;
 	wire [DATAWIDTH_BUS-1:0] DataBUS_C_In;
-	wire [DATAWIDTH_BUS-1:0] C_BUS_MUX_ALU_In;
 // ARCHITECTURE BUSES WIRES - OUTPUT
-	wire [DATAWIDTH_BUS-1:0] DataBUS_A_Out;
-	wire [DATAWIDTH_BUS-1:0] DataBUS_B_Out;
 	wire [DATAWIDTH_BUS-1:0] DataBUS_C_Out;
 // MIR REGISTER
 	wire [DATAWIDTH_MIR_FIELD-1:0] MIR_A_FIELD;
@@ -167,7 +174,6 @@ module uDataPath #(parameter MIR_BUS_WIDTH = 41, parameter Direction_BUS_WIDTH =
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R29;
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R30;
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R31;
-	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R33;
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R34;
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R35;
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R36;
@@ -696,7 +702,7 @@ SC_RegPSR #(.DATAWIDTH_BUS(DATAWIDTH_BUS), .DATA_REGGEN_INIT(DATA_REGGEN_INIT_0)
 	.PSR_Carry_InHigh(PSR_Carry_InHigh),
 	.SC_RegPSR_CLOCK_50(uDataPath_CLOCK_50),
 	.SC_RegPSR_Reset_InHigh(uDataPath_Reset_InHigh),
-	.SC_RegPSR_Write_InHigh(~(DATAWIDTH_ALU_SELECTION[DATAWIDTH_ALU_SELECTION-1] | DATAWIDTH_ALU_SELECTION[DATAWIDTH_ALU_SELECTION-2])),
+	.SC_RegPSR_Write_InHigh(~(uDataPath_ALUSelection[DATAWIDTH_ALU_SELECTION-1] | uDataPath_ALUSelection[DATAWIDTH_ALU_SELECTION-2])),
 	.uDataPath_Negative_InHigh(uDataPath_Negative_InHigh),
 	.uDataPath_Zero_InHigh(uDataPath_Zero_InHigh),
 	.uDataPath_Overflow_InHigh(uDataPath_Overflow_InHigh),

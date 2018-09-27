@@ -34,13 +34,13 @@ always@(*)
 	begin
 	   case (CBL_Cond_IN)
 		3'b000: CBL_MUX_OUT = Next;
-		3'b001: if(CBL_FLAGs_IN[3] == 1'b1) CBL_MUX_OUT = Jump;
+		3'b001: if(CBL_FLAGs_IN[0] == 1'b1) CBL_MUX_OUT = Jump;
 		        else CBL_MUX_OUT = Next;
-		3'b010: if(CBL_FLAGs_IN[2] == 1'b1) CBL_MUX_OUT = Jump;
+		3'b010: if(CBL_FLAGs_IN[1] == 1'b1) CBL_MUX_OUT = Jump;
 		        else CBL_MUX_OUT = Next;
-		3'b011: if(CBL_FLAGs_IN[1] == 1'b1) CBL_MUX_OUT = Jump;
+		3'b011: if(CBL_FLAGs_IN[2] == 1'b1) CBL_MUX_OUT = Jump;
 		        else CBL_MUX_OUT = Next;
-		3'b100: if(CBL_FLAGs_IN[0] == 1'b1) CBL_MUX_OUT = Jump;
+		3'b100: if(CBL_FLAGs_IN[3] == 1'b1) CBL_MUX_OUT = Jump;
 		        else CBL_MUX_OUT = Next;
 		3'b101: if(CBL_IR13_IN == 1'b1) CBL_MUX_OUT = Jump;
 		        else CBL_MUX_OUT = Next;

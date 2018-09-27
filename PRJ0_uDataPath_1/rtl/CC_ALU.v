@@ -76,13 +76,13 @@ module CC_ALU #(parameter DATAWIDTH_BUS=32, parameter DATAWIDTH_ALU_SELECTION=4)
 		4'b0111:  CC_ALU_DataBUS_Out = ~(CC_ALU_DataBUSA_In | CC_ALU_DataBUSB_In);	//NOR
 		4'b1000:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In + CC_ALU_DataBUSB_In;	//ADD
 		
-		4'b1001:  {CC_ALU_DataBUS_Out} = {CC_ALU_DataBUSA_In[31:2], 2'b0 };	//LSHIFT2 
-		4'b1010:  CC_ALU_DataBUS_Out = {CC_ALU_DataBUSA_In[31:10], 10'b0 };//LSHIFT10
+		4'b1001:  {CC_ALU_DataBUS_Out} = {CC_ALU_DataBUSA_In[29:0], 2'b0 };	//LSHIFT2 
+		4'b1010:  CC_ALU_DataBUS_Out = {CC_ALU_DataBUSA_In[21:0], 10'b0 };//LSHIFT10
 		4'b1011:  CC_ALU_DataBUS_Out = {19'b0, CC_ALU_DataBUSA_In[12:0] };	//SIMM13
 		4'b1100:  CC_ALU_DataBUS_Out = {{19{CC_ALU_DataBUSA_In[12]}}, CC_ALU_DataBUSA_In[12:0] };//SEXT13
 		4'b1101:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In+ 1'b1;//INC 
 		4'b1110:  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In+ 3'b100;//INCPC 
-		4'b1111:  CC_ALU_DataBUS_Out = {{5{CC_ALU_DataBUSA_In[31]}}, CC_ALU_DataBUSA_In[26:0] };//RSHIFT5
+		4'b1111:  CC_ALU_DataBUS_Out = {{5{CC_ALU_DataBUSA_In[31]}}, CC_ALU_DataBUSA_In[31:5] };//RSHIFT5
 		
 		
 		default :  CC_ALU_DataBUS_Out = CC_ALU_DataBUSA_In; // channel 0 is selected
