@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at programMem.v(37): always construct contains both blocking and non-blocking assignments File: D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/programMem.v Line: 37
+Warning (10268): Verilog HDL information at programMem.v(37): always construct contains both blocking and non-blocking assignments File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/programMem.v Line: 37

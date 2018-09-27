@@ -26,8 +26,7 @@
 //=======================================================
 module SC_RegIR #(parameter DATAWIDTH_BUS=32, parameter DATA_REGGEN_INIT=32'h00000000)(
 	//////////// OUTPUTS //////////
-	SC_RegIR_DataBUS_Out_A,
-	SC_RegIR_DataBUS_Out_B,
+	SC_RegIR_DataBUS_Out,
 	SC_RegIR_OP,
 	SC_RegIR_RD,
 	SC_RegIR_OP2,
@@ -36,8 +35,6 @@ module SC_RegIR #(parameter DATAWIDTH_BUS=32, parameter DATA_REGGEN_INIT=32'h000
 	SC_RegIR_BIT13,
 	SC_RegIR_RS2,
 	//////////// INPUTS //////////
-	SC_RegIR_ENABLE_BUS_A,
-	SC_RegIR_ENABLE_BUS_B,
 	SC_RegIR_CLOCK_50,
 	SC_RegIR_Reset_InHigh,
 	SC_RegIR_Write_InHigh,
@@ -50,8 +47,7 @@ module SC_RegIR #(parameter DATAWIDTH_BUS=32, parameter DATA_REGGEN_INIT=32'h000
 //=======================================================
 //  PORT declarations
 //=======================================================
-	output [DATAWIDTH_BUS-1:0] SC_RegIR_DataBUS_Out_A;
-	output [DATAWIDTH_BUS-1:0] SC_RegIR_DataBUS_Out_B;
+	output [DATAWIDTH_BUS-1:0] SC_RegIR_DataBUS_Out;
 	output 	[1:0] SC_RegIR_OP;
 	output 	[4:0] SC_RegIR_RD;
 	output 	[2:0] SC_RegIR_OP2;
@@ -62,8 +58,6 @@ module SC_RegIR #(parameter DATAWIDTH_BUS=32, parameter DATA_REGGEN_INIT=32'h000
 	input			SC_RegIR_CLOCK_50;
 	input			SC_RegIR_Reset_InHigh;
 	input			SC_RegIR_Write_InHigh;
-	input			SC_RegIR_ENABLE_BUS_A;
-	input			SC_RegIR_ENABLE_BUS_B;
 	input 		[DATAWIDTH_BUS-1:0] SC_RegIR_DataBUS_In;
 //=======================================================
 //  REG/WIRE declarations
@@ -91,11 +85,8 @@ module SC_RegIR #(parameter DATAWIDTH_BUS=32, parameter DATA_REGGEN_INIT=32'h000
 //  Outputs
 //=======================================================
 // OUTPUT LOGIC : COMBINATIONAL
-// OUTPUT BUS A
-	assign SC_RegIR_DataBUS_Out_A = (SC_RegIR_ENABLE_BUS_A)? RegIR_Register : 32'hZZZZZZZZ;
-// OUTPUT BUS B
-	assign SC_RegIR_DataBUS_Out_B = (SC_RegIR_ENABLE_BUS_B)? RegIR_Register : 32'hZZZZZZZZ;
-	
+	assign SC_RegIR_DataBUS_Out=RegIR_Register;
+//FLAGS
 	assign SC_RegIR_OP= RegIR_Register[31:30];
 	assign SC_RegIR_RD= RegIR_Register[29:25];
 	assign SC_RegIR_OP2=	RegIR_Register[24:22];

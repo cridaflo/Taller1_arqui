@@ -6,7 +6,7 @@ module MIR #(parameter MIR_BUS_WIDTH = 41, parameter REG_BUS_WIDTH = 6, paramete
 	MIR_CLOCK_50,
 	//////////// INPUTS //////////
 	MIR_Microinstruccion_IN,
-	SC_RegGENERAL_Reset_InHigh,
+	SC_RegMIR_Reset_InHigh,
 	//////////// OUTPUTS //////////
 	MIR_A_OUT,
 	MIR_AMUX_OUT,
@@ -41,7 +41,7 @@ module MIR #(parameter MIR_BUS_WIDTH = 41, parameter REG_BUS_WIDTH = 6, paramete
 	output [JUMP_ADDR_BUS_WIDTH-1:0] MIR_JUMP_ADDR_OUT;
 	input [MIR_BUS_WIDTH-1:0]MIR_Microinstruccion_IN;
 	input MIR_CLOCK_50;
-	input SC_RegGENERAL_Reset_InHigh;
+	input SC_RegMIR_Reset_InHigh;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
@@ -62,7 +62,7 @@ module MIR #(parameter MIR_BUS_WIDTH = 41, parameter REG_BUS_WIDTH = 6, paramete
 //=======================================================
 initial ceros = 0;
 always@(negedge MIR_CLOCK_50)
-if (SC_RegGENERAL_Reset_InHigh==1)
+if (SC_RegMIR_Reset_InHigh==1)
 		begin 
 	MIR_JUMP_ADDR_OUT = ceros[JUMP_ADDR_BUS_WIDTH-1:0];
 	MIR_COND_OUT = ceros[COND_BUS_WIDTH+JUMP_ADDR_BUS_WIDTH-1:JUMP_ADDR_BUS_WIDTH];
