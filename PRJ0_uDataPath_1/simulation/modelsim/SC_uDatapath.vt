@@ -26,42 +26,64 @@
 // 
 
 `timescale 1 ps/ 1 ps
-module SC_RegGENERAL_vlg_tst();
+module SC_uDatapath_vlg_tst();
 // constants                                           
 // general purpose registers
 reg eachvec;
 // test vector input registers
 reg CLOCK_50;
 reg RESET;
-reg WRITE;
-reg [31:0] BUS_IN;
 // wires - output                                              
-wire [31:0]  BUS_OUT_A;
-wire [31:0]  BUS_OUT_B;
-wire [31:0]  BUS_OUT;
+wire  PSR_Overflow_InHigh;
+wire PSR_Carry_InHigh;
+wire  PSR_Negative_InHigh;
+wire  PSR_Zero_InHigh;
+wire [1:0]  RegIR_OP;
+wire [4:0]  RegIR_RD;
+wire [2:0]  RegIR_OP2;
+wire [5:0]  RegIR_OP3;
+wire [4:0]  RegIR_RS1;
+wire RegIR_BIT13;
+wire [4:0]  RegIR_RS2;
+wire [31:0]  CC_MUX_REG_R1;
+wire [10:0]  ADRESS_MUX_OUT;
 
-reg ENABLE_BUS_A;
-reg ENABLE_BUS_B;
-
+wire [37:0]  Decoder_DataWrite_Wire_C;
+wire [31:0]  CC_MUX_REG_R32;
+wire [5:0]  MUX_TO_DECODER_C;
+wire [5:0]MIR_C_FIELD;
+wire [40:0]BUS_ROM_TO_MIR;
 // assign statements (if any)                          
 integer i;
-SC_RegGENERAL #(.DATAWIDTH_BUS(32),.DATA_REGGEN_INIT(32'h00000000)) r1 (
-// port map - connection between master ports and signals/registers   
-	.SC_RegGENERAL_DataBUS_Out_A(BUS_OUT_A),
-	.SC_RegGENERAL_DataBUS_Out_B(BUS_OUT_B),
-	.SC_RegGENERAL_CLOCK_50(CLOCK_50),
-	.SC_RegGENERAL_Reset_InHigh(RESET),
-	.SC_RegGENERAL_Write_InHigh(WRITE),
-	.SC_RegGENERAL_DataBUS_In(BUS_IN),
-	.SC_RegGENERAL_DataBUS_Out(BUS_OUT),
-	.SC_RegGENERAL_ENABLE_BUS_A(ENABLE_BUS_A),
-	.SC_RegGENERAL_ENABLE_BUS_B(ENABLE_BUS_B)
+uDataPath #(41, 11, 8, 2, 6, 3, 4, 32, 6, 4, 32'h00000000, 32'h00000000,32'h00000800, 38,6,6) uDataPath_0 (
+	//////////// OUTPUTS //////////
+	.PSR_Overflow_InHigh(PSR_Overflow_InHigh),
+	.PSR_Carry_InHigh(PSR_Carry_InHigh),
+	.PSR_Negative_InHigh(PSR_Negative_InHigh),
+	.PSR_Zero_InHigh(PSR_Zero_InHigh),
+	.RegIR_OP(RegIR_OP),
+	.RegIR_RD(RegIR_RD),
+	.RegIR_OP2(RegIR_OP2),
+	.RegIR_OP3(RegIR_OP3),
+	.RegIR_RS1(RegIR_RS1),
+	.RegIR_BIT13(RegIR_BIT13),
+	.RegIR_RS2(RegIR_RS2),
+	.CC_MUX_REG_R1(CC_MUX_REG_R1),
+	.ADRESS_MUX_OUT(ADRESS_MUX_OUT),
+	.Decoder_DataWrite_Wire_C(Decoder_DataWrite_Wire_C),
+	.CC_MUX_REG_R32(CC_MUX_REG_R32),
+	.MUX_TO_DECODER_C(MUX_TO_DECODER_C),
+	.MIR_C_FIELD(MIR_C_FIELD),
+	.BUS_ROM_TO_MIR(BUS_ROM_TO_MIR),
+	//////////// INPUTS //////////
+	.uDataPath_CLOCK_50(CLOCK_50),
+	.uDataPath_Reset_InHigh(RESET)
 );
 initial                                                
 begin                                                  
 // code that executes only once                        
 // insert code here --> begin                          
-                                                       
+                                                     
 // --> end                                             
 $display("Running testbench");                       
 end                                                    
@@ -72,23 +94,9 @@ begin
 // code executes for every event on sensitivity list   
 // insert code here --> begin                          
 #0 RESET<=1;  
-#60 RESET<=0;   	
+#10 RESET<=0;  
 
-#90 BUS_IN<=32'h000FF000;  
-#100 WRITE<=1;		
-
-#100 WRITE<=0;	
-BUS_IN<=32'hFFFFFFFF;  
-
-#100 WRITE<=1;	
-BUS_IN<=32'h0000000F; 
-
-#100 ENABLE_BUS_A<=1;
-
-#100 ENABLE_BUS_A<=0;
-ENABLE_BUS_B<=1;
-				 
-@eachvec;                                              
+@eachvec; 				                                             
 // --> end                                             
 end                                                    
 endmodule

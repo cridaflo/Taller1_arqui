@@ -1,6 +1,6 @@
 Fitter report for BB_SYSTEM
-Wed Sep 26 11:15:20 2018
-Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+Wed Sep 26 23:28:20 2018
+Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
 ---------------------
@@ -39,7 +39,7 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2016  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -47,19 +47,20 @@ functions, and any output files from any of the foregoing
 associated documentation or information are expressly subject 
 to the terms and conditions of the Intel Program License 
 Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel FPGA IP License Agreement, or other applicable license
-agreement, including, without limitation, that your use is for
-the sole purpose of programming logic devices manufactured by
-Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
 
 
 
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Wed Sep 26 11:15:20 2018       ;
-; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Fitter Status                      ; Successful - Wed Sep 26 23:28:20 2018       ;
+; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
 ; Family                             ; Cyclone IV E                                ;
@@ -77,64 +78,64 @@ refer to the applicable agreement for further details.
 +------------------------------------+---------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Settings                                                                                                                                    ;
-+--------------------------------------------------------------------+---------------------------------------+---------------------------------------+
-; Option                                                             ; Setting                               ; Default Value                         ;
-+--------------------------------------------------------------------+---------------------------------------+---------------------------------------+
-; Device                                                             ; EP4CE22F17C6                          ;                                       ;
-; Maximum processors allowed for parallel compilation                ; 4                                     ;                                       ;
-; Minimum Core Junction Temperature                                  ; 0                                     ;                                       ;
-; Maximum Core Junction Temperature                                  ; 85                                    ;                                       ;
-; Fit Attempts to Skip                                               ; 0                                     ; 0.0                                   ;
-; Use smart compilation                                              ; Off                                   ; Off                                   ;
-; Enable parallel Assembler and Timing Analyzer during compilation   ; On                                    ; On                                    ;
-; Enable compact report table                                        ; Off                                   ; Off                                   ;
-; Auto Merge PLLs                                                    ; On                                    ; On                                    ;
-; Router Timing Optimization Level                                   ; Normal                                ; Normal                                ;
-; Perform Clocking Topology Analysis During Routing                  ; Off                                   ; Off                                   ;
-; Placement Effort Multiplier                                        ; 1.0                                   ; 1.0                                   ;
-; Router Effort Multiplier                                           ; 1.0                                   ; 1.0                                   ;
-; Optimize Hold Timing                                               ; All Paths                             ; All Paths                             ;
-; Optimize Multi-Corner Timing                                       ; On                                    ; On                                    ;
-; Power Optimization During Fitting                                  ; Normal compilation                    ; Normal compilation                    ;
-; SSN Optimization                                                   ; Off                                   ; Off                                   ;
-; Optimize Timing                                                    ; Normal compilation                    ; Normal compilation                    ;
-; Optimize Timing for ECOs                                           ; Off                                   ; Off                                   ;
-; Regenerate Full Fit Report During ECO Compiles                     ; Off                                   ; Off                                   ;
-; Optimize IOC Register Placement for Timing                         ; Normal                                ; Normal                                ;
-; Limit to One Fitting Attempt                                       ; Off                                   ; Off                                   ;
-; Final Placement Optimizations                                      ; Automatically                         ; Automatically                         ;
-; Fitter Aggressive Routability Optimizations                        ; Automatically                         ; Automatically                         ;
-; Fitter Initial Placement Seed                                      ; 1                                     ; 1                                     ;
-; Periphery to Core Placement and Routing Optimization               ; Off                                   ; Off                                   ;
-; PCI I/O                                                            ; Off                                   ; Off                                   ;
-; Weak Pull-Up Resistor                                              ; Off                                   ; Off                                   ;
-; Enable Bus-Hold Circuitry                                          ; Off                                   ; Off                                   ;
-; Auto Packed Registers                                              ; Auto                                  ; Auto                                  ;
-; Auto Delay Chains                                                  ; On                                    ; On                                    ;
-; Auto Delay Chains for High Fanout Input Pins                       ; Off                                   ; Off                                   ;
-; Allow Single-ended Buffer for Differential-XSTL Input              ; Off                                   ; Off                                   ;
-; Treat Bidirectional Pin as Output Pin                              ; Off                                   ; Off                                   ;
-; Perform Physical Synthesis for Combinational Logic for Fitting     ; Off                                   ; Off                                   ;
-; Perform Physical Synthesis for Combinational Logic for Performance ; Off                                   ; Off                                   ;
-; Perform Register Duplication for Performance                       ; Off                                   ; Off                                   ;
-; Perform Logic to Memory Mapping for Fitting                        ; Off                                   ; Off                                   ;
-; Perform Register Retiming for Performance                          ; Off                                   ; Off                                   ;
-; Perform Asynchronous Signal Pipelining                             ; Off                                   ; Off                                   ;
-; Fitter Effort                                                      ; Auto Fit                              ; Auto Fit                              ;
-; Physical Synthesis Effort Level                                    ; Normal                                ; Normal                                ;
-; Logic Cell Insertion - Logic Duplication                           ; Auto                                  ; Auto                                  ;
-; Auto Register Duplication                                          ; Auto                                  ; Auto                                  ;
-; Auto Global Clock                                                  ; On                                    ; On                                    ;
-; Auto Global Register Control Signals                               ; On                                    ; On                                    ;
-; Reserve all unused pins                                            ; As input tri-stated with weak pull-up ; As input tri-stated with weak pull-up ;
-; Synchronizer Identification                                        ; Auto                                  ; Auto                                  ;
-; Enable Beneficial Skew Optimization                                ; On                                    ; On                                    ;
-; Optimize Design for Metastability                                  ; On                                    ; On                                    ;
-; Force Fitter to Avoid Periphery Placement Warnings                 ; Off                                   ; Off                                   ;
-; Enable input tri-state on active configuration pins in user mode   ; Off                                   ; Off                                   ;
-+--------------------------------------------------------------------+---------------------------------------+---------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                                                                            ;
++----------------------------------------------------------------------------+---------------------------------------+---------------------------------------+
+; Option                                                                     ; Setting                               ; Default Value                         ;
++----------------------------------------------------------------------------+---------------------------------------+---------------------------------------+
+; Device                                                                     ; EP4CE22F17C6                          ;                                       ;
+; Maximum processors allowed for parallel compilation                        ; 4                                     ;                                       ;
+; Minimum Core Junction Temperature                                          ; 0                                     ;                                       ;
+; Maximum Core Junction Temperature                                          ; 85                                    ;                                       ;
+; Fit Attempts to Skip                                                       ; 0                                     ; 0.0                                   ;
+; Use smart compilation                                                      ; Off                                   ; Off                                   ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                                    ; On                                    ;
+; Enable compact report table                                                ; Off                                   ; Off                                   ;
+; Auto Merge PLLs                                                            ; On                                    ; On                                    ;
+; Router Timing Optimization Level                                           ; Normal                                ; Normal                                ;
+; Perform Clocking Topology Analysis During Routing                          ; Off                                   ; Off                                   ;
+; Placement Effort Multiplier                                                ; 1.0                                   ; 1.0                                   ;
+; Router Effort Multiplier                                                   ; 1.0                                   ; 1.0                                   ;
+; Optimize Hold Timing                                                       ; All Paths                             ; All Paths                             ;
+; Optimize Multi-Corner Timing                                               ; On                                    ; On                                    ;
+; PowerPlay Power Optimization During Fitting                                ; Normal compilation                    ; Normal compilation                    ;
+; SSN Optimization                                                           ; Off                                   ; Off                                   ;
+; Optimize Timing                                                            ; Normal compilation                    ; Normal compilation                    ;
+; Optimize Timing for ECOs                                                   ; Off                                   ; Off                                   ;
+; Regenerate Full Fit Report During ECO Compiles                             ; Off                                   ; Off                                   ;
+; Optimize IOC Register Placement for Timing                                 ; Normal                                ; Normal                                ;
+; Limit to One Fitting Attempt                                               ; Off                                   ; Off                                   ;
+; Final Placement Optimizations                                              ; Automatically                         ; Automatically                         ;
+; Fitter Aggressive Routability Optimizations                                ; Automatically                         ; Automatically                         ;
+; Fitter Initial Placement Seed                                              ; 1                                     ; 1                                     ;
+; Periphery to Core Placement and Routing Optimization                       ; Off                                   ; Off                                   ;
+; PCI I/O                                                                    ; Off                                   ; Off                                   ;
+; Weak Pull-Up Resistor                                                      ; Off                                   ; Off                                   ;
+; Enable Bus-Hold Circuitry                                                  ; Off                                   ; Off                                   ;
+; Auto Packed Registers                                                      ; Auto                                  ; Auto                                  ;
+; Auto Delay Chains                                                          ; On                                    ; On                                    ;
+; Auto Delay Chains for High Fanout Input Pins                               ; Off                                   ; Off                                   ;
+; Allow Single-ended Buffer for Differential-XSTL Input                      ; Off                                   ; Off                                   ;
+; Treat Bidirectional Pin as Output Pin                                      ; Off                                   ; Off                                   ;
+; Perform Physical Synthesis for Combinational Logic for Fitting             ; Off                                   ; Off                                   ;
+; Perform Physical Synthesis for Combinational Logic for Performance         ; Off                                   ; Off                                   ;
+; Perform Register Duplication for Performance                               ; Off                                   ; Off                                   ;
+; Perform Logic to Memory Mapping for Fitting                                ; Off                                   ; Off                                   ;
+; Perform Register Retiming for Performance                                  ; Off                                   ; Off                                   ;
+; Perform Asynchronous Signal Pipelining                                     ; Off                                   ; Off                                   ;
+; Fitter Effort                                                              ; Auto Fit                              ; Auto Fit                              ;
+; Physical Synthesis Effort Level                                            ; Normal                                ; Normal                                ;
+; Logic Cell Insertion - Logic Duplication                                   ; Auto                                  ; Auto                                  ;
+; Auto Register Duplication                                                  ; Auto                                  ; Auto                                  ;
+; Auto Global Clock                                                          ; On                                    ; On                                    ;
+; Auto Global Register Control Signals                                       ; On                                    ; On                                    ;
+; Reserve all unused pins                                                    ; As input tri-stated with weak pull-up ; As input tri-stated with weak pull-up ;
+; Synchronizer Identification                                                ; Auto                                  ; Auto                                  ;
+; Enable Beneficial Skew Optimization                                        ; On                                    ; On                                    ;
+; Optimize Design for Metastability                                          ; On                                    ; On                                    ;
+; Force Fitter to Avoid Periphery Placement Warnings                         ; Off                                   ; Off                                   ;
+; Enable input tri-state on active configuration pins in user mode           ; Off                                   ; Off                                   ;
++----------------------------------------------------------------------------+---------------------------------------+---------------------------------------+
 
 
 +------------------------------------------+
@@ -150,7 +151,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -192,7 +193,7 @@ refer to the applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.pin.
+The pin-out file can be found in E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.pin.
 
 
 +-------------------------------------------------------------------+
@@ -976,9 +977,9 @@ Info (169124): Fitter converted 5 user pins into dedicated programming pins
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
 Critical Warning (169085): No exact pin location assignment(s) for 24 pins of 34 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
 Info (332104): Reading SDC File: 'BB_SYSTEM.SDC'
-Warning (332174): Ignored filter at BB_SYSTEM.sdc(9): CLOCK_50 could not be matched with a port File: D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.sdc Line: 9
-Warning (332049): Ignored create_clock at BB_SYSTEM.sdc(9): Argument <targets> is an empty collection File: D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.sdc Line: 9
-    Info (332050): create_clock -period 20 [get_ports CLOCK_50] File: D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.sdc Line: 9
+Warning (332174): Ignored filter at BB_SYSTEM.sdc(9): CLOCK_50 could not be matched with a port File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.sdc Line: 9
+Warning (332049): Ignored create_clock at BB_SYSTEM.sdc(9): Argument <targets> is an empty collection File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.sdc Line: 9
+    Info (332050): create_clock -period 20 [get_ports CLOCK_50] File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.sdc Line: 9
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
 Info (332144): No user constrained base clocks found in the design
 Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
@@ -1001,7 +1002,7 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  12 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has 3.3V VCCIO pins. 4 total pin(s) used --  20 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  24 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -1015,26 +1016,26 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.01 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.02 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (169177): 2 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
-    Info (169178): Pin BB_SYSTEM_CLOCK_50 uses I/O standard 3.3-V LVTTL at R8 File: D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 64
-    Info (169178): Pin BB_SYSTEM_Reset_InHigh uses I/O standard 3.3-V LVTTL at J15 File: D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 65
-Info (144001): Generated suppressed messages file D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.fit.smsg
+    Info (169178): Pin BB_SYSTEM_CLOCK_50 uses I/O standard 3.3-V LVTTL at R8 File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 64
+    Info (169178): Pin BB_SYSTEM_Reset_InHigh uses I/O standard 3.3-V LVTTL at J15 File: E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v Line: 65
+Info (144001): Generated suppressed messages file E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 1287 megabytes
-    Info: Processing ended: Wed Sep 26 11:15:20 2018
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Peak virtual memory: 5449 megabytes
+    Info: Processing ended: Wed Sep 26 23:28:20 2018
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:06
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.fit.smsg.
+The suppressed messages can be found in E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.fit.smsg.
 
 

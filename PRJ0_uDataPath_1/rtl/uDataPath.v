@@ -39,6 +39,11 @@ module uDataPath #(parameter MIR_BUS_WIDTH = 41, parameter Direction_BUS_WIDTH =
 	RegIR_RS2,
 	CC_MUX_REG_R1,
 	ADRESS_MUX_OUT,
+	Decoder_DataWrite_Wire_C,
+	CC_MUX_REG_R32,
+	MUX_TO_DECODER_C,
+	MIR_C_FIELD,
+	BUS_ROM_TO_MIR,
 	//////////// INPUTS //////////
 	uDataPath_CLOCK_50,
 	uDataPath_Reset_InHigh
@@ -55,16 +60,26 @@ module uDataPath #(parameter MIR_BUS_WIDTH = 41, parameter Direction_BUS_WIDTH =
 	output 	PSR_Negative_InHigh;
 	output 	PSR_Zero_InHigh;
 
-	output   RegIR_OP;
-	output	RegIR_RD;
-	output	RegIR_OP2;
-	output	RegIR_OP3;
-	output	RegIR_RS1;
+	output   [1:0]RegIR_OP;
+	output	[4:0]RegIR_RD;
+	output	[2:0]RegIR_OP2;
+	output	[5:0]RegIR_OP3;
+	output	[4:0]RegIR_RS1;
 	output	RegIR_BIT13;
-	output	RegIR_RS2;
-	output	CC_MUX_REG_R1;
+	output	[4:0]RegIR_RS2;
+	output	[31:0]CC_MUX_REG_R1;
 	
-	output   ADRESS_MUX_OUT;
+	output   [10:0]ADRESS_MUX_OUT;
+	
+	output [37:0]Decoder_DataWrite_Wire_C;
+	output [31:0]CC_MUX_REG_R32;
+	
+	output [5:0]MUX_TO_DECODER_C;
+	
+	output [5:0]MIR_C_FIELD;
+	
+	output [40:0]BUS_ROM_TO_MIR;
+	
 
 	//////////// INPUTS //////////
 	input 	uDataPath_CLOCK_50;
@@ -75,7 +90,6 @@ module uDataPath #(parameter MIR_BUS_WIDTH = 41, parameter Direction_BUS_WIDTH =
 // DECODERS
 	wire [DATAWIDTH_DECODER_OUT-1:0] Decoder_DataWrite_Wire_A;
 	wire [DATAWIDTH_DECODER_OUT-1:0] Decoder_DataWrite_Wire_B;
-	wire [DATAWIDTH_DECODER_OUT-1:0] Decoder_DataWrite_Wire_C;
 // ALU
 	wire [DATAWIDTH_ALU_SELECTION-1:0] uDataPath_ALUSelection;
 // FLAGS FROM ALU TO PSR
@@ -98,7 +112,6 @@ module uDataPath #(parameter MIR_BUS_WIDTH = 41, parameter Direction_BUS_WIDTH =
 // MIR REGISTER
 	wire [DATAWIDTH_MIR_FIELD-1:0] MIR_A_FIELD;
 	wire [DATAWIDTH_MIR_FIELD-1:0] MIR_B_FIELD;
-	wire [DATAWIDTH_MIR_FIELD-1:0] MIR_C_FIELD;
 	wire [2:0] MIR_COND_OUT;
 // MUX SELECT
 	wire MUX_SELECT_A;
@@ -107,15 +120,12 @@ module uDataPath #(parameter MIR_BUS_WIDTH = 41, parameter Direction_BUS_WIDTH =
 // DECODER CONTROL:  TO GENERATE WRITE SIGNAL TO GENERAL_REGISTERS TO WRITE DATA FROM DATA_BUS_C. ¡ONE BY ONE, NOT AT SAME TIME!
 	wire [DATAWIDTH_DECODER_SELECTION-1:0] MUX_TO_DECODER_A;
 	wire [DATAWIDTH_DECODER_SELECTION-1:0] MUX_TO_DECODER_B;
-	wire [DATAWIDTH_DECODER_SELECTION-1:0] MUX_TO_DECODER_C;
 // JUMP WIRE
 	wire [Direction_BUS_WIDTH-1:0] JUMP_TO_ADDRESS_MUX;
 // MIR FLAGS
-   wire [MIR_BUS_WIDTH-1:0]BUS_ROM_TO_MIR;
 	wire RD_OUT;
 	wire WR_OUT;
 // ROM
-	wire [Direction_BUS_WIDTH-1:0] ADRESS_MUX_OUT;
 // CBL
    wire [Selection_BUS_WIDTH-1:0] CBL_TO_ADRESS_MUX;
 	wire [Direction_BUS_WIDTH-1:0] CSAI_Direccion_OUT;
@@ -123,7 +133,6 @@ module uDataPath #(parameter MIR_BUS_WIDTH = 41, parameter Direction_BUS_WIDTH =
 	wire [DATAWIDTH_BUS-1:0]BUS_MEM_TO_MUX;
 // REGS
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R0;
-	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R1;
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R2;
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R3;
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R4;
@@ -154,7 +163,6 @@ module uDataPath #(parameter MIR_BUS_WIDTH = 41, parameter Direction_BUS_WIDTH =
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R29;
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R30;
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R31;
-	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R32;
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R33;
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R34;
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R35;
@@ -620,7 +628,7 @@ CC_BUS #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) CC_BUS_C
 
 //-------------------------------------------------------
 // MUX CONTROL
-CC_MUX #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_BUS), .DATAWIDTH_IR_SELECTION(5)) CC_MUX_A
+CC_MUX #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_DECODER_SELECTION), .DATAWIDTH_IR_SELECTION(5)) CC_MUX_A
 (
 // port map - connection between master ports and signals/registers
 	.CC_MUX_TO_DECODER_OUT(MUX_TO_DECODER_A),
@@ -629,7 +637,7 @@ CC_MUX #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_BUS), .DATAWIDTH_IR_SELECTION(5)
 	.CC_MUX_SELECT(MUX_SELECT_A)
 );
 
-CC_MUX #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_BUS), .DATAWIDTH_IR_SELECTION(5)) CC_MUX_b
+CC_MUX #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_DECODER_SELECTION), .DATAWIDTH_IR_SELECTION(5)) CC_MUX_b
 (
 // port map - connection between master ports and signals/registers
 	.CC_MUX_TO_DECODER_OUT(MUX_TO_DECODER_B),
@@ -638,7 +646,7 @@ CC_MUX #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_BUS), .DATAWIDTH_IR_SELECTION(5)
 	.CC_MUX_SELECT(MUX_SELECT_B)
 );
 
-CC_MUX #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_BUS), .DATAWIDTH_IR_SELECTION(5)) CC_MUX_c
+CC_MUX #(.DATAWIDTH_DECODER_SELECTION(DATAWIDTH_DECODER_SELECTION), .DATAWIDTH_IR_SELECTION(5)) CC_MUX_c
 (
 // port map - connection between master ports and signals/registers
 	.CC_MUX_TO_DECODER_OUT(MUX_TO_DECODER_C),
@@ -704,7 +712,7 @@ MIR #(.MIR_BUS_WIDTH(MIR_BUS_WIDTH), .REG_BUS_WIDTH(REG_BUS_WIDTH), .ALU_BUS_WID
 	.MIR_AMUX_OUT(MUX_SELECT_A),
 	.MIR_B_OUT(MIR_B_FIELD),
 	.MIR_BMUX_OUT(MUX_SELECT_B),
-	.MIR_C_OUT(MUX_SELECT_C),
+	.MIR_C_OUT(MIR_C_FIELD),
 	.MIR_CMUX_OUT(MUX_SELECT_C),
 	.MIR_RD_OUT(RD_OUT),
 	.MIR_WR_OUT(WR_OUT),
