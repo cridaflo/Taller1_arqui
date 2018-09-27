@@ -38,6 +38,9 @@ module uDataPath #(parameter MIR_BUS_WIDTH = 41, parameter Direction_BUS_WIDTH =
 	RegIR_BIT13,
 	RegIR_RS2,
 	CC_MUX_REG_R1,
+	CC_MUX_REG_R2,
+	CC_MUX_REG_R3,
+	CC_MUX_REG_R4,
 	ADRESS_MUX_OUT,
 	Decoder_DataWrite_Wire_C,
 	CC_MUX_REG_R32,
@@ -67,12 +70,16 @@ module uDataPath #(parameter MIR_BUS_WIDTH = 41, parameter Direction_BUS_WIDTH =
 	output	[4:0]RegIR_RS1;
 	output	RegIR_BIT13;
 	output	[4:0]RegIR_RS2;
-	output	[31:0]CC_MUX_REG_R1;
+	
+	output	[DATAWIDTH_BUS-1:0]CC_MUX_REG_R1;
+	output  [DATAWIDTH_BUS-1:0] CC_MUX_REG_R2;
+	output  [DATAWIDTH_BUS-1:0] CC_MUX_REG_R3;
+	output  [DATAWIDTH_BUS-1:0] CC_MUX_REG_R4;
 	
 	output   [10:0]ADRESS_MUX_OUT;
 	
 	output [37:0]Decoder_DataWrite_Wire_C;
-	output [31:0]CC_MUX_REG_R32;
+	output [DATAWIDTH_BUS-1:0]CC_MUX_REG_R32;
 	
 	output [5:0]MUX_TO_DECODER_C;
 	
@@ -133,9 +140,6 @@ module uDataPath #(parameter MIR_BUS_WIDTH = 41, parameter Direction_BUS_WIDTH =
 	wire [DATAWIDTH_BUS-1:0]BUS_MEM_TO_MUX;
 // REGS
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R0;
-	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R2;
-	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R3;
-	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R4;
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R5;
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R6;
 	wire [DATAWIDTH_BUS-1:0] CC_MUX_REG_R7;

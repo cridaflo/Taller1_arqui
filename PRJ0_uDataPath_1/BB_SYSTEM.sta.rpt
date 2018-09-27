@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for BB_SYSTEM
-Wed Sep 26 23:28:25 2018
+Thu Sep 27 07:40:45 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -102,7 +102,7 @@ agreement for further details.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; BB_SYSTEM.SDC ; OK     ; Wed Sep 26 23:28:24 2018 ;
+; BB_SYSTEM.SDC ; OK     ; Thu Sep 27 07:40:44 2018 ;
 +---------------+--------+--------------------------+
 
 
@@ -467,7 +467,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Wed Sep 26 23:28:24 2018
+    Info: Processing started: Thu Sep 27 07:40:43 2018
 Info: Command: quartus_sta BB_SYSTEM -c BB_SYSTEM
 Info: qsta_default_script.tcl version: #1
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
@@ -517,9 +517,9 @@ Info (332140): No Minimum Pulse Width paths to report
 Info (332101): Design is fully constrained for setup requirements
 Info (332101): Design is fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4776 megabytes
-    Info: Processing ended: Wed Sep 26 23:28:25 2018
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 4778 megabytes
+    Info: Processing ended: Thu Sep 27 07:40:45 2018
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

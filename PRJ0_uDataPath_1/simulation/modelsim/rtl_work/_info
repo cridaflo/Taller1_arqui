@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dE:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim
 vBB_SYSTEM
-Z1 !s110 1538021718
+Z1 !s110 1538052067
 !i10b 1
 !s100 cE;QH26J7I:Co15JCMfEH0
 ILH?:IaQ3L:nAB4DhSeabT1
@@ -23,7 +23,7 @@ Z5 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z6 !s108 1538021718.000000
+Z6 !s108 1538052067.000000
 !s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v|
 !i113 1
@@ -32,7 +32,7 @@ Z7 o-vlog01compat -work work
 Z8 tCvgOpt 0
 n@b@b_@s@y@s@t@e@m
 vC_BUS_MUX
-Z9 !s110 1538021719
+Z9 !s110 1538052068
 !i10b 1
 !s100 6kbD<84`PC8=ZfSREW2ho0
 ImgaP;N^zTZEJ9_Z[m5CIk0
@@ -46,16 +46,16 @@ R5
 r1
 !s85 0
 31
-Z10 !s108 1538021719.000000
+R6
 !s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/C_BUS_MUX.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/C_BUS_MUX.v|
 !i113 1
 R7
-Z11 !s92 -vlog01compat -work work +incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl
+Z10 !s92 -vlog01compat -work work +incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl
 R8
 n@c_@b@u@s_@m@u@x
 vCBL
-R1
+Z11 !s110 1538052066
 !i10b 1
 !s100 J2XP5SBbBUkA3VE>z94Sm1
 IcVQ^9cTH4Ug4T;o1F8V1b1
@@ -69,12 +69,12 @@ R5
 r1
 !s85 0
 31
-Z13 !s108 1538021717.000000
+Z13 !s108 1538052066.000000
 !s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CBL.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CBL.v|
 !i113 1
 R7
-R11
+R10
 R8
 n@c@b@l
 vCC_ALU
@@ -97,11 +97,11 @@ R6
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_ALU.v|
 !i113 1
 R7
-R11
+R10
 R8
 n@c@c_@a@l@u
 vCC_BUS
-R1
+R11
 !i10b 1
 !s100 d4c@cjfoOBdL]Ud>^S>am0
 IY]6AlgLoC3?EAOLlPe@N:0
@@ -115,12 +115,12 @@ R5
 r1
 !s85 0
 31
-R6
+R13
 !s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_BUS.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_BUS.v|
 !i113 1
 R7
-R11
+R10
 R8
 n@c@c_@b@u@s
 vCC_DECODER
@@ -143,11 +143,11 @@ R6
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_DECODER.v|
 !i113 1
 R7
-R11
+R10
 R8
 n@c@c_@d@e@c@o@d@e@r
 vCC_MUX
-R1
+R11
 !i10b 1
 !s100 IFT:aTBhaN5_GDYXXl8>W3
 I=0ZEfN>VgN8NeVQo=:?BP2
@@ -161,12 +161,12 @@ R5
 r1
 !s85 0
 31
-R6
+R13
 !s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX.v|
 !i113 1
 R7
-R11
+R10
 R8
 n@c@c_@m@u@x
 vCC_MUX_REG
@@ -184,16 +184,16 @@ R5
 r1
 !s85 0
 31
-R10
+Z14 !s108 1538052068.000000
 !s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX_REG.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX_REG.v|
 !i113 1
 R7
-R11
+R10
 R8
 n@c@c_@m@u@x_@r@e@g
 vCS_Address_MUX
-Z14 !s110 1538021717
+R11
 !i10b 1
 !s100 NDji`OQKccML_2S@380hU2
 I:ZhImb0VXZgzDYJ:3AEdb0
@@ -212,11 +212,11 @@ R13
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CS_address_MUX.v|
 !i113 1
 R7
-R11
+R10
 R8
 n@c@s_@address_@m@u@x
 vCSAI
-R14
+R11
 !i10b 1
 !s100 :eVW^13=EiDaDllP6ejGm0
 IehQD@hbPaGBPQ;U>idWne1
@@ -235,17 +235,17 @@ R13
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CSAI.v|
 !i113 1
 R7
-R11
+R10
 R8
 n@c@s@a@i
 vMIR
-R14
+R11
 !i10b 1
-!s100 ^o>k8]4__^Qk?;Cm2HN`=0
-I;9G;m16>[AVk>AcG4HJon0
+!s100 [zPTfUlM:IX5035EahSVZ2
+Imbf@4eA5>__dojYLYJYgj2
 R2
 R0
-w1538021667
+w1538050969
 8E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/MIR.v
 FE:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/MIR.v
 L0 4
@@ -258,17 +258,17 @@ R13
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/MIR.v|
 !i113 1
 R7
-R11
+R10
 R8
 n@m@i@r
 vprogramMem
-R14
+R11
 !i10b 1
-!s100 XcoCcdW`<KmUMY1OhRAZT1
-ID4QL:C90_KbGEezz[n6HL2
+!s100 5YXW;DlO]0NU1S?75Q?HX1
+IMMbj98D=NoNWX@DYDN<@_3
 R2
 R0
-w1538018106
+w1538051995
 8E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/programMem.v
 FE:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/programMem.v
 L0 1
@@ -281,11 +281,11 @@ R13
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/programMem.v|
 !i113 1
 R7
-R11
+R10
 R8
 nprogram@mem
 vROM
-R14
+R11
 !i10b 1
 !s100 2khcL?fO1fJh^^lZ[z8E=1
 IYHRGTU]8dCkVL5>Tdf4M10
@@ -304,7 +304,7 @@ R13
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/ROM.v|
 !i113 1
 R7
-R11
+R10
 R8
 n@r@o@m
 vSC_RegFIXED
@@ -327,7 +327,7 @@ R6
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegFIXED.v|
 !i113 1
 R7
-R11
+R10
 R8
 n@s@c_@reg@f@i@x@e@d
 vSC_RegGENERAL
@@ -350,7 +350,7 @@ R6
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegGENERAL.v|
 !i113 1
 R7
-R11
+R10
 R8
 n@s@c_@reg@g@e@n@e@r@a@l
 vSC_RegIR
@@ -373,7 +373,7 @@ R6
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegIR.v|
 !i113 1
 R7
-R11
+R10
 R8
 n@s@c_@reg@i@r
 vSC_RegPSR
@@ -391,22 +391,22 @@ R5
 r1
 !s85 0
 31
-R10
+R14
 !s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegPSR.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegPSR.v|
 !i113 1
 R7
-R11
+R10
 R8
 n@s@c_@reg@p@s@r
 vSC_uDatapath_vlg_tst
 R9
 !i10b 1
-!s100 LJZYho3o9W^cZ965eF5OL2
-IPKHMkZIIbTLIF@lOikghc0
+!s100 4SX^`WeDniJVMd3A9==4N2
+IU[e_Lz2A3H5Ao5@nG[d033
 R2
 R0
-w1538020033
+w1538050910
 8E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim/SC_uDatapath.vt
 FE:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim/SC_uDatapath.vt
 L0 29
@@ -414,7 +414,7 @@ R5
 r1
 !s85 0
 31
-R10
+R14
 !s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim/SC_uDatapath.vt|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim/SC_uDatapath.vt|
 !i113 1
@@ -423,13 +423,13 @@ R7
 R8
 n@s@c_u@datapath_vlg_tst
 vuDataPath
-R1
+R11
 !i10b 1
-!s100 =SIQU>Tz>mEondNjb>i`B0
-IKB][^e_M^ief1hR5JEU;C0
+!s100 eFT6DHTGR927Mab>LSOcn2
+IPdL8M;Ceb5m95UMdPj]QO0
 R2
 R0
-w1538019928
+w1538050853
 8E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v
 FE:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v
 R4
@@ -437,12 +437,12 @@ R5
 r1
 !s85 0
 31
-R6
+R13
 !s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v|
 !i113 1
 R7
-R11
+R10
 R8
 nu@data@path
 vWB_SYSTEM
@@ -465,6 +465,6 @@ R6
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v|
 !i113 1
 R7
-R11
+R10
 R8
 n@w@b_@s@y@s@t@e@m

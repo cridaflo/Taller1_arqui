@@ -45,14 +45,17 @@ wire [5:0]  RegIR_OP3;
 wire [4:0]  RegIR_RS1;
 wire RegIR_BIT13;
 wire [4:0]  RegIR_RS2;
-wire [31:0]  CC_MUX_REG_R1;
 wire [10:0]  ADRESS_MUX_OUT;
 
 wire [37:0]  Decoder_DataWrite_Wire_C;
-wire [31:0]  CC_MUX_REG_R32;
 wire [5:0]  MUX_TO_DECODER_C;
 wire [5:0]MIR_C_FIELD;
 wire [40:0]BUS_ROM_TO_MIR;
+wire [31:0]  CC_MUX_REG_R1;
+wire [31:0]  CC_MUX_REG_R2;
+wire [31:0]  CC_MUX_REG_R3;
+wire [31:0]  CC_MUX_REG_R4;
+wire [31:0]  CC_MUX_REG_R32;
 // assign statements (if any)                          
 integer i;
 uDataPath #(41, 11, 8, 2, 6, 3, 4, 32, 6, 4, 32'h00000000, 32'h00000000,32'h00000800, 38,6,6) uDataPath_0 (
@@ -68,13 +71,16 @@ uDataPath #(41, 11, 8, 2, 6, 3, 4, 32, 6, 4, 32'h00000000, 32'h00000000,32'h0000
 	.RegIR_RS1(RegIR_RS1),
 	.RegIR_BIT13(RegIR_BIT13),
 	.RegIR_RS2(RegIR_RS2),
-	.CC_MUX_REG_R1(CC_MUX_REG_R1),
 	.ADRESS_MUX_OUT(ADRESS_MUX_OUT),
 	.Decoder_DataWrite_Wire_C(Decoder_DataWrite_Wire_C),
 	.CC_MUX_REG_R32(CC_MUX_REG_R32),
 	.MUX_TO_DECODER_C(MUX_TO_DECODER_C),
 	.MIR_C_FIELD(MIR_C_FIELD),
 	.BUS_ROM_TO_MIR(BUS_ROM_TO_MIR),
+	.CC_MUX_REG_R1(CC_MUX_REG_R1),
+	.CC_MUX_REG_R2(CC_MUX_REG_R2),
+	.CC_MUX_REG_R3(CC_MUX_REG_R3),
+	.CC_MUX_REG_R4(CC_MUX_REG_R4),
 	//////////// INPUTS //////////
 	.uDataPath_CLOCK_50(CLOCK_50),
 	.uDataPath_Reset_InHigh(RESET)
