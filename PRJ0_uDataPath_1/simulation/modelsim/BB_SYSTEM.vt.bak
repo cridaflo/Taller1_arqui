@@ -27,8 +27,6 @@
 
 `timescale 1 ps/ 1 ps
 module BB_SYSTEM_vlg_tst();
-parameter TCK = 20;
-parameter CLK_FREQ = 1000000000 / TCK; 
 // constants                                           
 // general purpose registers
 reg eachvec;
@@ -50,20 +48,16 @@ begin
 // code that executes only once                        
 // insert code here --> begin                          
                                                        
-// --> end 
-BB_SYSTEM_CLOCK_50 <= 0;                                               
+// --> end                                             
 $display("Running testbench");                       
 end                                                    
 always                                                 
 // optional sensitivity list                           
-// @(event1 or event2 or .... eventn) 
-   #(TCK/2) BB_SYSTEM_CLOCK_50 <= ~ BB_SYSTEM_CLOCK_50;   
-always	
+// @(event1 or event2 or .... eventn)                  
 begin                                                  
 // code executes for every event on sensitivity list   
 // insert code here --> begin                          
-#0 BB_SYSTEM_Reset_InHigh <= 1;
-#100 BB_SYSTEM_Reset_InHigh <= 0;                                          
+                                                       
 @eachvec;                                              
 // --> end                                             
 end                                                    

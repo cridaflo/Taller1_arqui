@@ -7,9 +7,14 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dE:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim
+Z0 dD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim
 vBB_SYSTEM
+<<<<<<< Updated upstream
 Z1 !s110 1538091930
+=======
+<<<<<<< Updated upstream
+Z1 !s110 1538021718
+>>>>>>> Stashed changes
 !i10b 1
 !s100 cE;QH26J7I:Co15JCMfEH0
 ILH?:IaQ3L:nAB4DhSeabT1
@@ -26,13 +31,37 @@ r1
 Z6 !s108 1538091930.000000
 !s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v|
+=======
+Z1 !s110 1538022737
+!i10b 1
+!s100 cE;QH26J7I:Co15JCMfEH0
+IM6Tb;fkNlXCLVT?D?JA243
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1537971395
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v
+Z3 L0 27
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1538022737.000000
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/BB_SYSTEM.v|
+>>>>>>> Stashed changes
 !i113 1
-Z7 o-vlog01compat -work work
-!s92 -vlog01compat -work work +incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1
-Z8 tCvgOpt 0
+Z6 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1
+Z7 tCvgOpt 0
 n@b@b_@s@y@s@t@e@m
 vC_BUS_MUX
+<<<<<<< Updated upstream
 R1
+=======
+<<<<<<< Updated upstream
+Z9 !s110 1538021719
+>>>>>>> Stashed changes
 !i10b 1
 !s100 6kbD<84`PC8=ZfSREW2ho0
 ImgaP;N^zTZEJ9_Z[m5CIk0
@@ -53,12 +82,41 @@ R6
 R7
 Z9 !s92 -vlog01compat -work work +incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl
 R8
+=======
+R1
+!i10b 1
+!s100 6kbD<84`PC8=ZfSREW2ho0
+IoiAeZ3NOUIDooW<Hjzn`O3
+R2
+R0
+Z8 w1537970701
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/C_BUS_MUX.v
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/C_BUS_MUX.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/C_BUS_MUX.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/C_BUS_MUX.v|
+!i113 1
+R6
+Z9 !s92 -vlog01compat -work work +incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl
+R7
+>>>>>>> Stashed changes
 n@c_@b@u@s_@m@u@x
 vCBL
 Z10 !s110 1538091929
 !i10b 1
+<<<<<<< Updated upstream
 !s100 ;[Vci@lc:blof[8:O>LKK2
 I]d;RS<2N0NYdO_ENj@R_n0
+=======
+!s100 J2XP5SBbBUkA3VE>z94Sm1
+<<<<<<< Updated upstream
+IcVQ^9cTH4Ug4T;o1F8V1b1
+>>>>>>> Stashed changes
 R2
 R0
 w1538088565
@@ -76,97 +134,200 @@ Z11 !s108 1538091929.000000
 R7
 R9
 R8
+=======
+IGjOzTzEeki8Sb81`G>c[>1
+R2
+R0
+w1537720379
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CBL.v
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CBL.v
+L0 4
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CBL.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CBL.v|
+!i113 1
+R6
+R9
+R7
+>>>>>>> Stashed changes
 n@c@b@l
 vCC_ALU
 R1
 !i10b 1
+<<<<<<< Updated upstream
 !s100 d@jI4kdEX6d<j7_N2IUGf2
 Ilm6T0BjRQNL9JZ7m3nJN=1
 R2
 R0
 w1538085810
+=======
+!s100 k^Vl_QU_N@DHgYic8:ZZd0
+IoHUJG3?QVUjTXDc[AYGK82
+R2
+R0
+<<<<<<< Updated upstream
+w1537628080
+>>>>>>> Stashed changes
 8E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_ALU.v
 FE:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_ALU.v
+=======
+w1537389075
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_ALU.v
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_ALU.v
+R3
+>>>>>>> Stashed changes
 R4
-R5
 r1
 !s85 0
 31
-R6
-!s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_ALU.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_ALU.v|
+R5
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_ALU.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_ALU.v|
 !i113 1
-R7
+R6
 R9
+R7
+<<<<<<< Updated upstream
+R9
+=======
+<<<<<<< Updated upstream
+R11
+>>>>>>> Stashed changes
 R8
+=======
+>>>>>>> Stashed changes
 n@c@c_@a@l@u
 vCC_BUS
 R10
 !i10b 1
 !s100 d4c@cjfoOBdL]Ud>^S>am0
-IY]6AlgLoC3?EAOLlPe@N:0
+I3DS;7TA5bA8:902V:o8Q:0
 R2
 R0
-w1537829527
-8E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_BUS.v
-FE:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_BUS.v
+R8
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_BUS.v
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_BUS.v
+R3
 R4
-R5
 r1
 !s85 0
 31
+<<<<<<< Updated upstream
 R11
+=======
+<<<<<<< Updated upstream
+R6
+>>>>>>> Stashed changes
 !s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_BUS.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_BUS.v|
 !i113 1
 R7
 R9
 R8
+=======
+R5
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_BUS.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_BUS.v|
+!i113 1
+R6
+R9
+R7
+>>>>>>> Stashed changes
 n@c@c_@b@u@s
 vCC_DECODER
 R1
 !i10b 1
 !s100 eUPFXIT?EPIMWz>Ggz^BG1
-I6DE`16zXdK]>[kZF;Bn5K3
+IHCn3B6z3>XIR63cGg7hb_1
 R2
 R0
-w1537628087
-8E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_DECODER.v
-FE:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_DECODER.v
+R8
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_DECODER.v
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_DECODER.v
+R3
 R4
-R5
 r1
 !s85 0
 31
-R6
-!s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_DECODER.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_DECODER.v|
+R5
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_DECODER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_DECODER.v|
 !i113 1
+<<<<<<< Updated upstream
 R7
 R9
 R8
+=======
+R6
+R9
+R7
+>>>>>>> Stashed changes
 n@c@c_@d@e@c@o@d@e@r
 vCC_MUX
 R10
 !i10b 1
 !s100 IFT:aTBhaN5_GDYXXl8>W3
-I=0ZEfN>VgN8NeVQo=:?BP2
+IQVg99iY;WnFHFR3W]:UYF2
 R2
 R0
-w1537832645
-8E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX.v
-FE:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX.v
+R8
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX.v
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX.v
+R3
 R4
-R5
 r1
 !s85 0
 31
+R5
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX.v|
+!i113 1
+R6
+R9
+R7
+n@c@c_@m@u@x
+vCC_MUX_REG
+R1
+!i10b 1
+!s100 SX4YGBz4XVG6BF5O?Qh[H2
+Ik?Nb?BoRD=PW=^VV5g@XP0
+R2
+R0
+Z10 w1538022297
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX_REG.v
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX_REG.v
+L0 4
+R4
+r1
+!s85 0
+31
+<<<<<<< Updated upstream
 R11
+=======
+<<<<<<< Updated upstream
+R6
+>>>>>>> Stashed changes
 !s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX.v|
+=======
+R5
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX_REG.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CC_MUX_REG.v|
+>>>>>>> Stashed changes
 !i113 1
-R7
+R6
 R9
+R7
+<<<<<<< Updated upstream
+R9
+=======
+<<<<<<< Updated upstream
+R11
+>>>>>>> Stashed changes
 R8
 n@c@c_@m@u@x
 vCC_MUX_REG
@@ -317,87 +478,311 @@ R0
 w1538012957
 8E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegFIXED.v
 FE:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegFIXED.v
+=======
+n@c@c_@m@u@x_@r@e@g
+vCS_Address_MUX
+R1
+!i10b 1
+!s100 NDji`OQKccML_2S@380hU2
+IIlD]Sh3bfDjaD2931>m5B0
+R2
+R0
+w1537922373
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CS_address_MUX.v
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CS_address_MUX.v
+L0 4
 R4
-R5
 r1
 !s85 0
 31
+R5
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CS_address_MUX.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CS_address_MUX.v|
+!i113 1
+R6
+R9
+R7
+n@c@s_@address_@m@u@x
+vCSAI
+R1
+!i10b 1
+!s100 :eVW^13=EiDaDllP6ejGm0
+I]gK[L>7h?O0V0z[Zjd@D^1
+R2
+R0
+w1537921704
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CSAI.v
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CSAI.v
+L0 4
+>>>>>>> Stashed changes
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CSAI.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/CSAI.v|
+!i113 1
+R6
+R9
+R7
+n@c@s@a@i
+vMIR
+Z11 !s110 1538022736
+!i10b 1
+!s100 N0O:U?DX3`72U=bK63l>E3
+IIDA2IlGQd@6;5zEiAWC4;1
+R2
+R0
+R10
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/MIR.v
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/MIR.v
+L0 4
+R4
+r1
+!s85 0
+31
+<<<<<<< Updated upstream
 R11
 !s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegFIXED.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegFIXED.v|
+=======
+Z12 !s108 1538022736.000000
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/MIR.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/MIR.v|
 !i113 1
-R7
+R6
 R9
+R7
+n@m@i@r
+vprogramMem
+R11
+!i10b 1
+!s100 `TZZmHdA=[Il51z0AHh<U0
+IlPCVS6Ngz[<dL@8e1lE`d0
+R2
+R0
+w1537974708
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/programMem.v
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/programMem.v
+L0 1
+R4
+r1
+!s85 0
+31
+R12
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/programMem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/programMem.v|
+!i113 1
+R6
+R9
+R7
+nprogram@mem
+vROM
+R11
+!i10b 1
+!s100 2khcL?fO1fJh^^lZ[z8E=1
+IeHhZHZOTTDSQobNQhFTg92
+R2
+R0
+w1537976263
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/ROM.v
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/ROM.v
+L0 1
+R4
+r1
+!s85 0
+31
+R12
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/ROM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/ROM.v|
+>>>>>>> Stashed changes
+!i113 1
+R6
+R9
+R7
+<<<<<<< Updated upstream
+R9
+=======
+<<<<<<< Updated upstream
+R11
+>>>>>>> Stashed changes
 R8
+=======
+n@r@o@m
+vSC_RegFIXED
+R1
+!i10b 1
+!s100 Xe32ClAIzPHbVfQ0A35WN0
+IHJXi`mYG@iCND;3W7nX=n2
+R2
+R0
+R10
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegFIXED.v
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegFIXED.v
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegFIXED.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegFIXED.v|
+!i113 1
+R6
+R9
+R7
+>>>>>>> Stashed changes
 n@s@c_@reg@f@i@x@e@d
 vSC_RegGENERAL
 R10
 !i10b 1
 !s100 <UHPI=mfAWDBk4a52=M893
+<<<<<<< Updated upstream
 IDlma<Gk:W<>K?hILOFVh;1
 R2
 R0
 w1538012879
 8E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegGENERAL.v
 FE:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegGENERAL.v
+=======
+Ik7JAIE9L9]fMMA@08ndHW3
+R2
+R0
+R10
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegGENERAL.v
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegGENERAL.v
+R3
+>>>>>>> Stashed changes
 R4
-R5
 r1
 !s85 0
 31
+<<<<<<< Updated upstream
 R11
 !s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegGENERAL.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegGENERAL.v|
+=======
+R5
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegGENERAL.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegGENERAL.v|
+>>>>>>> Stashed changes
 !i113 1
+<<<<<<< Updated upstream
 R7
 R9
 R8
 n@s@c_@reg@g@e@n@e@r@a@l
+=======
+R6
+R9
+R7
+n@s@c_@reg@g@e@n@e@r@a@l
+vSC_RegGENERAL_vlg_tst
+R1
+!i10b 1
+!s100 6Ac;TPiohk9Z:[9_J`?iO0
+IO2[]RLeP]3KZlInY86YdH0
+R2
+R0
+R8
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim/SC_RegGENERAL.vt
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim/SC_RegGENERAL.vt
+L0 29
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim/SC_RegGENERAL.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim/SC_RegGENERAL.vt|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/simulation/modelsim
+R7
+n@s@c_@reg@g@e@n@e@r@a@l_vlg_tst
+>>>>>>> Stashed changes
 vSC_RegIR
 R1
 !i10b 1
 !s100 ROmk^UJNKY0H3c6OKe9aO2
+<<<<<<< Updated upstream
 I>:W:ei?KVL5D:98mVbz4A3
 R2
 R0
 w1538012901
 8E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegIR.v
 FE:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegIR.v
+=======
+IoL<GXf2_o1KJ1JN>eI7111
+R2
+R0
+R10
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegIR.v
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegIR.v
+R3
+>>>>>>> Stashed changes
 R4
-R5
 r1
 !s85 0
 31
-R6
-!s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegIR.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegIR.v|
+R5
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegIR.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegIR.v|
 !i113 1
+<<<<<<< Updated upstream
 R7
 R9
 R8
 n@s@c_@reg@i@r
 vSC_RegPSR
+<<<<<<< Updated upstream
 R1
+=======
+R9
+=======
+R6
+R9
+R7
+n@s@c_@reg@i@r
+vSC_RegPSR
+R1
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 !i10b 1
 !s100 G9I]6R@18g]g?B[cRK:fd2
-IEG>RJlhOo_MnJh?E=X_dV0
+Ind=89^[I^GM282i@N3c<^1
 R2
 R0
-w1537832337
-8E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegPSR.v
-FE:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegPSR.v
+R8
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegPSR.v
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegPSR.v
+R3
 R4
-R5
 r1
 !s85 0
 31
+<<<<<<< Updated upstream
 R6
+=======
+<<<<<<< Updated upstream
+R10
+>>>>>>> Stashed changes
 !s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegPSR.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegPSR.v|
 !i113 1
 R7
 R9
 R8
+=======
+R5
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegPSR.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/SC_RegPSR.v|
+!i113 1
+R6
+R9
+R7
+>>>>>>> Stashed changes
 n@s@c_@reg@p@s@r
 vSC_uDatapath_vlg_tst
 !s110 1538091931
@@ -425,46 +810,88 @@ n@s@c_u@datapath_vlg_tst
 vuDataPath
 R10
 !i10b 1
+<<<<<<< Updated upstream
 !s100 <[FK8cf6@iRgRKWz:EE8i2
 IjanUdY;oi=ACJ<4QZJ3P40
+=======
+<<<<<<< Updated upstream
+!s100 =SIQU>Tz>mEondNjb>i`B0
+IKB][^e_M^ief1hR5JEU;C0
+>>>>>>> Stashed changes
 R2
 R0
 w1538090628
 8E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v
 FE:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v
+=======
+!s100 ZckB2K[jo]ANiJjYnmn:c2
+I?Te@l<OzY?BDjDK[;NoVR1
+R2
+R0
+w1538022682
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v
+R3
+>>>>>>> Stashed changes
 R4
-R5
 r1
 !s85 0
 31
+<<<<<<< Updated upstream
 R11
 !s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v|
+=======
+R5
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/uDataPath.v|
+>>>>>>> Stashed changes
 !i113 1
+<<<<<<< Updated upstream
 R7
 R9
 R8
+=======
+R6
+R9
+R7
+>>>>>>> Stashed changes
 nu@data@path
 vWB_SYSTEM
 R1
 !i10b 1
 !s100 fb[`:g0h?mUVOL78=8<;U1
+<<<<<<< Updated upstream
 IRXF8EDSAV3II<T6zHGfQQ0
 R2
 R0
 R3
 8E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v
 FE:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v
+=======
+I1W]fC1Lh:]XN9RW>fFX021
+R2
+R0
+w1537971494
+8D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v
+FD:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v
+R3
+>>>>>>> Stashed changes
 R4
-R5
 r1
 !s85 0
 31
-R6
-!s107 E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl|E:/ArquiDig/Taller1_arqui/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v|
+R5
+!s107 D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl|D:/tareas/arquitectura/proyecto1/Taller1_arqui/PRJ0_uDataPath_1/rtl/WB_SYSTEM.v|
 !i113 1
+<<<<<<< Updated upstream
 R7
 R9
 R8
+=======
+R6
+R9
+R7
+>>>>>>> Stashed changes
 n@w@b_@s@y@s@t@e@m

@@ -27,6 +27,8 @@
 
 `timescale 1 ps/ 1 ps
 module SC_uDatapath_vlg_tst();
+parameter TCK = 20;
+parameter CLK_FREQ = 1000000000 / TCK; 
 // constants                                           
 // general purpose registers
 reg eachvec;
@@ -98,12 +100,15 @@ begin
 // code that executes only once                        
 // insert code here --> begin                          
                                                      
-// --> end                                             
+// --> end 
+CLOCK_50 <= 0;                                                
 $display("Running testbench");                       
 end                                                    
 always                                                 
 // optional sensitivity list                           
-// @(event1 or event2 or .... eventn)                  
+// @(event1 or event2 or .... eventn)  
+#(TCK/2) CLOCK_50 <= ~ CLOCK_50;
+always                   
 begin                                                  
 // code executes for every event on sensitivity list   
 // insert code here --> begin                          
